@@ -1,0 +1,124 @@
+.header-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+
+    .header-parent {
+        width: 100%;
+
+        .header-top {
+            width: 80%;
+            margin: 0 auto;
+            padding: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+            .header-input {
+                width: 400px;
+                border: 1.8px solid gray;
+                height: 40px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                border-radius: 4px;
+
+                input {
+                    padding: 15px 5px;
+                    width: 100%;
+                    border: none;
+                    background-color: transparent;
+                    font-size: 20px;
+                    outline: none;
+                }
+
+                .icon-se {
+                    font-size: 22px;
+                    margin-right: 20px;
+                    color: gray;
+                }
+            }
+
+            .cos {
+                p {
+                    font-size: 15px;
+                    text-align: end;
+                    color: #999;
+                    margin-bottom: 6px;
+                }
+
+
+                div {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .header {
+            width: 100%;
+            background-color: #ffd333;
+            // height: 40px;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 0 auto;
+
+            ul {
+                // width: 70%;
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                font-weight: 600;
+                font-size: 17px;
+                color: rgb(61, 70, 77)
+            }
+
+            .header-icon {
+                display: flex;
+                gap: 22px;
+
+
+                .icon-head {
+                    font-size: 25px;
+                    color: rgb(61, 70, 77);
+                }
+
+                .heart {
+                    position: relative;
+
+                    .heart-count {
+                        width: 15px;
+                        height: 15px;
+                        font-size: 14px;
+                        border-radius: 50%;
+                        background-color: white;
+                        position: absolute;
+                        top: -5px;
+                        text-align: center;
+                        right: -5px;
+                    }
+                }
+
+
+                .cart-icon {
+                    position: relative;
+
+                    .cart-count {
+                        width: 15px;
+                        height: 15px;
+                        font-size: 14px;
+                        border-radius: 50%;
+                        background-color: white;
+                        position: absolute;
+                        top: -5px;
+                        text-align: center;
+                        right: -5px;
+                    }
+                }
+            }
+        }
+    }
+}
