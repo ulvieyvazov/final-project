@@ -1,0 +1,185 @@
+.home-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+
+    .home-parent {
+        width: 80%;
+        height: 50px;
+        margin: 0 auto;
+
+        .first-section-image {
+            padding: 50px 0;
+            width: 70%;
+            height: 370px;
+            background-image: url("https://stroyka.angular.themeforest.scompiler.ru/themes/default-ltr/assets/images/slides/slide-1.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .first-section-text-parent {
+                width: 50%;
+                margin-left: 50px;
+
+                .first-section-text {
+                    width: 100%;
+
+                    color: #3d464d;
+
+                    .big {
+                        font-size: 30px;
+                        line-height: 34px;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                    }
+
+                    p {
+                        line-height: 25px;
+                        padding: 10px 0;
+                        padding-bottom: 40px;
+                    }
+
+                    a {
+                        padding: 10px 30px;
+                        background-color: #ffd333;
+                        color: #3d464d;
+                        font-size: 22px;
+                        border-radius: 3px;
+
+                    }
+                }
+            }
+
+
+        }
+
+        .first-section-image2 {
+            padding: 50px 0;
+            width: 70%;
+            height: 370px;
+            background-image: url("https://stroyka.angular.themeforest.scompiler.ru/themes/default-ltr/assets/images/slides/slide-2.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+
+            .first-section-text-parent {
+                width: 50%;
+                margin-left: 50px;
+
+                .first-section-text {
+                    width: 100%;
+
+                    color: #3d464d;
+
+                    .big {
+                        font-size: 30px;
+                        line-height: 34px;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                    }
+
+                    p {
+                        line-height: 25px;
+                        padding: 10px 0;
+                        padding-bottom: 40px;
+                    }
+
+                    a {
+                        padding: 10px 30px;
+                        background-color: #ffd333;
+                        color: #3d464d;
+                        font-size: 22px;
+                        border-radius: 3px;
+
+                    }
+                }
+            }
+
+        }
+
+        .first-section-image3 {
+            padding: 50px 0;
+            width: 70%;
+            height: 370px;
+            background-image: url("https://stroyka.angular.themeforest.scompiler.ru/themes/default-ltr/assets/images/slides/slide-3.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+
+            .first-section-text-parent {
+                width: 50%;
+                margin-left: 50px;
+
+                .first-section-text {
+                    width: 100%;
+
+                    color: #3d464d;
+
+                    .big {
+                        font-size: 30px;
+                        line-height: 34px;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                    }
+
+                    p {
+                        line-height: 25px;
+                        padding: 10px 0;
+                        padding-bottom: 40px;
+                    }
+
+                    a {
+                        padding: 10px 30px;
+                        background-color: #ffd333;
+                        color: #3d464d;
+                        font-size: 22px;
+                        border-radius: 3px;
+
+                    }
+                }
+            }
+        }
+
+
+        .home-about {
+            width: 100%;
+            padding: 50px 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .home-free {
+                width: 25%;
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                border: 2px solid #d1cfcf;
+
+                a {
+                    width: 35%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .home-free-child {
+                    width: 100%;
+
+                    p {
+                        font-weight: 700;
+                        font-size: 19px;
+                        color: #3d464d;
+                        padding-bottom: 3px;
+                    }
+
+                    span {
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: #3d464d;
+                    }
+                }
+            }
+        }
+    }
+}
