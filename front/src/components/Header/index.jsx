@@ -4,6 +4,7 @@ import { BsSearch } from "react-icons/bs";
 import { BsCart3 } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
+import {NavLink} from "react-router-dom"
 
 
 
@@ -30,9 +31,9 @@ const Header = () => {
 
                 <div className='header'>
                     <ul>
-                        <li>Home</li>
+                        <li><NavLink to={'/'}>Home</NavLink></li>
                         <li>Megamenu</li>
-                        <li>About</li>
+                        <li><NavLink to={'/about'}>About</NavLink></li>
                         <li>Contacts</li>
                         <li>Shop</li>
                         <li>Account</li>

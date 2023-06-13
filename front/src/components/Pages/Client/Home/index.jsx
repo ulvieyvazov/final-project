@@ -3,7 +3,6 @@ import "./index.scss"
 import SwiperCorusel from '../../../Swiper/app'
 
 
-
 const Home = () => {
     return (
         <div className='home-container'>
@@ -80,8 +79,27 @@ const Home = () => {
                         <h3>Featured Products</h3>
                         <div></div>
                     </div>
+
+
+
+                    <div className='featured-card-parent'>
+                        <div className='featured-card'>
+
+                        </div>
+                    </div>
                 </div>
 
+
+                <div className='hundreds-parent'>
+                    <div className="hundreds">
+                        <div className='hundreds-text'>
+                            <h2>Hundreds  Hand Tools</h2>
+                            <p>Hammers, Chisels, Universal Pliers, Nippers, Jigsaws, Saws</p>
+                            
+                            <a href="/">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
