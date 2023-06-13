@@ -2,6 +2,8 @@ import React from 'react'
 import "./index.scss"
 import SwiperCorusel from '../../../Swiper/app'
 
+
+
 const Home = () => {
     return (
         <div className='home-container'>
@@ -33,7 +35,8 @@ const Home = () => {
 
                         <div className='home-free-child'>
                             <p>
-                                Support 24/7                            </p>
+                                Support 24/7
+                            </p>
                             <span>Call us anytime</span>
                         </div>
                     </div>
@@ -70,9 +73,20 @@ const Home = () => {
                     </div>
 
                 </div>
+
+
+                <div className='featured-parent'>
+                    <div className='featured'>
+                        <h3>Featured Products</h3>
+                        <div></div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     )
 }
+
 
 export default Home

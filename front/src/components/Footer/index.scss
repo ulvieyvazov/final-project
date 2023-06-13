@@ -1,0 +1,277 @@
+.footer-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+    border-top: 1px solid #d3d2d2;
+    padding-top: 30px;
+
+    .footer-parent {
+        width: 80%;
+        margin: 0 auto;
+
+        .footer {
+            width: 100%;
+
+            .footer-top {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding-bottom: 50px;
+
+                .footer-contact {
+                    width: 25%;
+
+                    h5 {
+                        font-weight: 700;
+                        font-size: 20px;
+                        color: #3d464d;
+                        line-height: 24px;
+                        padding-bottom: 30px;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 15px;
+                        color: #3d464d;
+                        line-height: 22px;
+                        padding-bottom: 24px;
+                    }
+
+                    ul {
+                        li {
+                            font-weight: 400;
+                            font-size: 15px;
+                            color: #3d464d;
+                            padding-bottom: 11px;
+                            line-height: 18px;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+
+                            .footer-icon {
+                                font-size: 17px;
+                            }
+                        }
+                    }
+                }
+
+                .footer-info {
+                    width: 15%;
+
+                    h5 {
+                        font-weight: 700;
+                        font-size: 20px;
+                        color: #3d464d;
+                        line-height: 24px;
+                        padding-bottom: 30px;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 15px;
+                        color: #3d464d;
+                        line-height: 22px;
+                        padding-bottom: 24px;
+                    }
+
+                    ul {
+                        li {
+                            font-weight: 400;
+                            font-size: 15px;
+                            color: #3d464d;
+                            padding-bottom: 11px;
+                            line-height: 18px;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+
+                            .footer-icon {
+                                font-size: 17px;
+                            }
+                        }
+                    }
+                }
+
+                .footer-acco {
+                    width: 15%;
+
+                    h5 {
+                        font-weight: 700;
+                        font-size: 20px;
+                        color: #3d464d;
+                        line-height: 24px;
+                        padding-bottom: 30px;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 15px;
+                        color: #3d464d;
+                        line-height: 22px;
+                        padding-bottom: 24px;
+                    }
+
+                    ul {
+                        li {
+                            font-weight: 400;
+                            font-size: 15px;
+                            color: #3d464d;
+                            padding-bottom: 11px;
+                            line-height: 18px;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+
+                            .footer-icon {
+                                font-size: 17px;
+                            }
+                        }
+                    }
+                }
+
+                .footer-new {
+                    width: 25%;
+
+                    h5 {
+                        font-weight: 700;
+                        font-size: 20px;
+                        color: #3d464d;
+                        line-height: 24px;
+                        padding-bottom: 30px;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 15px;
+                        color: #3d464d;
+                        line-height: 22px;
+                        padding-bottom: 20px;
+                    }
+
+
+                    form {
+                        display: flex;
+                        align-items: center;
+
+                        input {
+                            padding: 10px 1px;
+                            font-size: 16px;
+                        }
+
+                        button {
+                            padding: 11px 10px;
+                            background-color: #ffd333;
+                            color: #3d464d;
+                            border: 0;
+                            font-size: large;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .footer-social-parent {
+                        .p {
+                            font-weight: 400;
+                            font-size: 15px;
+                            color: #3d464d;
+                            padding-bottom: 4px !important;
+                            padding-top: 24px;
+
+                        }
+
+                        .footer-social {
+                            display: flex;
+                            gap: 6px;
+
+                            .facebook {
+                                width: 35px;
+                                height: 35px;
+                                background-color: blue;
+                                border-radius: 50%;
+                                position: relative;
+
+                                .footer-social-icon {
+                                    font-size: 20px;
+                                    color: white;
+                                    position: absolute;
+                                    left: 8px;
+                                    top: 8px;
+                                }
+                            }
+
+                            .twit {
+                                width: 35px;
+                                height: 35px;
+                                background-color: #007bff;
+                                border-radius: 50%;
+                                position: relative;
+
+                                .footer-social-icon {
+                                    font-size: 20px;
+                                    color: white;
+                                    position: absolute;
+                                    left: 8px;
+                                    top: 8px;
+                                }
+                            }
+
+                            .yout {
+                                width: 35px;
+                                height: 35px;
+                                background-color: #dc3545;
+                                border-radius: 50%;
+                                position: relative;
+
+                                .footer-social-icon {
+                                    font-size: 20px;
+                                    color: white;
+                                    position: absolute;
+                                    left: 8px;
+                                    top: 8px;
+                                }
+                            }
+
+                            .insta {
+                                width: 35px;
+                                height: 35px;
+                                background-color: #6f42c1;
+                                border-radius: 50%;
+                                position: relative;
+
+                                .footer-social-icon {
+                                    font-size: 20px;
+                                    color: white;
+                                    position: absolute;
+                                    left: 8px;
+                                    top: 8px;
+                                }
+                            }
+
+                            .rss {
+                                width: 35px;
+                                height: 35px;
+                                background-color: #ffd333;
+                                border-radius: 50%;
+                                position: relative;
+
+                                .footer-social-icon {
+                                    font-size: 20px;
+                                    position: absolute;
+                                    left: 8px;
+                                    top: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer-bottom {
+                width: 100%;
+                padding: 20px 0;
+                border-top: 1px solid #d3d2d2;
+
+            }
+        }
+    }
+}

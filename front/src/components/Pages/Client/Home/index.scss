@@ -5,7 +5,6 @@
 
     .home-parent {
         width: 80%;
-        height: 50px;
         margin: 0 auto;
 
         .first-section-image {
@@ -178,6 +177,31 @@
                         font-size: 14px;
                         color: #3d464d;
                     }
+                }
+            }
+        }
+
+
+
+        .featured-parent {
+            width: 100%;
+            padding: 50px 0;
+
+            .featured {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                h3 {
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: #3d464d;
+                }
+
+                div{
+                    width: 82%;
+                    height: 2px;
+                    background-color: #d1cfcf;
                 }
             }
         }
