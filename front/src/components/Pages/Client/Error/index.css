@@ -1,0 +1,72 @@
+.error-404-container {
+    max-width: 1640px;
+    margin: 0 auto;
+}
+
+
+.error-404-parent {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.error-404 {
+    font-weight: 700;
+    font-size: 80px;
+    color: #ebebeb;
+    line-height: 120px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.note-found {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.note-found h1 {
+    font-weight: 700;
+    font-size: 36px;
+    color: rgb(61, 70, 77);
+    line-height: 43.2px;
+}
+
+.note-found p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #3d464d;
+    line-height: 24px;
+    padding: 32px 0;
+}
+.note-found span {
+    font-weight: 400;
+    font-size: 16px;
+    color: #3d464d;
+    line-height: 24px;
+    padding: 32px 0;
+    margin-bottom: 15px;
+}
+.note-found button {
+    margin-top: 14px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #3d464d;
+    line-height: 24px;
+    background-color: #ebebeb;
+    padding: 3px 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    /* transition: all 0.7s; */
+    border-radius: 2px;
+}
+
+
+.note-found button:hover{
+    color: white;
+    background-color: #3d464d;
+    border: 0;
+    border: 1px solid transparent;
+}
