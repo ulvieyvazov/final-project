@@ -22,7 +22,7 @@
                 border-radius: 5px;
 
                 .about-bgimage-text-child {
-                    width: 60%;
+                    width: 60%;  
                     text-align: center;
                     margin: 0 auto;
 
@@ -42,6 +42,8 @@
                         padding: 40px 0;
                     }
                 }
+
+               
             }
         }
 
@@ -100,5 +102,32 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 675px) {
+    .about-bgimage-text{
+        width: 40%;
+        
+        .about-bgimage-text-child{
+            width: 95% !important;
+    
+            p{
+                padding: 30px 0 !important;
+            }
+        }                    
+    }
+}
+@media (max-width: 535px) {
+    .about-bgimage-text{
+        width: 90% !important;
+        
+        .about-bgimage-text-child{
+            width: 95% !important;
+    
+            p{
+                padding: 20px 0 !important;
+            }
+        }                    
     }
 }

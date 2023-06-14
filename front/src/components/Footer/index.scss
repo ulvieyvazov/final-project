@@ -17,6 +17,7 @@
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
+                gap: 75px;
                 padding-bottom: 50px;
 
                 .footer-contact {
@@ -181,6 +182,7 @@
 
                         .footer-social {
                             display: flex;
+                            flex-wrap: wrap;
                             gap: 6px;
 
                             .facebook {
@@ -273,5 +275,41 @@
 
             }
         }
+    }
+}
+
+
+@media (max-width: 1171px) {
+    .footer-top{
+        width: 100% !important;
+    }
+    .footer-contact{
+        width: 44% !important;
+    }
+    .footer-info{
+        width: 35% !important;
+    }
+    .footer-acco{
+        width: 38% !important;
+    }
+    .footer-new{
+        width: 45% !important;
+    }
+}
+@media (max-width: 586px) {
+    .footer-top{
+        width: 100% !important;
+    }
+    .footer-contact{
+        width: 44% !important;
+    }
+    .footer-info{
+        width: 35% !important;
+    }
+    .footer-acco{
+        width: 38% !important;
+    }
+    .footer-new{
+        width: 40% !important;
     }
 }

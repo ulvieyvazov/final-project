@@ -251,7 +251,156 @@
                 }
 
             }
-
         }
+
+        .home-popular {
+            width: 100%;
+            padding-top: 80px;
+            padding-bottom: 50px;
+
+            .featured {
+                display: flex;
+                align-items: center;
+                gap: 35px;
+
+                h3 {
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: #3d464d;
+                }
+
+                div {
+                    width: 82%;
+                    height: 2px;
+                    background-color: #d1cfcf;
+                }
+            }
+
+            .home-popular-card-parent {
+                width: 100%;
+                padding: 50px 0;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 30px;
+
+                .home-popular-card {
+                    width: 30%;
+                    padding: 15px;
+                    display: flex;
+                    gap: 20px;
+                    box-shadow: 0 1px 11px #504f4f;
+
+                    img {
+                        width: 30%;
+                        height: 120px;
+                    }
+
+                    .home-popular-text {
+                        width: 70%;
+
+                        h4 {
+                            color: #3d464d;
+                            font-size: 20px;
+                            font-family: 'Roboto';
+                        }
+
+                        ul {
+                            padding: 22px 0;
+                            li {
+                                font-weight: 400;
+                                font-size: 14px;
+                                color: #6c757d;
+                                line-height: 22px;
+                            }
+                        }
+
+                        div {
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: #1a66ff;
+                            line-height: 21px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        .home-news {
+            width: 100%;
+            padding: 50px 0;
+
+            .featured {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                h3 {
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: #3d464d;
+                }
+
+                div {
+                    width: 82%;
+                    height: 2px;
+                    background-color: #d1cfcf;
+                }
+            }
+
+            .home-news-card-parent {
+                width: 100%;
+                height: 150px;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 35px;
+
+                .home-news-card {
+                    // width: 50%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 40%;
+                        height: 100%;
+                    }
+
+                    .home-news-card-text {
+                        width: 70%;
+                        padding-left: 20px;
+
+                        span {
+                            font-weight: 400;
+                            font-size: 13px;
+                            color: rgb(173, 173, 173);
+                            line-height: 22.5px;
+                            // padding-right: 15px;
+                        }
+
+                        h3 {
+                            font-weight: 550;
+                            padding: 10px 0;
+                            font-size: 16px;
+                            color: #3d464d;
+                            line-height: 32px;
+                        }
+
+                        p {
+                            font-weight: 600;
+                            font-size: 13px;
+                            color: rgb(61, 70, 77);
+                            line-height: 24px;
+                            font-family: 'Roboto';
+                            padding-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }

@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import "./index.scss"
-import post1 from "../../../../assets/post-1.jpg"
-import post2 from "../../../../assets/post-2.jpg"
-import post3 from "../../../../assets/post-3.jpg"
-import post4 from "../../../../assets/post-4.jpg"
-import post5 from "../../../../assets/post-5.jpg"
-import post6 from "../../../../assets/post-6.jpg"
-import post7 from "../../../../assets/post-7.jpg"
-import post8 from "../../../../assets/post-8.jpg"
-import post9 from "../../../../assets/post-9.jpg"
-import post10 from "../../../../assets/post-10.jpg"
+
 
 
 
@@ -26,8 +17,7 @@ const Blog = () => {
     useEffect(() => {
         getData()
     }, [])
-
-
+    
 
 
     return (
