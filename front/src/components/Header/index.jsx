@@ -37,7 +37,7 @@ const Header = () => {
                         <li>Contacts</li>
                         <li>Shop</li>
                         <li>Account</li>
-                        <li>Blog</li>
+                        <li><NavLink to={'/blog'}>Blog</NavLink></li>
                     </ul>
 
                     <div className='header-icon'>
