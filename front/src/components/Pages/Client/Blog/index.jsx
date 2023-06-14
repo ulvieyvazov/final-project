@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from "axios"
 import "./index.scss"
 import post1 from "../../../../assets/post-1.jpg"
 import post2 from "../../../../assets/post-2.jpg"
@@ -14,6 +15,21 @@ import post10 from "../../../../assets/post-10.jpg"
 
 
 const Blog = () => {
+
+    const [data, setDate] = useState([])
+
+    const getData = async () => {
+        const res = await axios.get("http://localhost:5050/news")
+        setDate(res.data)
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
+
+
+
+
     return (
         <div className='blog-container'>
             <div className='blog-parent'>
@@ -21,141 +37,24 @@ const Blog = () => {
                 <h1>Latest News</h1>
 
                 <div className='blog-left'>
-                    <div className='post-left1'>
-                        <img src={post1} alt="" />
+                    {
+                        data.map((d) => (
+                            <div className='post-left1'>
+                                <img src={d.img} alt="" />
 
-                        <div className='post-left1-text'>
-                            <span>Special Offers</span>
-                            <span>October 19, 2019</span>
+                                <div className='post-left1-text'>
+                                    <span>{d.info}</span>
+                                    <span>{d.date}</span>
 
-                            <h3>Philosophy That Addresses Topics Such As Goodness</h3>
-                            <p> In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
+                                    <h3>{d.title}</h3>
+                                    <p> {d.disc}</p>
 
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div className='post-left1'>
-                        <img src={post2} alt="" />
+                                    <button>Read More</button>
+                                </div>
+                            </div>
+                        ))
+                    }
 
-                        <div className='post-left1-text'>
-                            <span>Latest News</span>
-                            <span>September 5, 2019</span>
-
-                            <h3>Logic Is The Study Of Reasoning And Argument Part 2</h3>
-                            <p>In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
-
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div className='post-left1'>
-                        <img src={post3} alt="" />
-
-                        <div className='post-left1-text'>
-                            <span>New Arrivals</span>
-                            <span>August 12, 2019</span>
-
-                            <h3>Some Philosophers Specialize In One Or More Historical Periods</h3>
-                            <p> In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
-
-                            <button>Read More</button>
-                        </div>
-                    </div>
-
-
-                    <div className='post-left1'>
-                        <img src={post4} alt="" />
-
-                        <div className='post-left1-text'>
-                            <span>Special Offers</span>
-                            <span>Jule 30, 2019</span>
-
-                            <h3>A Variety Of Other Academic And Non-Academic Approaches Have Been Explored</h3>
-                            <p> In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
-
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div className='post-left1'>
-                        <img src={post5} alt="" />
-
-                        <div className='post-left1-text'>
-                            <span>New Arrivals</span>
-                            <span>June 12, 2019</span>
-
-                            <h3>Germany Was The First Country To Professionalize Philosophy</h3>
-                            <p>In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
-
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div className='post-left1'>
-                        <img src={post6} alt="" />
-
-                        <div className='post-left1-text'>
-                            <span>Special Offers</span>
-                            <span>May 21, 2019</span>
-
-                            <h3>Logic Is The Study Of Reasoning And Argument Part 1</h3>
-                            <p> In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
-
-                            <button>Read More</button>
-                        </div>
-                    </div>
-
-
-
-                    <div className='post-left1'>
-                        <img src={post7} alt="" />
-
-                        <div className='post-left1-text'>
-                            <span>Special Offers</span>
-                            <span>April 3, 2019</span>
-
-                            <h3>Many Inquiries Outside Of Academia Are Philosophical In The Broad Sense</h3>
-                            <p> In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
-
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div className='post-left1'>
-                        <img src={post8} alt="" />
-
-                        <div className='post-left1-text'>
-                            <span>Latest News</span>
-                            <span>Mart 29, 2019</span>
-
-                            <h3>An Advantage Of Digital Circuits When Compared To Analog Circuits</h3>
-                            <p>In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
-
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div className='post-left1'>
-                        <img src={post9} alt="" />
-
-                        <div className='post-left1-text'>
-                            <span>New Arrivals</span>
-                            <span>February 10, 2019</span>
-
-                            <h3>A Digital Circuit Is Typically Constructed From Small Electronic Circuits</h3>
-                            <p> In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
-
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div className='post-left1'>
-                        <img src={post10} alt="" />
-
-                        <div className='post-left1-text'>
-                            <span>Special Offers</span>
-                            <span>January 1, 2019</span>
-
-                            <h3>Engineers Use Many Methods To Minimize Logic Functions</h3>
-                            <p> In one general sense, philosophy is associated with wisdom, intellectual culture and a search for knowledge. In that sense, all cultures... </p>
-
-                            <button>Read More</button>
-                        </div>
-                    </div>
                 </div>
 
                 <div className='blog-right'>
