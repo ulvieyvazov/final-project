@@ -1,9 +1,9 @@
-.blog-container {
+.more-container {
     width: 100%;
     max-width: 1640px;
     margin: 0 auto;
 
-    .blog-parent {
+    .more-parent {
         width: 80%;
         margin: 0 auto;
         padding-top: 40px;
@@ -28,6 +28,7 @@
 
                 img {
                     width: 100%;
+                    padding-top: 50px;
                 }
 
                 .post-left1-text {
@@ -35,21 +36,33 @@
 
                     span {
                         font-weight: 400;
-                        font-size: 15px;
-                        color: #adadad;
+                        font-size: 16px;
+                        // color: #adadad;
+                        color: #3d464d;
                         line-height: 22.5px;
                         padding-right: 15px;
+                        margin-top: 18px !important;
                     }
 
                     h3 {
-                        font-weight: 550;
+                        font-weight: 400;
+                        text-align: center;
                         padding: 10px 0;
-                        font-size: 24px;
-                        color: rgb(61, 70, 77);
+                        color: #3d464d;
                         line-height: 32px;
+                        font-style: italic;
+                        font-family: "Roboto";
+                    }
+
+                    div {
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: #3d464d;
+                        line-height: 26px;
                     }
 
                     p {
+                        padding-bottom: 40px;
                         font-weight: 600;
                         font-size: 16px;
                         color: rgb(61, 70, 77);
@@ -238,7 +251,8 @@
                             color: #3d464d;
                             line-height: 24px;
                         }
-                        span{
+
+                        span {
                             font-size: 14px;
                             color: #adadad;
                         }
