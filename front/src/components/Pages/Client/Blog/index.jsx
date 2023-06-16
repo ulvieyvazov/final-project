@@ -12,14 +12,14 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Blog = () => {
-    
+
     const navigate = useNavigate()
     const [value, setValue] = useState("")
     const [data, setDate] = useState([])
 
     const getData = async () => {
         const res = await axios.get("http://localhost:5050/news")
-        setDate(res.data.filter((item)=> item.title.toLowerCase().includes(value.toLowerCase())));
+        setDate(res.data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase())));
     };
 
 
@@ -40,7 +40,7 @@ const Blog = () => {
                     {
                         data.map((d) => (
                             <div className='post-left1'>
-                                <img src={d.img} alt="" onClick={()=> navigate('/morenews')}/>
+                                <img src={d.img} alt="" onClick={() => navigate('/morenews')} />
 
                                 <div className='post-left1-text'>
                                     <span>{d.info}</span>
@@ -49,7 +49,7 @@ const Blog = () => {
                                     <h3>{d.title}</h3>
                                     <p> {d.disc}</p>
 
-                                    <button onClick={()=> navigate('/morenews')}>Read More</button>
+                                    <button onClick={() => navigate('/morenews')}>Read More</button>
                                 </div>
                             </div>
                         ))
@@ -59,7 +59,7 @@ const Blog = () => {
 
                 <div className='blog-right'>
                     <div className='blog-right-input'>
-                        <input type="text" placeholder='Blog search'  value={value} onChange={(e)=> setValue(e.target.value)} />
+                        <input type="text" placeholder='Blog search' value={value} onChange={(e) => setValue(e.target.value)} />
                         <BsSearch className='icon-se' />
                     </div>
 
@@ -70,19 +70,20 @@ const Blog = () => {
 
                         <div className='footer-social'>
                             <div className='facebook'>
-                                <FaFacebookF className='footer-social-icon' />
+                                <a href="https://www.facebook.com/" target='_blank'><FaFacebookF className='footer-social-icon' /></a>
                             </div>
                             <div className='twit'>
-                                <AiOutlineTwitter className='footer-social-icon' />
+                                <a href="https://twitter.com/" target='_blank'><AiOutlineTwitter className='footer-social-icon' /></a>
+
                             </div>
                             <div className='yout'>
-                                <AiFillYoutube className='footer-social-icon' />
+                                <a href="https://www.youtube.com/" target='_blank'><AiFillYoutube className='footer-social-icon' /></a>
                             </div>
                             <div className='insta'>
-                                <AiFillInstagram className='footer-social-icon' />
+                                <a href="https://www.instagram.com/" target='_blank'><AiFillInstagram className='footer-social-icon' /></a>
                             </div>
                             <div className='rss'>
-                                <FaRss className='footer-social-icon' />
+                                <a href="https://rss.com/" target='_blank'><FaRss className='footer-social-icon' /></a>
                             </div>
                         </div>
                     </div>
@@ -94,19 +95,19 @@ const Blog = () => {
                         <div className='latest-cardd-parent'>
                             {
                                 data
-                                .filter((f)=> (
-                                    f._id !== ("64897a2f8f745cb96a21c85d" && "64897a818f745cb96a21c85f")
-                                ))
-                                .map((d) => (
-                                    <div className='latest-cardd'>
-                                        <img src={d.img} alt="" />
+                                    .filter((f) => (
+                                        f._id !== ("64897a2f8f745cb96a21c85d" && "64897a818f745cb96a21c85f")
+                                    ))
+                                    .map((d) => (
+                                        <div className='latest-cardd'>
+                                            <img src={d.img} alt="" />
 
-                                        <div className='latest-api'>
-                                            <p>{d.title}</p>
-                                            <span>{d.date}</span>
+                                            <div className='latest-api'>
+                                                <p>{d.title}</p>
+                                                <span>{d.date}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))
+                                    ))
                             }
                         </div>
                     </div>

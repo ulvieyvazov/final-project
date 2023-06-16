@@ -88,23 +88,23 @@ const Footer = () => {
 
                                 <div className='footer-social'>
                                     <div className='facebook'>
-                                        <FaFacebookF className='footer-social-icon'/>
+                                        <a href="https://www.facebook.com/" target='_blank'><FaFacebookF className='footer-social-icon' /></a>
                                     </div>
                                     <div className='twit'>
-                                        <AiOutlineTwitter className='footer-social-icon'/>
+                                        <a href="https://twitter.com/" target='_blank'><AiOutlineTwitter className='footer-social-icon' /></a>
+                                        
                                     </div>
                                     <div className='yout'>
-                                        <AiFillYoutube className='footer-social-icon'/>
+                                        <a href="https://www.youtube.com/" target='_blank'><AiFillYoutube className='footer-social-icon' /></a>
                                     </div>
                                     <div className='insta'>
-                                        <AiFillInstagram className='footer-social-icon'/>
+                                        <a href="https://www.instagram.com/" target='_blank'><AiFillInstagram className='footer-social-icon' /></a>
                                     </div>
                                     <div className='rss'>
-                                        <FaRss className='footer-social-icon'/>
+                                        <a href="https://rss.com/" target='_blank'><FaRss className='footer-social-icon' /></a>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
 

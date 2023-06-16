@@ -2,6 +2,7 @@ import React from 'react'
 import "./index.scss"
 import SwiperCorusel from '../../../Swiper/app'
 import NewsSwiper from '../../../Swiper/News/index'
+import BackToTopButton from '../../../BackToTopButton'
 
 
 
@@ -221,6 +222,7 @@ const Home = () => {
                 </div>
 
             </div>
+            <BackToTopButton/>
         </div>
     )
 }

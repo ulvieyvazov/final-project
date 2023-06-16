@@ -11,9 +11,11 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
+import { useNavigate } from "react-router-dom";
 
 export default function NewsSwiper() {
 
+    const navigate = useNavigate()
     const [data, setDate] = useState([])
 
 
@@ -40,7 +42,7 @@ export default function NewsSwiper() {
                     data.map((d) => (
                         <SwiperSlide>
                             <div className='home-news-card'>
-                                <img src={d.img} alt="" />
+                                <img src={d.img} alt="" onClick={() => navigate("/morenews")} />
                                 <div className='home-news-card-text'>
                                     <h3>{d.title}</h3>
                                     <span>{d.date}</span>
@@ -50,7 +52,7 @@ export default function NewsSwiper() {
                         </SwiperSlide>
                     ))
                 }
-
+                
             </Swiper>
         </>
     );
