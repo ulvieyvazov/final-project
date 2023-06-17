@@ -336,11 +336,15 @@
 
         .bestsellers-parent {
             width: 100%;
+            padding: 60px 0;
+            margin: 0 auto;
 
             .featured {
+                width: 98%;
                 display: flex;
                 align-items: center;
                 gap: 40px;
+                margin: 0 auto;
 
                 h3 {
                     font-weight: 700;
@@ -349,7 +353,7 @@
                 }
 
                 div {
-                    width: 82%;
+                    width: 87%;
                     height: 2px;
                     background-color: #d1cfcf;
                 }
@@ -357,19 +361,22 @@
 
             .bestsellers-card-parent {
                 width: 100%;
+
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
-                gap: 10px;
+                gap: 24px;
                 padding: 40px 0;
-                margin: 0 auto;
-
+                
+                
                 .featured-card {
                     margin: 0 auto;
+                    margin-bottom: 19px;
                     height: 350px;
                     padding: 8px;
                     width: 30%;
                     border: 2px solid #d1cfcf;
+                    position: relative;
 
                     img {
                         width: 90%;

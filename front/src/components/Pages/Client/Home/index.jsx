@@ -128,7 +128,7 @@ const Home = () => {
                     <div className='bestsellers-card-parent'>
                         {
                             data.map((d) => (
-                                <div className='featured-card'>
+                                (d.rating >= 4 ? <div className='featured-card'>
                                     <img src={d.img} alt="" />
 
                                     <div className="featured-card-text">
@@ -156,16 +156,19 @@ const Home = () => {
                                         </div>
 
                                     </div>
-                                    <div className="new-absolute">
-                                        {d.innovation === "new" ? <h4 style={{ backgroundColor: "blue", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
+                                    <div>
+                                        <div className="new-absolute">
+                                            {d.innovation === "new" ? <h4 style={{ backgroundColor: "blue", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
+                                        </div>
+                                        <div className="hot-absolute">
+                                            {d.innovation === "hot" ? <h4 style={{ backgroundColor: "#010190", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
+                                        </div>
+                                        <div className="sale-absolute">
+                                            {d.innovation === "sale" ? <h4 style={{ backgroundColor: "red", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
+                                        </div>
                                     </div>
-                                    <div className="hot-absolute">
-                                        {d.innovation === "hot" ? <h4 style={{ backgroundColor: "#010190", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
-                                    </div>
-                                    <div className="sale-absolute">
-                                        {d.innovation === "sale" ? <h4 style={{ backgroundColor: "red", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
-                                    </div>
-                                </div>
+
+                                </div> : "")
                             ))
                         }
                     </div>
