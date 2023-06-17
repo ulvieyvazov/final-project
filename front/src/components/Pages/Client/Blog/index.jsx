@@ -18,10 +18,10 @@ const Blog = () => {
     const [data, setDate] = useState([])
 
     const getData = async () => {
-        const res = await axios.get("http://localhost:5050/news")
+        const res = await axios.get("http://localhost:4040/news")
         setDate(res.data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase())));
     };
-
+    
 
 
     useEffect(() => {

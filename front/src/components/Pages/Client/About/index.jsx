@@ -1,7 +1,9 @@
 import React from 'react'
 import "./index.scss"
 
+
 const About = () => {
+
   return (
     <div className='about-container'>
       <div className='about-parent'>
@@ -24,13 +26,13 @@ const About = () => {
           </div>
 
           <div className='our-team-card-parent'>
-            
+
             <div className="our-team-card">
               <img src="https://stroyka.angular.themeforest.scompiler.ru/themes/default-ltr/assets/images/teammates/teammate-1.jpg" alt="" />
               <h3>Michael Russo</h3>
               <p>Chief Executive Officer</p>
             </div>
-            
+
 
             <div className="our-team-card">
               <img src="https://stroyka.angular.themeforest.scompiler.ru/themes/default-ltr/assets/images/teammates/teammate-2.jpg" alt="" />
@@ -44,6 +46,7 @@ const About = () => {
               <h3>Anthony Harris</h3>
               <p>Finance Director</p>
             </div>
+
 
           </div>
         </div>

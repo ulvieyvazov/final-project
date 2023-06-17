@@ -3,6 +3,7 @@ import "./index.scss"
 import SwiperCorusel from '../../../Swiper/app'
 import NewsSwiper from '../../../Swiper/News/index'
 import BackToTopButton from '../../../BackToTopButton'
+import HomeSwiper from '../../../Swiper/HomeSwiper'
 
 
 
@@ -88,9 +89,7 @@ const Home = () => {
 
 
                     <div className='featured-card-parent'>
-                        <div className='featured-card'>
-
-                        </div>
+                        <HomeSwiper/>
                     </div>
                 </div>
 

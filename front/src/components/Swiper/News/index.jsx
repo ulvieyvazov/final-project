@@ -20,7 +20,7 @@ export default function NewsSwiper() {
 
 
     const getData = async () => {
-        const res = await axios.get("http://localhost:5050/news")
+        const res = await axios.get("http://localhost:4040/news")
         setDate(res.data)
     }
 
