@@ -4,7 +4,8 @@ import { BsSearch } from "react-icons/bs";
 import { BsCart3 } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import DarkMode from '../mode';
 
 
 
@@ -40,6 +41,7 @@ const Header = () => {
                         <li><NavLink to={'/blog'}>Blog</NavLink></li>
                     </ul>
 
+                            <DarkMode />
                     <div className='header-icon'>
                         <div className='heart'>
                             <AiOutlineHeart className='icon-head' />
