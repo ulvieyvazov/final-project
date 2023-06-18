@@ -21,8 +21,38 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                padding-bottom: 25px;
 
-                
+                .aa {
+                    button {
+                        padding: 7px 0;
+                        background-color: transparent;
+                        border: 0;
+                        font-size: 17px;
+                    }
+                }
+
+
+                .shop-search {
+                    position: relative;
+                    align-items: center;
+                    input {
+                        padding: 5px 8px;
+                        // width: 400px;
+                        font-size: 15px;
+                        outline-color: #ffd333;
+                        border-radius: 3px;
+                        border: 0;
+                        border: 1px solid #3d464d;
+                    }
+                    .shop-icon{
+                        position: absolute;
+                        right: 14px;
+                        top: 4px;
+                        font-size: 20px;
+                        color: #353e44;
+                    }
+                }
 
             }
 
@@ -33,7 +63,7 @@
                 flex-wrap: wrap;
                 align-items: center;
                 justify-content: space-between;
-                
+
                 .featured-card {
                     height: 350px;
                     padding: 8px;

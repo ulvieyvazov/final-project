@@ -6,6 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { IoMdSearch } from "react-icons/io";
 
 
 
@@ -27,20 +28,20 @@ const Shop = () => {
         setData(res.data.filter((item) => item.name.toLowerCase().includes(value.toLocaleLowerCase())))
     }
 
-    const handleSortA = ()=>{
+    const handleSortA = () => {
         let sortData = []
-        
-        sortData = [...data].sort((a,b)=>{
+
+        sortData = [...data].sort((a, b) => {
             return a.name.localeCompare(b.name)
         })
 
         setData(sortData)
     }
 
-    const handleSortZ = ()=>{
+    const handleSortZ = () => {
         let sortData = []
-        
-        sortData = [...data].sort((a,b)=>{
+
+        sortData = [...data].sort((a, b) => {
             return b.name.localeCompare(a.name)
         })
 
@@ -62,26 +63,29 @@ const Shop = () => {
                 <div className='shop-right'>
                     <div className='shop-right-head'>
 
-                        <Box sx={{ minWidth: 1 }}>
+                        <Box sx={{ minWidth: 1 }} className='aa'>
                             <FormControl fullWidth style={{ width: '180px', height: '30px' }}>
-                                <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                                <InputLabel id="demo-simple-select-label">Sort</InputLabel>
                                 <Select
-                                    style={{height: '40px'}}
+                                    style={{ height: '50px' }}
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     value={age}
                                     label="Age"
                                     onChange={handleChange}
                                 >
-                                    <MenuItem value={10}><button onClick={handleSortA}>sort by name(A-Z)</button></MenuItem>
-                                    <MenuItem value={20}><button onClick={handleSortZ}>sort by name(Z-A)</button></MenuItem>
-                                    <MenuItem value={30}><button>Default</button></MenuItem>
+                                    <MenuItem value={10}><button style={{ backgroundColor: "transparent", border: 0 }} onClick={handleSortA}>sort by name(A-Z)</button></MenuItem>
+                                    <MenuItem value={20}><button style={{ backgroundColor: "transparent", border: 0 }} onClick={handleSortZ}>sort by name(Z-A)</button></MenuItem>
+                                    <MenuItem value={30}><button style={{ backgroundColor: "transparent", border: 0 }} onClick={getData}>Default</button></MenuItem>
                                 </Select>
                             </FormControl>
                             <button>sort by price</button>
                         </Box>
 
-                        <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
+                        <div className='shop-search' style={{display: 'flex'}}>
+                            <input type="text" st placeholder='Search Product' value={value} onChange={(e) => setValue(e.target.value)} />
+                            <IoMdSearch className='shop-icon'/>
+                        </div>
                     </div>
 
                     <div className='shop-card-parent'>
