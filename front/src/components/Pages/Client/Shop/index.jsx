@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { IoMdSearch } from "react-icons/io";
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -19,9 +20,11 @@ const Shop = () => {
     };
 
 
+    const navigate = useNavigate()
     const [sort, setSort] = useState('sorting')
     const [value, setValue] = useState("")
     const [data, setData] = useState([])
+
 
     const getData = async () => {
         const res = await axios.get("http://localhost:5050/products")
@@ -82,17 +85,18 @@ const Shop = () => {
                             <button>sort by price</button>
                         </Box>
 
-                        <div className='shop-search' style={{display: 'flex'}}>
+                        <div className='shop-search' style={{ display: 'flex' }}>
                             <input type="text" st placeholder='Search Product' value={value} onChange={(e) => setValue(e.target.value)} />
-                            <IoMdSearch className='shop-icon'/>
+                            <IoMdSearch className='shop-icon' />
                         </div>
                     </div>
 
                     <div className='shop-card-parent'>
                         {
                             data.map((d) => (
-                                <div className='featured-card'>
-                                    <img src={d.img} alt="" />
+                                console.log(d._id),
+                                <div className='featured-card' key={d._id}>
+                                    <img src={d.img} alt="" onClick={() => navigate(`product-details/${d._id}`)}/>
 
                                     <div className="featured-card-text">
                                         <p>{d.name}</p>

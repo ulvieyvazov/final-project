@@ -6,6 +6,7 @@ import NewsSwiper from '../../../Swiper/News/index'
 import HomeSwiper from '../../../Swiper/HomeSwiper'
 import axios from 'axios'
 import { Box, Rating } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -13,6 +14,7 @@ import { Box, Rating } from '@mui/material'
 const Home = () => {
 
     const [data, setData] = useState([])
+    const navigate = useNavigate()
 
     const getData = async () => {
         const res = await axios.get("http://localhost:5050/products")
@@ -129,7 +131,7 @@ const Home = () => {
                         {
                             data.map((d) => (
                                 (d.rating >= 4 ? <div className='featured-card'>
-                                    <img src={d.img} alt="" />
+                                    <img src={d.img} alt="" onClick={()=> navigate(`product-details/${d._id}`)} key={d._id}/>
 
                                     <div className="featured-card-text">
                                         <p>{d.name}</p>

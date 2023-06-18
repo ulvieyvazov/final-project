@@ -9,6 +9,7 @@ import Error404 from './components/Pages/Client/Error';
 import MoreNews from './components/Pages/Client/MoreNews';
 import BackToTopButton from './components/BackToTopButton';
 import Shop from './components/Pages/Client/Shop';
+import ProductDetail from '../src/ProductDetail/index';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
         <Route path='/blog' element={<Blog />}></Route>
         <Route path='/morenews' element={<MoreNews />}></Route>
         <Route path='/shop' element={<Shop />}></Route>
-        <Route path='*' element={<Error404 />}></Route>
+        <Route path='/shop/product-details/:id' element={<ProductDetail />}></Route>
+        <Route path='/product-details/:id' element={<ProductDetail />}></Route>
+        {/* <Route path='*' element={<Error404 />}></Route> */}
       </Routes>
       <BackToTopButton />
       <Footer />

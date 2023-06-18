@@ -25,6 +25,12 @@ export default function HomeSwiper() {
         setData(res.data)
     }
 
+    
+    const deleteData = async(id)=>{
+        await axios.delete(`http://localhost:5050/products/${id}`)
+        await getData()
+    }
+
     useEffect(() => {
         getData()
     }, [])
@@ -78,6 +84,7 @@ export default function HomeSwiper() {
                                 <div className="sale-absolute">
                                     {d.innovation === "sale" ? <h4 style={{ backgroundColor: "red", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
                                 </div>
+                                <button onClick={()=> deleteData(d._id)}>DELETE</button>
                             </div>
                         </SwiperSlide>
                     ))
