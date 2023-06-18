@@ -1,0 +1,111 @@
+.shop-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+
+    .shop-parent {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 40px;
+        display: flex;
+
+        .shop-left {
+            width: 20%;
+        }
+
+        .shop-right {
+            width: 100%;
+
+            .shop-right-head {
+                width: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                
+
+            }
+
+            .shop-card-parent {
+                width: 100%;
+                padding: 25px 0;
+                display: flex !important;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                
+                .featured-card {
+                    height: 350px;
+                    padding: 8px;
+                    width: 30%;
+                    position: relative;
+                    border: 2px solid #d1cfcf;
+
+                    img {
+                        width: 90%;
+                        height: 60%;
+                        position: relative;
+                    }
+
+                    .new-absolute {
+                        position: absolute;
+                        top: 8px;
+                        left: 10px;
+                    }
+
+                    .hot-absolute {
+                        position: absolute;
+                        top: 8px;
+                        left: 10px;
+                    }
+
+                    .sale-absolute {
+                        position: absolute;
+                        top: 8px;
+                        left: 10px;
+                    }
+
+                    .featured-card-text {
+                        width: 80%;
+
+                        // text-align: center;
+                        p {
+                            font-weight: 400;
+                            font-size: 15px;
+                            color: rgb(61, 70, 77);
+                            line-height: 19px;
+                            margin-left: 4px;
+                            // flex-grow: 1;
+                            height: 35px;
+                            margin-top: 4px;
+                        }
+
+                        .reviews {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+
+                            span {
+                                font-weight: 400;
+                                font-size: 23px;
+                                // color: #3d464d;
+                                // line-height: 19px;
+                                // margin-left: 4px;
+                                // flex-grow: 1;
+                            }
+                        }
+
+
+                        h3 {
+                            margin-left: 4px;
+                            font-weight: 700;
+                            font-size: 16px;
+                            color: #3d464d;
+                            line-height: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

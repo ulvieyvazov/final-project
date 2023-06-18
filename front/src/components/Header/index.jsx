@@ -35,7 +35,7 @@ const Header = () => {
                         <li>Megamenu</li>
                         <li><NavLink to={'/about'}>About</NavLink></li>
                         <li>Contacts</li>
-                        <li>Shop</li>
+                        <li><NavLink to={'/shop'}>Shop</NavLink></li>
                         <li>Account</li>
                         <li><NavLink to={'/blog'}>Blog</NavLink></li>
                     </ul>

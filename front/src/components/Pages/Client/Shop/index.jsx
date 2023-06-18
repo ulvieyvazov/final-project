@@ -1,0 +1,140 @@
+import React, { useEffect, useState } from 'react'
+import "./index.scss"
+import axios from 'axios'
+import { Box, Rating } from '@mui/material'
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
+
+
+const Shop = () => {
+
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
+
+
+    const [sort, setSort] = useState('sorting')
+    const [value, setValue] = useState("")
+    const [data, setData] = useState([])
+
+    const getData = async () => {
+        const res = await axios.get("http://localhost:5050/products")
+        setData(res.data.filter((item) => item.name.toLowerCase().includes(value.toLocaleLowerCase())))
+    }
+
+    const handleSortA = ()=>{
+        let sortData = []
+        
+        sortData = [...data].sort((a,b)=>{
+            return a.name.localeCompare(b.name)
+        })
+
+        setData(sortData)
+    }
+
+    const handleSortZ = ()=>{
+        let sortData = []
+        
+        sortData = [...data].sort((a,b)=>{
+            return b.name.localeCompare(a.name)
+        })
+
+        setData(sortData)
+    }
+
+
+    useEffect(() => {
+        getData()
+    }, [value])
+
+    return (
+        <div className='shop-container'>
+            <div className='shop-parent'>
+                <div className='shop-left'>
+
+                </div>
+
+                <div className='shop-right'>
+                    <div className='shop-right-head'>
+
+                        <Box sx={{ minWidth: 1 }}>
+                            <FormControl fullWidth style={{ width: '180px', height: '30px' }}>
+                                <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                                <Select
+                                    style={{height: '40px'}}
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={age}
+                                    label="Age"
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value={10}><button onClick={handleSortA}>sort by name(A-Z)</button></MenuItem>
+                                    <MenuItem value={20}><button onClick={handleSortZ}>sort by name(Z-A)</button></MenuItem>
+                                    <MenuItem value={30}><button>Default</button></MenuItem>
+                                </Select>
+                            </FormControl>
+                            <button>sort by price</button>
+                        </Box>
+
+                        <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
+                    </div>
+
+                    <div className='shop-card-parent'>
+                        {
+                            data.map((d) => (
+                                <div className='featured-card'>
+                                    <img src={d.img} alt="" />
+
+                                    <div className="featured-card-text">
+                                        <p>{d.name}</p>
+
+                                        <div className="reviews">
+                                            <div style={{ padding: '10px 0' }}>
+                                                <Box
+                                                    sx={{
+                                                        '& > legend': { mt: 5 },
+                                                    }}
+                                                >
+                                                    <Rating name="read-only" value={d.rating} readOnly />
+                                                </Box>
+                                            </div>
+                                            <span style={{ fontSize: '14px', color: '#b3b3b3' }}>{d.reviews} Reviews</span>
+                                        </div>
+
+                                        <div style={{ display: "flex", gap: '20px' }}>
+
+                                            {/* {d.discount ? <h3 style={{display: "none", fontSize: }}>${d.price}.00</h3> : } */}
+                                            {d.discount ? <h3 style={{ textDecorationLine: "line-through", fontSize: '14px' }}>${d.price}.00</h3> : <h3>${d.price}.00</h3>}
+
+                                            {d.discount ? <h3 style={{ color: 'red', fontSize: '20px' }}>${d.discount}.00</h3> : ""}
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <div className="new-absolute">
+                                            {d.innovation === "new" ? <h4 style={{ backgroundColor: "blue", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
+                                        </div>
+                                        <div className="hot-absolute">
+                                            {d.innovation === "hot" ? <h4 style={{ backgroundColor: "#010190", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
+                                        </div>
+                                        <div className="sale-absolute">
+                                            {d.innovation === "sale" ? <h4 style={{ backgroundColor: "red", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Shop
