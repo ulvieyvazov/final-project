@@ -1,0 +1,84 @@
+.detail-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+
+    .detail-parent {
+        width: 70%;
+        margin: 0 auto;
+        padding-top: 40px;
+
+        .detail-top {
+            width: 100%;
+
+            .featured-card {
+                display: flex;
+                // align-items: center;
+                gap: 40px;
+                // height: 350px;
+                padding: 8px;
+                width: 100%;
+
+                img {
+                    border: 2px solid #d1cfcf;
+                    width: 45%;
+                    // height: 40%;
+                    position: relative;
+                }
+
+                .featured-card-text {
+                    width: 60%;
+
+                    // text-align: center;
+                    h2 {
+                        font-weight: 600;
+                        font-size: 38px;
+                        margin-left: 4px;
+                        // flex-grow: 1;
+                        margin-bottom: 4px;
+                    }
+
+                    .reviews {
+                        display: flex;
+                        align-items: center;
+                        gap: 14px;
+
+                        span {
+                            font-weight: 400;
+                            // font-size: 23px;
+                            // color: #3d464d;
+                            // line-height: 19px;
+                            // margin-left: 4px;
+                            // flex-grow: 1;
+                        }
+                    }
+
+                    .descrip {
+                        font-size: 17px;
+                        color: #3d464d;
+                        line-height: 25px;
+                        padding: 11px 0;
+                    }
+
+                    .availability {
+                        display: flex;
+                        gap: 20px;
+                        p {
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: rgb(153, 153, 153);
+                        }
+                    }
+
+
+                    h3 {
+                        margin-top: 10px;
+                        font-weight: 700;
+                        font-size: 34px;
+                        color: #3d464d;
+                    }
+                }
+            }
+        }
+    }
+}

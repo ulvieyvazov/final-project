@@ -23,7 +23,7 @@ function App() {
         <Route path='/shop' element={<Shop />}></Route>
         <Route path='/shop/product-details/:id' element={<ProductDetail />}></Route>
         <Route path='/product-details/:id' element={<ProductDetail />}></Route>
-        {/* <Route path='*' element={<Error404 />}></Route> */}
+        <Route path='*' element={<Error404 />}></Route>
       </Routes>
       <BackToTopButton />
       <Footer />
