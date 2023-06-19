@@ -1,0 +1,41 @@
+.specification-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+
+}
+
+.specification-parent {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.general {
+    width: 70%;
+    padding: 60px 0;
+}
+
+.general h2{
+    padding-bottom: 18px;
+}
+
+.general .general-div {
+    justify-content: space-between;
+    padding: 14px 5px;
+    border-top: 1px solid gray;
+}
+.dimensions {
+    width: 70%;
+    padding: 30px 0;
+}
+
+.dimensions h2{
+    padding-bottom: 18px;
+}
+
+.dimensions .dimensions-div {
+    justify-content: space-between;
+    padding: 14px 5px;
+    border-top: 1px solid gray;
+}

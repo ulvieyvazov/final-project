@@ -1,14 +1,25 @@
 // import { Box, Rating } from '@mui/material'
+import { Box, Rating } from '@mui/material';
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import "./index.scss"
-import RatingDetail from '../components/RatingDetail'
+import React, { useEffect, useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+
+// import required modules
+import { Pagination, Navigation } from "swiper";
+import Description from '../components/ShopData/Description';
 
 const ProductDetail = () => {
 
-
+  const navigate = useNavigate()
   const { id: params } = useParams();
   const [data, setData] = useState([]);
 
@@ -16,27 +27,48 @@ const ProductDetail = () => {
     const res = await axios.get(`http://localhost:5050/products/${params}`)
     setData(res.data)
   }
-  console.log(params._id);
 
 
   useEffect(() => {
     getData()
   }, [])
 
-  
   return (
     <div className='detail-container'>
       <div className='detail-parent'>
         <div className='detail-top'>
           {
             <div className='featured-card'>
-              <img src={data.img} alt="" />
+              <div style={{ width: '50%' }}>
+                {/* <img src={data.img} alt="" /> */}
+                <Swiper
+                  pagination={{
+                    type: "fraction",
+                  }}
+                  navigation={true}
+                  modules={[Pagination, Navigation]}
+                  className="mySwiper"
+                >
+
+                  <SwiperSlide><img src={data.img} alt="" /></SwiperSlide>
+                  <SwiperSlide><img src={data.detailimg} alt="" /></SwiperSlide>
+
+                </Swiper>
+              </div>
 
               <div className="featured-card-text">
                 <h2>{data.name}</h2>
 
                 <div className="reviews">
-                  <RatingDetail/>                  
+                  <div style={{ padding: '10px 0' }}>
+                    <Box
+                      sx={{
+                        '& > legend': { mt: 5 },
+                      }}
+                    >
+                      <Rating name="read-only" value={data.rating} readOnly />
+                    </Box>
+                  </div>
                   <span style={{ fontSize: '16px', color: '#b3b3b3' }}>{data.reviews} Reviews</span>
                 </div>
 
@@ -58,7 +90,12 @@ const ProductDetail = () => {
                   {data.discount ? <h3 style={{ color: 'red', fontSize: '34px' }}>${data.discount}.00</h3> : ""}
                 </div>
 
+                <div className='shpo-addtocart'>
+                  <button>Add to cart</button>
+                  icon
+                </div>
               </div>
+
 
 
               {/* <div>
@@ -78,6 +115,27 @@ const ProductDetail = () => {
         </div>
 
         <div className='detail-bottom'>
+
+          <div className='detail-bottom-head' key={data._id}>
+            <a href="" onClick={() => navigate(`/shop/product-details/${data._id}/description`)}>Description</a>
+            {/* <h1>Product Full Description</h1> */}
+            {/* <p>{data.fulldisc?.productfulldisc}</p> */}
+            <a href="" onClick={() => navigate(`/shop/product-details/${data._id}/specification`)} style={{ margin: '0 20px' }}>Specification</a>
+            <a href="/">Reviews</a>
+          </div>
+
+          <div className='detail-bottom-text'>
+            <div className='description'>
+              
+            </div>
+
+            <div className='specification'>
+            </div>
+
+
+            <div className='reviews'>
+            </div>
+          </div>
 
         </div>
       </div>
