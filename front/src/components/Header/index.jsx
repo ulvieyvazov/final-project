@@ -1,15 +1,36 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./index.scss"
 import { BsSearch } from "react-icons/bs";
 import { BsCart3 } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom"
 import DarkMode from '../mode';
 
 
 
 const Header = () => {
+
+    const [open, setOpen] = useState(false)
+
+    let menuRef = useRef();
+
+    useEffect(() => {
+        let handler = (e) => {
+            if (!menuRef.current.contains(e.target)) {
+                setOpen(false)
+                console.log(menuRef);
+            }
+        }
+
+        document.addEventListener("mousedown", handler)
+
+        return () => {
+            document.removeEventListener("mousedown", handler)
+        }
+    })
+
     return (
         <div className='header-container'>
             <div className='header-parent'>
@@ -40,8 +61,25 @@ const Header = () => {
                         <li>Account</li>
                         <li><NavLink to={'/blog'}>Blog</NavLink></li>
                     </ul>
+                    <div className='drop-parent' ref={menuRef}>
+                        <div className='drop' onClick={() => setOpen(!open)}>
+                            <GiHamburgerMenu />
+                        </div>
 
-                            <DarkMode />
+                        <div className={`dropmenu ${open ? 'active' : 'inactive'}`}>
+                            <li><NavLink to={'/'}>Home</NavLink></li>
+                            <li>Megamenu</li>
+                            <li><NavLink to={'/about'}>About</NavLink></li>
+                            <li>Contacts</li>
+                            <li><NavLink to={'/shop'}>Shop</NavLink></li>
+                            <li>Account</li>
+                            <li><NavLink to={'/blog'}>Blog</NavLink></li>
+                        </div>
+
+                    </div>
+
+
+                    <DarkMode />
                     <div className='header-icon'>
                         <div className='heart'>
                             <AiOutlineHeart className='icon-head' />

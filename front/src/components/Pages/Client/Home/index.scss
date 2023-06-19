@@ -209,11 +209,12 @@
 
             .featured-card-parent {
                 width: 100%;
-                // display: flex;
-                // flex-wrap: wrap;
-                // align-items: center;
+                display: flex;
+                align-items: center;
                 gap: 10px;
                 padding: 40px 0;
+                flex-wrap: wrap !important;
+
 
                 .featured-card {
                     height: 350px;
@@ -708,7 +709,7 @@
             }
         }
 
-        .home-end-parent{
+        .home-end-parent {
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
@@ -716,7 +717,7 @@
             align-items: center;
             justify-content: space-between;
 
-            .home-end{
+            .home-end {
                 width: 28%;
 
                 .featured {
@@ -724,19 +725,20 @@
                     align-items: center;
                     gap: 8px;
                     width: 100%;
-    
+
                     h3 {
                         font-weight: 700;
                         font-size: 17px;
                         color: #3d464d;
                     }
-    
+
                     div {
                         width: 50%;
                         height: 2px;
                         background-color: #d1cfcf;
                     }
                 }
+
                 .featured-card {
                     margin: 0 auto;
                     margin-top: 18px;
@@ -812,10 +814,49 @@
                         }
                     }
                 }
-                                                
+
             }
         }
 
 
+    }
+}
+
+
+@media (max-width: 1151px) {
+    .home-parent{
+        .featured-card {
+            width: 40% !important;
+        }
+    }
+
+    .home-about {
+        .home-free {
+            width: 50% !important;
+        }
+    }
+
+    .first-section-image {
+        width: 100% !important;
+    }
+
+    .first-section-image2 {
+        width: 100% !important;
+    }
+
+    .first-section-image3 {
+        width: 100% !important;
+    }
+
+    .featured-card-parent {
+        width: 100% !important;
+        // width: 100%;
+        margin-left: 20px;
+    }
+
+    .first-section-text-parent{
+        width: 100% !important;
+        // width: 100%;
+        margin-left: 10px !important;
     }
 }
