@@ -45,7 +45,7 @@ export default function HomeSwiper() {
                 className="mySwiper"
             >
                 {
-                    data.map((d) => (
+                    data.map((d, dIndex) => (
                         <SwiperSlide>
                             <div className='featured-card'>
                                 <img src={d.img} alt="" />
@@ -85,6 +85,7 @@ export default function HomeSwiper() {
                                     {d.innovation === "sale" ? <h4 style={{ backgroundColor: "red", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
                                 </div>
                                 <button onClick={()=> deleteData(d._id)}>DELETE</button>
+                                <button>add to cart</button>
                             </div>
                         </SwiperSlide>
                     ))

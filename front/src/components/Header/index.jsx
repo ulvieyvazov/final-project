@@ -5,14 +5,16 @@ import { BsCart3 } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import DarkMode from '../mode';
 
 
 
-const Header = () => {
+const Header = (props) => {
 
     const [open, setOpen] = useState(false)
+
+    const navigate = useNavigate()
 
     let menuRef = useRef();
 
@@ -88,14 +90,14 @@ const Header = () => {
                             </div>
                         </div>
 
-                        <div className='cart-icon'>
-                            <BsCart3 className='icon-head' />
-                            <div className='cart-count'>
-                                0
+                        <div className='cart-icon' onClick={()=> props.handleShow(true)}>
+                            <BsCart3 className='icon-head'/>
+                            <div className='cart-count' onClick={()=> props.handleShow(false)}>
+                                {props.count}
                             </div>
                         </div>
 
-                        <div>
+                        <div onClick={()=> navigate('/cartlist')}>
                             <AiOutlineUser className='icon-head' />
                         </div>
                     </div>

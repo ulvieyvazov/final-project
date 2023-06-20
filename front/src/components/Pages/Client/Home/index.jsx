@@ -169,6 +169,7 @@ const Home = () => {
                                             {d.innovation === "sale" ? <h4 style={{ backgroundColor: "red", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
                                         </div>
                                     </div>
+                                    <button>add to cart</button>
 
                                 </div> : "")
                             ))

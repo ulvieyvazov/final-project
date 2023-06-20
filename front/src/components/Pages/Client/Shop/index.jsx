@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom"
 
 
 
-const Shop = () => {
+const Shop = ({product, addToCart}) => {
 
     const [age, setAge] = React.useState('');
 
@@ -134,6 +134,8 @@ const Shop = () => {
                                             {d.innovation === "sale" ? <h4 style={{ backgroundColor: "red", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
                                         </div>
                                     </div>
+
+                                    <button onClick={()=> addToCart(d)}>add to cart</button>
 
                                 </div>
                             ))
