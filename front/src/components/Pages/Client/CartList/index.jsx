@@ -1,14 +1,16 @@
+import { Rating } from '@mui/material'
+import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
 
-const CartList = ({ cart }) => {
+const CartList = ({ cart, removeFromCart }) => {
 
 
     const [CART, setCART] = useState([])
-    
 
-    const removeFromCart = (ca)=>{
-        setCART(CART.filter((product) => product !== ca))
-    }
+
+    // const removeFromCart = (ca) => {
+    //     setCART(CART.filter((product) => product !== ca))
+    // }
 
     useEffect(() => {
         setCART(cart)
@@ -21,7 +23,21 @@ const CartList = ({ cart }) => {
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <img src={ca.img} style={{ width: '100px' }} alt="" />
                         <p>{ca.name}</p>
-                        <button>-</button>
+                        <Box
+                            sx={{
+                                '& > legend': { mt: 5 },
+                            }}
+                        >
+                            <Rating name="read-only" value={ca.rating} readOnly />
+                        </Box>
+                        <button
+                            onClick={() => {
+                                const _CART = CART.map((item, index) => {
+                                    return caIndex === index ? { ...item, quantity: item.quantity > 0 ? item.quantity - 1 : 0 } : item
+                                })
+                                setCART(_CART)
+                            }}
+                        >-</button>
                         <span>{ca.quantity}</span>
                         <button onClick={() => {
                             const _CART = CART.map((item, index) => {
@@ -32,16 +48,16 @@ const CartList = ({ cart }) => {
                         <p>{ca.price * ca.quantity}</p>
 
 
-                        <button className='remove-icon' onClick={()=> removeFromCart(ca)}>Remove</button>
+                        <button className='remove-icon' onClick={() => removeFromCart(ca)}>Remove</button>
                     </div>
 
                 ))
             }
 
             <p> Total
-                {/* {
-                    cart.map(item => item.price * item.quantity).reduce((total, value) => total + value)
-                } */}
+                {
+                    CART.map(item => item.price * item.quantity).reduce((total, value) => total + value, 0)
+                }
             </p>
         </div>
     )

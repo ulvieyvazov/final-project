@@ -91,13 +91,13 @@ const Header = (props) => {
                         </div>
 
                         <div className='cart-icon' onClick={()=> props.handleShow(true)}>
-                            <BsCart3 className='icon-head'/>
+                            <BsCart3 className='icon-head' onClick={()=> navigate('/cartlist')} />
                             <div className='cart-count' onClick={()=> props.handleShow(false)}>
                                 {props.count}
                             </div>
                         </div>
 
-                        <div onClick={()=> navigate('/cartlist')}>
+                        <div>
                             <AiOutlineUser className='icon-head' />
                         </div>
                     </div>

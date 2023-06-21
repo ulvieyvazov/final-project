@@ -29,13 +29,15 @@ function App() {
   const handleShow = (value) => {
     setShowCart(value)
   }
-  const removeFromCart = (ca)=>{
+
+
+  const removeFromCart = (ca) => {
     setCart(cart.filter((product) => product !== ca))
-}
+  }
 
   return (
     <>
-      <Header count={cart.length} handleShow={handleShow} removeFromCart={removeFromCart}/>
+      <Header count={cart.length} handleShow={handleShow} removeFromCart={removeFromCart} />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/about' element={<About />}></Route>
@@ -43,9 +45,10 @@ function App() {
         <Route path='/morenews' element={<MoreNews />}></Route>
         {
           showCart ?
-            <Route path='/cartlist' element={<CartList cart={cart}/>}></Route> :
+            <Route path='/cartlist' element={<CartList cart={cart} removeFromCart={removeFromCart}/>}></Route> :
             <Route path='/shop' element={<Shop addToCart={addToCart} />}></Route>
         }
+        <Route path='/shop' element={<Shop addToCart={addToCart} />}></Route>
         <Route path='/cartlist' element={<CartList cart={cart} />}></Route>
         <Route path='/shop/product-details/:id' element={<ProductDetail />}></Route>
         <Route path='/product-details/:id' element={<ProductDetail />}></Route>
