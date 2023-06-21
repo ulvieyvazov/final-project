@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom"
 
 
 
-const Shop = ({product, addToCart}) => {
+const Shop = ({ addToCart , addToWis}) => {
 
     const [age, setAge] = React.useState('');
 
@@ -135,6 +135,7 @@ const Shop = ({product, addToCart}) => {
                                         </div>
                                     </div>
 
+                                    <button onClick={()=> addToWis(d)}>add to wis</button>
                                     <button onClick={()=> addToCart(d)}>add to cart</button>
 
                                 </div>

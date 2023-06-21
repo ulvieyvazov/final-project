@@ -2,48 +2,46 @@ import { Rating } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
 
-const Wishlist = ({ cartWi }) => {
+const Wishlist = ({ cartWis, removeFromWis }) => {
 
 
-    const [wish, setWish] = useState([])
+    const [CART, setCART] = useState([])
 
-    console.log(wish.img);
 
-    const removeFromWish = (ca) => {
-        setWish(wish.filter((product) => product !== ca))
-    }
+    // const removeFromWish = (ca) => {
+    //     setCART(CART.filter((product) => product !== ca))
+    // }
 
     useEffect(() => {
-        setWish(cartWi)
-    }, [cartWi])
+        setCART(cartWis)
+    }, [cartWis])
 
     return (
         <div>
             {
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={wish.img} style={{ width: '100px' }} alt="" />
-                    <p>{wish.name}</p>
-                    <Box
-                        sx={{
-                            '& > legend': { mt: 5 },
-                        }}
-                    >
-                        <Rating name="read-only" value={wish.rating} readOnly />
-                    </Box>
+                CART.map((caWi, caIndex) => (
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <img src={caWi.img} style={{ width: '100px' }} alt="" />
+                        <p>{caWi.name}</p>
+                        <Box
+                            sx={{
+                                '& > legend': { mt: 5 },
+                            }}
+                        >
+                            <Rating name="read-only" value={caWi.rating} readOnly />
+                        </Box>
 
-                    <button>add to cart</button>
+
+                        <p>{caWi.discount ? caWi.discount * caWi.quantity : caWi.price * caWi.quantity}</p>
+
+                        {/* <p>{ca.price * ca.quantity}</p> */}
 
 
-                    <button className='remove-icon' onClick={() => removeFromWish(wish)}>Remove</button>
-                </div>
+                        <button className='remove-icon' onClick={() => removeFromWis(caWi)}>Remove</button>
+                    </div>
+                ))
 
             }
-
-            <p> Total
-                {
-                    wish.map(item => item.price * item.quantity).reduce((total, value) => total + value, 0)
-                }
-            </p>
         </div>
     )
 }

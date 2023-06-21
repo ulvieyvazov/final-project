@@ -7,11 +7,12 @@ import HomeSwiper from '../../../Swiper/HomeSwiper'
 import axios from 'axios'
 import { Box, Rating } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { AiFillHeart } from "react-icons/ai";
 
 
 
 
-const Home = () => {
+const Home = ({addToCart, addToWis}) => {
 
     const [data, setData] = useState([])
     const navigate = useNavigate()
@@ -28,7 +29,7 @@ const Home = () => {
     return (
         <div className='home-container'>
             <div className='home-parent'>
-                <SwiperCorusel />
+                <SwiperCorusel />     
 
 
                 <div className='home-about'>
@@ -104,7 +105,7 @@ const Home = () => {
 
 
                     <div className='featured-card-parent'>
-                        <HomeSwiper />
+                        <HomeSwiper addToCart={addToCart} addToWis={addToWis} />
                     </div>
                 </div>
 
@@ -169,8 +170,8 @@ const Home = () => {
                                             {d.innovation === "sale" ? <h4 style={{ backgroundColor: "red", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
                                         </div>
                                     </div>
-                                    <button>add to cart</button>
-
+                                    <button onClick={()=> addToCart(d)} className="add">Add To Cart</button>
+                                <button onClick={()=> addToWis(d)} className="wish"><AiFillHeart style={{fontSize: '25px'}} className="wh"/></button>
                                 </div> : "")
                             ))
                         }
@@ -331,6 +332,8 @@ const Home = () => {
                                         </div>
                                     </div>
 
+                                    <button onClick={()=> addToCart(d)} className="add">Add To Cart</button>
+                                <button onClick={()=> addToWis(d)} className="wish"><AiFillHeart style={{fontSize: '25px'}} className="wh"/></button>
                                 </div> : "")
                             ))
                         }

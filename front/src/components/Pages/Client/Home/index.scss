@@ -217,7 +217,7 @@
 
 
                 .featured-card {
-                    height: 350px;
+                    height: 380px;
                     padding: 8px;
                     width: 100%;
                     border: 2px solid #d1cfcf;
@@ -246,6 +246,32 @@
                         left: 10px;
                     }
 
+                    .add {
+                        margin: 14px 0px;
+                        background-color: #ffd333;
+                        border: 0;
+                        padding: 5px 90px;
+                        font-size: 15px;
+                        border-radius: 3px;
+                        color: #3d464d;
+                        cursor: pointer;
+                    }
+
+                    .wish {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        padding: 2px 2px;
+
+                        .wh {
+                            
+                        }
+                    }
+
+                    .add:hover {
+                        background-color: #e0b620;
+                    }
+
                     .featured-card-text {
                         width: 80%;
 
@@ -260,6 +286,7 @@
                             height: 35px;
                             margin-top: 4px;
                         }
+
 
                         .reviews {
                             display: flex;
@@ -362,7 +389,6 @@
 
             .bestsellers-card-parent {
                 width: 100%;
-
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
@@ -370,10 +396,32 @@
                 padding: 40px 0;
 
 
+                .add {
+                        margin: 14px 0px;
+                        background-color: #ffd333;
+                        border: 0;
+                        padding: 5px 90px;
+                        font-size: 15px;
+                        border-radius: 3px;
+                        color: #3d464d;
+                        cursor: pointer;
+                    }
+
+                    .wish {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        padding: 2px 2px;
+
+                        .wh {
+                            
+                        }
+                    }
+
                 .featured-card {
                     margin: 0 auto;
                     margin-bottom: 19px;
-                    height: 350px;
+                    height: 380px;
                     padding: 8px;
                     width: 23%;
                     border: 2px solid #d1cfcf;
@@ -555,10 +603,33 @@
                 padding: 30px 0;
                 gap: 21px;
 
+
+                .add {
+                    margin: 14px 0px;
+                    background-color: #ffd333;
+                    border: 0;
+                    padding: 5px 90px;
+                    font-size: 15px;
+                    border-radius: 3px;
+                    color: #3d464d;
+                    cursor: pointer;
+                }
+
+                .wish {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 2px 2px;
+
+                    .wh {
+                        
+                    }
+                }
+
                 .featured-card {
                     margin: 0 auto;
                     margin-bottom: 19px;
-                    height: 350px;
+                    height: 380px;
                     padding: 8px;
                     width: 23%;
                     border: 2px solid #d1cfcf;
@@ -657,7 +728,7 @@
 
             .home-news-card-parent {
                 width: 100%;
-                height: 150px;
+                height: 180px;
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
@@ -824,7 +895,7 @@
 
 
 @media (max-width: 1151px) {
-    .home-parent{
+    .home-parent {
         .featured-card {
             width: 40% !important;
         }
@@ -854,7 +925,7 @@
         margin-left: 20px;
     }
 
-    .first-section-text-parent{
+    .first-section-text-parent {
         width: 100% !important;
         // width: 100%;
         margin-left: 10px !important;

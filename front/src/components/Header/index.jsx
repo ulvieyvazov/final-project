@@ -10,7 +10,7 @@ import DarkMode from '../mode';
 
 
 
-const Header = (props) => {
+const Header = (props, propsWi) => {
 
     const [open, setOpen] = useState(false)
 
@@ -83,10 +83,10 @@ const Header = (props) => {
 
                     <DarkMode />
                     <div className='header-icon'>
-                        <div className='heart'>
-                            <AiOutlineHeart className='icon-head' />
-                            <div className='heart-count'>
-                                0
+                        <div className='heart' onClick={()=> props.handleShowWi(true)}>
+                            <AiOutlineHeart className='icon-head' onClick={()=> navigate('/wishlist')}/>
+                            <div className='heart-count' onClick={()=> props.handleShowWi(false)}>
+                                {props.size}
                             </div>
                         </div>
 

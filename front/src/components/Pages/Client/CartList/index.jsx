@@ -19,6 +19,7 @@ const CartList = ({ cart, removeFromCart }) => {
     return (
         <div>
             {
+
                 CART.map((ca, caIndex) => (
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <img src={ca.img} style={{ width: '100px' }} alt="" />
@@ -45,7 +46,7 @@ const CartList = ({ cart, removeFromCart }) => {
                             })
                             setCART(_CART)
                         }}>+</button>
-                        <p>{ca.price * ca.quantity}</p>
+                        <p>{ca.discount ? ca.discount * ca.quantity : ca.price * ca.quantity}</p>
 
 
                         <button className='remove-icon' onClick={() => removeFromCart(ca)}>Remove</button>
@@ -56,8 +57,11 @@ const CartList = ({ cart, removeFromCart }) => {
 
             <p> Total
                 {
-                    CART.map(item => item.price * item.quantity).reduce((total, value) => total + value, 0)
+                    CART.map((item) => item.price * item.quantity).reduce((total, value) => total + value, 0)
                 }
+                {/* CART.map((item)=> item.discount ? (item.discount * item.quantity).reduce((total, value) => total + value, 0) :
+                    (item.price * item.quantity).reduce((total, value) => total + value, 0)
+                ) */}
             </p>
         </div>
     )

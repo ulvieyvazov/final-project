@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-import Typography from '@mui/material/Typography';
+import { AiFillHeart } from "react-icons/ai";
+// import Typography from '@mui/material/Typography';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,9 +16,9 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import axios from "axios";
 
-export default function HomeSwiper() {
+ function HomeSwiper({ addToCart, addToWis }) {
 
-    const [value, setValue] = React.useState(2);
+    // const [value, setValue] = React.useState(2);
     const [data, setData] = useState([])
 
     const getData = async () => {
@@ -25,8 +26,8 @@ export default function HomeSwiper() {
         setData(res.data)
     }
 
-    
-    const deleteData = async(id)=>{
+
+    const deleteData = async (id) => {
         await axios.delete(`http://localhost:5050/products/${id}`)
         await getData()
     }
@@ -84,8 +85,9 @@ export default function HomeSwiper() {
                                 <div className="sale-absolute">
                                     {d.innovation === "sale" ? <h4 style={{ backgroundColor: "red", color: "white", textTransform: "uppercase", fontSize: "12px", padding: "3px", width: '38px', textAlign: "center" }}>{d.innovation}</h4> : ""}
                                 </div>
-                                <button onClick={()=> deleteData(d._id)}>DELETE</button>
-                                <button>add to cart</button>
+                                {/* <button onClick={() => deleteData(d._id)}>DELETE</button> */}
+                                <button onClick={()=> addToCart(d)} className="add">Add To Cart</button>
+                                <button onClick={()=> addToWis(d)} className="wish"><AiFillHeart style={{fontSize: '25px'}} className="wh"/></button>
                             </div>
                         </SwiperSlide>
                     ))
@@ -94,3 +96,5 @@ export default function HomeSwiper() {
         </>
     );
 }   
+
+export default HomeSwiper
