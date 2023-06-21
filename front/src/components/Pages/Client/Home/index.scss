@@ -247,15 +247,18 @@
                     }
 
                     .add {
-                        margin: 14px 0px;
+                        margin: 0 auto;
+                        margin: 14px 8px;
                         background-color: #ffd333;
                         border: 0;
-                        padding: 5px 90px;
+                        width: 95%;
+                        padding: 5px 0;
                         font-size: 15px;
                         border-radius: 3px;
                         color: #3d464d;
                         cursor: pointer;
                     }
+
 
                     .wish {
                         position: absolute;
@@ -263,9 +266,6 @@
                         right: 0;
                         padding: 2px 2px;
 
-                        .wh {
-                            
-                        }
                     }
 
                     .add:hover {
@@ -397,26 +397,30 @@
 
 
                 .add {
-                        margin: 14px 0px;
-                        background-color: #ffd333;
-                        border: 0;
-                        padding: 5px 90px;
-                        font-size: 15px;
-                        border-radius: 3px;
-                        color: #3d464d;
-                        cursor: pointer;
-                    }
+                    margin: 0 auto;
+                    margin: 14px 8px;
+                    background-color: #ffd333;
+                    border: 0;
+                    width: 95%;
+                    padding: 5px 0;
+                    font-size: 15px;
+                    border-radius: 3px;
+                    color: #3d464d;
+                    cursor: pointer;
+                }
 
-                    .wish {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        padding: 2px 2px;
+                .wish {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 2px 2px;
 
-                        .wh {
-                            
-                        }
-                    }
+                    .wh {}
+                }
+
+                .add:hover {
+                    background-color: #e0b620;
+                }
 
                 .featured-card {
                     margin: 0 auto;
@@ -605,10 +609,12 @@
 
 
                 .add {
-                    margin: 14px 0px;
+                    margin: 0 auto;
+                    margin: 14px 8px;
                     background-color: #ffd333;
                     border: 0;
-                    padding: 5px 90px;
+                    width: 95%;
+                    padding: 5px 0;
                     font-size: 15px;
                     border-radius: 3px;
                     color: #3d464d;
@@ -621,9 +627,11 @@
                     right: 0;
                     padding: 2px 2px;
 
-                    .wh {
-                        
-                    }
+                    .wh {}
+                }
+
+                .add:hover {
+                    background-color: #e0b620;
                 }
 
                 .featured-card {
@@ -785,6 +793,7 @@
             margin: 0 auto;
             padding: 50px 0;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
 
@@ -895,9 +904,25 @@
 
 
 @media (max-width: 1151px) {
+
+    .home-parent {
+        width: 85% !important;
+        margin: 0 auto;
+    }
+
     .home-parent {
         .featured-card {
             width: 40% !important;
+        }
+    }
+
+    .featured-card-parent {
+        .swiper-slide {
+            width: 50% !important;
+        }
+
+        .featured-card {
+            width: 100% !important;
         }
     }
 
@@ -929,5 +954,116 @@
         width: 100% !important;
         // width: 100%;
         margin-left: 10px !important;
+    }
+
+    .home-popular-card {
+        width: 40% !important;
+    }
+
+    .home-popular-card-parent {
+        width: 100% !important;
+        margin: 0 auto;
+        justify-content: space-around;
+    }
+
+    .featured {
+        margin: 0 auto;
+        width: 90% !important;
+
+        div {
+            width: 60% !important;
+        }
+    }
+
+    // .home-news-card{
+    //     width: 70% !important;
+    // }
+
+    .home-news-card-parent {
+        .swiper-slide {
+            width: 100% !important;
+        }
+    }
+
+    .home-end {
+        width: 50% !important;
+
+        .featured-card {
+            width: 100% !important;
+        }
+    }
+
+    .hundreds-text {
+        width: 100% !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .home-about {
+        .home-free {
+            width: 100% !important;
+            margin: 0 auto;
+        }
+    }
+
+    .featured-card-parent {
+        .swiper-slide {
+            width: 100% !important;
+        }
+
+        .featured-card {
+            width: 100% !important;
+        }
+    }
+
+    .featured {
+        margin: 0 auto;
+        width: 100% !important;
+
+        div {
+            width: 60% !important;
+        }
+    }
+
+    .home-parent {
+        .featured-card {
+            width: 100% !important;
+        }
+    }
+
+    .home-popular-card {
+        width: 100% !important;
+    }
+
+    .home-popular-card-parent {
+        width: 100% !important;
+        margin: 0 auto;
+        justify-content: space-around;
+    }
+
+    .home-news-card-parent {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .home-news-card {
+        img {
+            width: 94% !important;
+        }
+
+        flex-direction: column;
+    }
+
+    .home-news-card-text {
+        width: 100% !important;
+    }
+
+    .home-end {
+        width: 100% !important;
+
+        .featured-card {
+            width: 100% !important;
+        }
     }
 }

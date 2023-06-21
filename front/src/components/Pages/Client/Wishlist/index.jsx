@@ -2,7 +2,7 @@ import { Rating } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
 
-const Wishlist = ({ cartWis, removeFromWis }) => {
+const Wishlist = ({ cartWis, removeFromWis, addToCart }) => {
 
 
     const [CART, setCART] = useState([])

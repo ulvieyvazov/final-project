@@ -198,7 +198,7 @@ const Home = ({addToCart, addToWis}) => {
                                     <li>Grinding Machines</li>
                                 </ul>
 
-                                <div>Show All</div>
+                                <div onClick={()=> navigate('/shop')}>Show All</div>
                             </div>
                         </div>
                         <div className="home-popular-card">
@@ -213,7 +213,7 @@ const Home = ({addToCart, addToWis}) => {
                                     <li>Paint Tools</li>
                                 </ul>
 
-                                <div>Show All</div>
+                                <div onClick={()=> navigate('/shop')}>Show All</div>
                             </div>
                         </div>
                         <div className="home-popular-card">
@@ -228,7 +228,7 @@ const Home = ({addToCart, addToWis}) => {
                                     <li>Sharpening Machines</li>
                                 </ul>
 
-                                <div>Show All</div>
+                                <div onClick={()=> navigate('/shop')}>Show All</div>
                             </div>
                         </div>
                         <div className="home-popular-card">
@@ -243,7 +243,7 @@ const Home = ({addToCart, addToWis}) => {
                                     <li>Electric Motors</li>
                                 </ul>
 
-                                <div>Show All</div>
+                                <div onClick={()=> navigate('/shop')}>Show All</div>
                             </div>
                         </div>
                         <div className="home-popular-card">

@@ -59,7 +59,7 @@ function App() {
         <Route path='/morenews' element={<MoreNews />}></Route>
         <Route path='/cartlist' element={<CartList cart={cart} removeFromCart={removeFromCart} />}></Route> :
         <Route path='/shop' element={<Shop addToWis={addToWis} addToCart={addToCart}/>}></Route>
-        <Route path='/wishlist' element={<Wishlist cartWis={cartWis} removeFromWis={removeFromWis} />}></Route> :
+        <Route path='/wishlist' element={<Wishlist cartWis={cartWis} addToCart={addToCart} removeFromWis={removeFromWis} />}></Route> :
         {/* <Route path='/shop' element={<Shop addToCart={addToCart} addToCartWi={addToWis} />}></Route> */}
         {/* <Route path='/wishlist' element={<Wishlist cartWi={cartWis} />}></Route> */}
         {/* <Route path='/cartlist' element={<CartList cart={cart} />}></Route> */}

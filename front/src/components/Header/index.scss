@@ -69,11 +69,11 @@
             // margin-bottom: 50px;
             position: relative;
 
-            .drop{
+            .drop {
                 display: none;
             }
 
-            .dropmenu.active{
+            .dropmenu.active {
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0);
@@ -99,7 +99,7 @@
             }
 
 
-            .dropmenu.inactive{
+            .dropmenu.inactive {
                 opacity: 0;
                 visibility: hidden;
                 transform: translateY(0);
@@ -188,7 +188,14 @@
             display: none !important;
         }
     }
-    .drop{
+
+    .drop {
         display: block !important;
+    }
+
+    .header-top {
+        .header-input {
+            display: none !important;
+        }
     }
 }
