@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-// import "./index.scss"
+import "./index.scss"
 import { NewsSchema } from '../../../ProductSchema/NewsSchema';
 
 const AddNews = () => {
@@ -136,7 +136,7 @@ const AddNews = () => {
 
                         <button type='submit'>Add</button>
                         <button onClick={updateData}>update</button>
-                        <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
+                        <input className='search' type="text" placeholder='Search blog' value={value} onChange={(e) => setValue(e.target.value)} />
                     </form>
 
                 </div>
@@ -146,7 +146,7 @@ const AddNews = () => {
                 <div className='admin-card'>
                     {
                         data.map((d) => (
-                            <div className='featured-card' key={d._id}>
+                            <div className='featured-card' style={{height: '400px'}} key={d._id}>
                                 <div className='post-left1'>
                                     <img src={d.img} alt="" />
 

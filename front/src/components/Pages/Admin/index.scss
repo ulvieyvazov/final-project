@@ -8,9 +8,30 @@
         margin: 0 auto;
         padding-top: 40px;
 
+        button{
+            margin: 15px 0;
+            padding: 6px 40px;
+            margin-left: 10px;
+            background-color: #ffd333;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .search{
+            width: 18%;
+            margin-left: 74px;
+            // height: 25px;
+            font-size: 17px;
+            padding: 5px 3px;
+        }
+
+        button:hover{
+            background-color: #f3c008;
+        }
         .admin-card{
             display: flex;
             flex-wrap: wrap;
+
             .featured-card {
                 margin: 0 auto;
                 margin-bottom: 19px;

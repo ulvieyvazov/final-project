@@ -11,10 +11,11 @@ import "./index.scss"
 const AdminProducts = () => {
 
 
+    const [value, setValue] = useState("")
     const [data, setData] = useState([])
     const getData = async () => {
         const res = await axios.get("http://localhost:5050/products")
-        setData(res.data)
+        setData(res.data.filter((item) => item.name.toLowerCase().includes(value.toLowerCase())))
     }
 
     const [state, setState] = useState({
@@ -226,6 +227,7 @@ const AdminProducts = () => {
 
                         <button type='submit'>Add</button>
                         <button onClick={updateData}>update</button>
+                        {/* <input className='search' type="text" placeholder='Search product' value={value} onChange={(e) => setValue(e.target.value)} /> */}
                     </form>
 
                 </div>
