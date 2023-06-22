@@ -1,0 +1,89 @@
+.admin-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+
+    .admin-parent {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 40px;
+
+        .admin-card{
+            display: flex;
+            flex-wrap: wrap;
+            .featured-card {
+                margin: 0 auto;
+                margin-bottom: 19px;
+                height: 380px;
+                padding: 8px;
+                width: 23%;
+                border: 2px solid #d1cfcf;
+                position: relative;
+    
+                img {
+                    width: 90%;
+                    height: 60%;
+                    position: relative;
+                }
+    
+                .new-absolute {
+                    position: absolute;
+                    top: 8px;
+                    left: 10px;
+                }
+    
+                .hot-absolute {
+                    position: absolute;
+                    top: 8px;
+                    left: 10px;
+                }
+    
+                .sale-absolute {
+                    position: absolute;
+                    top: 8px;
+                    left: 10px;
+                }
+    
+                .featured-card-text {
+                    width: 80%;
+    
+                    // text-align: center;
+                    p {
+                        font-weight: 400;
+                        font-size: 15px;
+                        color: rgb(61, 70, 77);
+                        line-height: 19px;
+                        margin-left: 4px;
+                        // flex-grow: 1;
+                        height: 35px;
+                        margin-top: 4px;
+                    }
+    
+                    .reviews {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+    
+                        span {
+                            font-weight: 400;
+                            font-size: 23px;
+                            // color: #3d464d;
+                            // line-height: 19px;
+                            // margin-left: 4px;
+                            // flex-grow: 1;
+                        }
+                    }
+    
+    
+                    h3 {
+                        margin-left: 4px;
+                        font-weight: 700;
+                        font-size: 16px;
+                        color: #3d464d;
+                        line-height: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

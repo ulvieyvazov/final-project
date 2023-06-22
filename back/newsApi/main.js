@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-const mongoose  = require("mongoose");
+const mongoose = require("mongoose");
 dotenv.config();
 
 
@@ -76,6 +76,17 @@ app.delete("/news/:id", async (req, res) => {
     res.send(deletNews);
   } catch (err) {
     res.status(400).json({ message: err });
+  }
+});
+
+app.put("/news/:id", async (req, res) => {
+  try {
+    const newsId = req.params.id;
+    const updatedUser = req.body
+    const result = await News.findByIdAndUpdate(newsId, updatedUser, { new: true });
+    res.send(result);
+  } catch (err) {
+    res.status(404).json({ message: "Not exist" });
   }
 });
 

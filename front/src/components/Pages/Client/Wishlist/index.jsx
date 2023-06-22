@@ -38,6 +38,7 @@ const Wishlist = ({ cartWis, removeFromWis, addToCart }) => {
 
 
                         <button className='remove-icon' onClick={() => removeFromWis(caWi)}>Remove</button>
+                        <button onClick={()=> addToCart(caWi)}>add to cart</button>
                     </div>
                 ))
 

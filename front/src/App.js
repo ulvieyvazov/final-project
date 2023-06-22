@@ -15,6 +15,9 @@ import Specification from './components/ShopData/Specification';
 import { useState } from 'react';
 import CartList from './components/Pages/Client/CartList';
 import Wishlist from './components/Pages/Client/Wishlist';
+import AdminProducts from './components/Pages/Admin/AddProducts';
+// import Update from './components/Pages/Admin/Update';
+import AddNews from './components/Pages/Admin/AddNews';
 
 function App() {
 
@@ -45,6 +48,8 @@ function App() {
   const removeFromCart = (ca) => {
     setCart(cart.filter((product) => product !== ca))
   }
+  
+  
   const removeFromWis = (ca) => {
     setCartWis(cartWis.filter((product) => product !== ca))
   }
@@ -67,6 +72,9 @@ function App() {
         <Route path='/product-details/:id' element={<ProductDetail />}></Route>
         <Route path='/shop/product-details/:id/description' element={<Description />}></Route>
         <Route path='/shop/product-details/:id/specification' element={<Specification />}></Route>
+        <Route path='/adminproducts' element={<AdminProducts/>}></Route>
+        <Route path='/adminnews' element={<AddNews/>}></Route>
+        {/* <Route path='/update' element={<Update/>}></Route> */}
         <Route path='*' element={<Error404 />}></Route>
       </Routes>
       <BackToTopButton />

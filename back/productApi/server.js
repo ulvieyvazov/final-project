@@ -208,6 +208,17 @@ app.delete("/products/:id", async (req, res) => {
     }
 });
 
+app.put("/products/:id", async (req, res) => {
+    try {
+        const updateId = req.params.id;
+        const updatedUser = req.body
+        const result = await Products.findByIdAndUpdate(updateId, updatedUser, { new: true });
+        res.send(result);
+    } catch (err) {
+        res.status(404).json({ message: "Not exist" });
+    }
+});
+
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log("server qalxdi, port:", PORT);
