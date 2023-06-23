@@ -72,17 +72,17 @@ const Specification = ({addToCart}) => {
                 
                 <div className='dimensions-div' style={{display: 'flex'}}>
                   <p>Length</p>
-                  <div>{data.specification?.dimensions?.length ? data.specification?.dimensions?.length : "There is no such data in this product"} sm</div>
+                  <div>{data.specification?.dimensions?.length ? <span>{data.specification?.dimensions?.length}sm</span> : "There is no such data in this product"} </div>
                 </div>
 
                 <div className='dimensions-div' style={{display: 'flex'}}>
                   <p>Width</p>
-                  <div>{data.specification?.dimensions?.width ? data.specification?.dimensions?.width : "There is no such data in this product"} sm</div>
+                  <div>{data.specification?.dimensions?.width ? <span>{data.specification?.dimensions?.width}sm</span> : "There is no such data in this product"} </div>
                 </div>
                 
                 <div className='dimensions-div' style={{display: 'flex'}}>
                   <p>Height</p>
-                  <div>{data.specification?.dimensions?.height ? data.specification?.dimensions?.height : "There is no such data in this product"} sm</div>
+                  <div>{data.specification?.dimensions?.height ? <span>{data.specification?.dimensions?.height}sm</span> : "There is no such data in this product"} </div>
                 </div>
               </div>
             </div>

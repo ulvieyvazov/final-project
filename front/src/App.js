@@ -12,7 +12,7 @@ import Shop from './components/Pages/Client/Shop';
 import ProductDetail from '../src/ProductDetail/index';
 import Description from '../src/components/ShopData/Description/index'
 import Specification from './components/ShopData/Specification';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CartList from './components/Pages/Client/CartList';
 import Wishlist from './components/Pages/Client/Wishlist';
 import AdminProducts from './components/Pages/Admin/AddProducts';
@@ -20,18 +20,30 @@ import AdminProducts from './components/Pages/Admin/AddProducts';
 import AddNews from './components/Pages/Admin/AddNews';
 import Contact from './components/Pages/Client/Contact';
 import Register from './components/Pages/Client/Register';
+import Login from './components/Pages/Client/Login';
+
+const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || '[]') 
+const cartWisFromLocalStorage = JSON.parse(localStorage.getItem("cartWis") || '[]') 
 
 function App() {
 
 
-  const [cart, setCart] = useState([])
-  const [cartWis, setCartWis] = useState([])
+  const [cart, setCart] = useState(cartFromLocalStorage)
+  const [cartWis, setCartWis] = useState(cartWisFromLocalStorage)
   const [showCart, setShowCart] = useState(false)
   const [showCartWi, setShowCartWi] = useState(false)
 
   const addToCart = (data) => {
     setCart([...cart, { ...data, quantity: 1 }])
   }
+
+  useEffect(()=>{
+    localStorage.setItem("cart", JSON.stringify(cart))
+  }, [cart])
+
+  useEffect(()=>{
+    localStorage.setItem("cartWis", JSON.stringify(cartWis))
+  }, [cartWis])
 
 
   const addToWis = (dataWis) => {
@@ -69,6 +81,7 @@ function App() {
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/wishlist' element={<Wishlist cartWis={cartWis} addToCart={addToCart} removeFromWis={removeFromWis} />}></Route> :
         <Route path='/register' element={<Register />}></Route>
+        <Route path='/login' element={<Login />}></Route>
         {/* <Route path='/shop' element={<Shop addToCart={addToCart} addToCartWi={addToWis} />}></Route> */}
         {/* <Route path='/wishlist' element={<Wishlist cartWi={cartWis} />}></Route> */}
         {/* <Route path='/cartlist' element={<CartList cart={cart} />}></Route> */}

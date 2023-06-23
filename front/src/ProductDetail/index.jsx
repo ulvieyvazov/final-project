@@ -6,6 +6,13 @@ import "./index.scss"
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FaFacebookF } from "react-icons/fa";
+import { AiOutlineTwitter } from "react-icons/ai";
+import { AiFillYoutube } from "react-icons/ai";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaRss } from "react-icons/fa";
+import ReactImageMagnify from 'react-image-magnify';
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,14 +24,14 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import Description from '../components/ShopData/Description';
 
-const ProductDetail = ({addToCart}) => {
+const ProductDetail = ({ addToCart }) => {
 
   const navigate = useNavigate()
   const { id: params } = useParams();
   const [data, setData] = useState([]);
   // const [cart, setCart] = useState([])
 
-  
+
 
   const getData = async () => {
     const res = await axios.get(`http://localhost:5050/products/${params}`)
@@ -56,7 +63,18 @@ const ProductDetail = ({addToCart}) => {
                   className="mySwiper"
                 >
 
-                  <SwiperSlide><img src={data.img} alt="" /></SwiperSlide>
+                  <SwiperSlide><ReactImageMagnify {...{
+                    smallImage: {
+                      alt: 'Wristwatch by Ted Baker London',
+                      isFluidWidth: true,
+                      src: data.img
+                    },
+                    largeImage: {
+                      src: data.img,
+                      width: 1200,
+                      height: 1800
+                    }
+                  }} /></SwiperSlide>
                   <SwiperSlide><img src={data.detailimg} alt="" /></SwiperSlide>
 
                 </Swiper>
@@ -72,8 +90,8 @@ const ProductDetail = ({addToCart}) => {
                         '& > legend': { mt: 5 },
                       }}
                     >
-                      <Rating name="read-only" value={data.rating} readOnly />
                     </Box>
+                    <Rating name="read-only" value={data.rating} readOnly />
                   </div>
                   <span style={{ fontSize: '16px', color: '#b3b3b3' }}>{data.reviews} Reviews</span>
                 </div>
@@ -96,10 +114,28 @@ const ProductDetail = ({addToCart}) => {
                   {data.discount ? <h3 style={{ color: 'red', fontSize: '34px' }}>${data.discount}.00</h3> : ""}
                 </div>
 
-                <div className='shpo-addtocart'>
-                  <button onClick={()=> addToCart(data)}>Add to cart</button>
-                  icon
+                <div className='shpo-addtocart' style={{ display: 'flex', alignItems: 'center' }}>
+                  <button onClick={() => addToCart(data)}>Add to cart</button>
+                  <div className='footer-social'>
+                    <div className='facebook'>
+                      <a href="https://www.facebook.com/" target='_blank'><FaFacebookF className='footer-social-icon' /></a>
+                    </div>
+                    <div className='twit'>
+                      <a href="https://twitter.com/" target='_blank'><AiOutlineTwitter className='footer-social-icon' /></a>
+
+                    </div>
+                    <div className='yout'>
+                      <a href="https://www.youtube.com/" target='_blank'><AiFillYoutube className='footer-social-icon' /></a>
+                    </div>
+                    <div className='insta'>
+                      <a href="https://www.instagram.com/" target='_blank'><AiFillInstagram className='footer-social-icon' /></a>
+                    </div>
+                    <div className='rss'>
+                      <a href="https://rss.com/" target='_blank'><FaRss className='footer-social-icon' /></a>
+                    </div>
+                  </div>
                 </div>
+
               </div>
 
 

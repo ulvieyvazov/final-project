@@ -17,11 +17,11 @@ const Header = (props, propsWi) => {
     const navigate = useNavigate()
 
 
-    const getFix = ()=>{
-        if(window.scrollY >= 80){
+    const getFix = () => {
+        if (window.scrollY >= 80) {
             setFix(true)
         }
-        else{
+        else {
             setFix(false)
         }
     }
@@ -74,6 +74,8 @@ const Header = (props, propsWi) => {
                         <li><NavLink to={'/shop'}>Shop</NavLink></li>
                         <li>Account</li>
                         <li><NavLink to={'/blog'}>Blog</NavLink></li>
+                        <li><NavLink to={'/login'}>Login</NavLink></li>
+                        <li><NavLink to={'/register'}>Register</NavLink></li>
                     </ul>
                     <div className='drop-parent' ref={menuRef}>
                         <div className='drop' onClick={() => setOpen(!open)}>
@@ -88,6 +90,8 @@ const Header = (props, propsWi) => {
                             <li><NavLink to={'/shop'}>Shop</NavLink></li>
                             <li>Account</li>
                             <li><NavLink to={'/blog'}>Blog</NavLink></li>
+                            <li><NavLink to={'/login'}>Login</NavLink></li>
+                            <li><NavLink to={'/register'}>Register</NavLink></li>
                         </div>
 
                     </div>
@@ -95,16 +99,16 @@ const Header = (props, propsWi) => {
 
                     <DarkMode />
                     <div className='header-icon'>
-                        <div className='heart' onClick={()=> props.handleShowWi(true)}>
-                            <AiOutlineHeart className='icon-head' onClick={()=> navigate('/wishlist')}/>
-                            <div className='heart-count' onClick={()=> props.handleShowWi(false)}>
+                        <div className='heart' onClick={() => props.handleShowWi(true)}>
+                            <AiOutlineHeart className='icon-head' onClick={() => navigate('/wishlist')} />
+                            <div className='heart-count' onClick={() => props.handleShowWi(false)}>
                                 {props.size}
                             </div>
                         </div>
 
-                        <div className='cart-icon' onClick={()=> props.handleShow(true)}>
-                            <BsCart3 className='icon-head' onClick={()=> navigate('/cartlist')} />
-                            <div className='cart-count' onClick={()=> props.handleShow(false)}>
+                        <div className='cart-icon' onClick={() => props.handleShow(true)}>
+                            <BsCart3 className='icon-head' onClick={() => navigate('/cartlist')} />
+                            <div className='cart-count' onClick={() => props.handleShow(false)}>
                                 {props.count}
                             </div>
                         </div>
