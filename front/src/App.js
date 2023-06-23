@@ -18,6 +18,7 @@ import Wishlist from './components/Pages/Client/Wishlist';
 import AdminProducts from './components/Pages/Admin/AddProducts';
 // import Update from './components/Pages/Admin/Update';
 import AddNews from './components/Pages/Admin/AddNews';
+import Contact from './components/Pages/Client/Contact';
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
         <Route path='/morenews' element={<MoreNews />}></Route>
         <Route path='/cartlist' element={<CartList cart={cart} removeFromCart={removeFromCart} />}></Route> :
         <Route path='/shop' element={<Shop addToWis={addToWis} addToCart={addToCart}/>}></Route>
+        <Route path='/contact' element={<Contact />}></Route>
         <Route path='/wishlist' element={<Wishlist cartWis={cartWis} addToCart={addToCart} removeFromWis={removeFromWis} />}></Route> :
         {/* <Route path='/shop' element={<Shop addToCart={addToCart} addToCartWi={addToWis} />}></Route> */}
         {/* <Route path='/wishlist' element={<Wishlist cartWi={cartWis} />}></Route> */}

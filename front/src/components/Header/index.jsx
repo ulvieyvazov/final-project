@@ -12,9 +12,21 @@ import DarkMode from '../mode';
 
 const Header = (props, propsWi) => {
 
+    const [fix, setFix] = useState(false)
     const [open, setOpen] = useState(false)
-
     const navigate = useNavigate()
+
+
+    const getFix = ()=>{
+        if(window.scrollY >= 80){
+            setFix(true)
+        }
+        else{
+            setFix(false)
+        }
+    }
+
+    window.addEventListener("scroll", getFix)
 
     let menuRef = useRef();
 
@@ -53,12 +65,12 @@ const Header = (props, propsWi) => {
                     </div>
                 </div>
 
-                <div className='header'>
+                <div className={fix ? 'header getFix' : 'header'}>
                     <ul>
                         <li><NavLink to={'/'}>Home</NavLink></li>
                         <li>Megamenu</li>
                         <li><NavLink to={'/about'}>About</NavLink></li>
-                        <li>Contacts</li>
+                        <li><NavLink to={'/contact'}>Contacts</NavLink></li>
                         <li><NavLink to={'/shop'}>Shop</NavLink></li>
                         <li>Account</li>
                         <li><NavLink to={'/blog'}>Blog</NavLink></li>

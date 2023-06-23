@@ -258,7 +258,7 @@ const Home = ({addToCart, addToWis}) => {
                                     <li>Levels</li>
                                 </ul>
 
-                                <div>Show All</div>
+                                <div onClick={()=> navigate('/shop')}>Show All</div>
                             </div>
                         </div>
                         <div className="home-popular-card">
@@ -273,7 +273,7 @@ const Home = ({addToCart, addToWis}) => {
                                     <li>Work Shoes</li>
                                 </ul>
 
-                                <div>Show All</div>
+                                <div onClick={()=> navigate('/shop')}>Show All</div>
                             </div>
                         </div>
 

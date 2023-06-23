@@ -57,6 +57,13 @@
             }
         }
 
+        .header.getFix{
+            position: fixed;
+            z-index: 999;
+            top: 0px;
+            background-color: #facc24;
+        }
+
         .header {
             width: 100%;
             background-color: #ffd333;
