@@ -293,7 +293,7 @@ const Home = ({addToCart, addToWis}) => {
                         {
                             data.map((d) => (
                                 (d.innovation === "new" ? <div className='featured-card'>
-                                    <img src={d.img} alt="" />
+                                    <img src={d.img} alt="" onClick={()=> navigate(`product-details/${d._id}`)} key={d._id}/>
 
                                     <div className="featured-card-text">
                                         <p>{d.name}</p>

@@ -15,10 +15,12 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
  function HomeSwiper({ addToCart, addToWis }) {
 
     // const [value, setValue] = React.useState(2);
+    const navigate = useNavigate()
     const [data, setData] = useState([])
 
     const getData = async () => {
@@ -49,7 +51,7 @@ import axios from "axios";
                     data.map((d, dIndex) => (
                         <SwiperSlide>
                             <div className='featured-card'>
-                                <img src={d.img} alt="" />
+                                <img src={d.img} alt="" onClick={()=> navigate(`product-details/${d._id}`)} key={d._id}/>
 
                                 <div className="featured-card-text">
                                     <p>{d.name}</p>

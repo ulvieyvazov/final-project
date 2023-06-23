@@ -1,0 +1,53 @@
+.register-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+
+    .register-parent {
+        width: 25%;
+        padding: 70px 0;
+        margin: 0 auto;
+        padding-top: 40px;
+        color: #3d464d;
+
+        h1 {
+            font-size: 38px;
+        }
+
+        form {
+            width: 100%;
+
+            input {
+                width: 100%;
+                padding: 5px 4px;
+                font-size: 19px;
+                outline-color: blue;
+            }
+
+            div {
+                padding: 14px 0;
+            }
+
+            label {
+                font-size: 19px;
+            }
+
+            button {
+                padding: 8px 17px;
+                font-size: 17px;
+                background-color: #ffd333;
+                color: #3d464d;
+                border: 0;
+                cursor: pointer;
+                transition: all 0.5s;
+                border-radius: 3px;
+                margin-top: 15px;
+            }
+
+            button:hover{
+                background-color: #3d464d;
+                color: #fff;
+            }
+        }
+    }
+}

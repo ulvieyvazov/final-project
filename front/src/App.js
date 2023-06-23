@@ -19,6 +19,7 @@ import AdminProducts from './components/Pages/Admin/AddProducts';
 // import Update from './components/Pages/Admin/Update';
 import AddNews from './components/Pages/Admin/AddNews';
 import Contact from './components/Pages/Client/Contact';
+import Register from './components/Pages/Client/Register';
 
 function App() {
 
@@ -49,8 +50,8 @@ function App() {
   const removeFromCart = (ca) => {
     setCart(cart.filter((product) => product !== ca))
   }
-  
-  
+
+
   const removeFromWis = (ca) => {
     setCartWis(cartWis.filter((product) => product !== ca))
   }
@@ -64,19 +65,20 @@ function App() {
         <Route path='/blog' element={<Blog />}></Route>
         <Route path='/morenews' element={<MoreNews />}></Route>
         <Route path='/cartlist' element={<CartList cart={cart} removeFromCart={removeFromCart} />}></Route> :
-        <Route path='/shop' element={<Shop addToWis={addToWis} addToCart={addToCart}/>}></Route>
+        <Route path='/shop' element={<Shop addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/wishlist' element={<Wishlist cartWis={cartWis} addToCart={addToCart} removeFromWis={removeFromWis} />}></Route> :
+        <Route path='/register' element={<Register />}></Route>
         {/* <Route path='/shop' element={<Shop addToCart={addToCart} addToCartWi={addToWis} />}></Route> */}
         {/* <Route path='/wishlist' element={<Wishlist cartWi={cartWis} />}></Route> */}
         {/* <Route path='/cartlist' element={<CartList cart={cart} />}></Route> */}
         {/* <Route path='/addtocart' element={<AddToCartT addToCart={addToCart}/>}></Route> */}
-        <Route path='/shop/product-details/:id' element={<ProductDetail addToCart={addToCart}/>}></Route>
+        <Route path='/shop/product-details/:id' element={<ProductDetail addToCart={addToCart} />}></Route>
         <Route path='/product-details/:id' element={<ProductDetail addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/shop/product-details/:id/description' element={<Description addToCart={addToCart} />}></Route>
         <Route path='/shop/product-details/:id/specification' element={<Specification addToCart={addToCart} />}></Route>
-        <Route path='/adminproducts' element={<AdminProducts/>}></Route>
-        <Route path='/adminnews' element={<AddNews/>}></Route>
+        <Route path='/adminproducts' element={<AdminProducts />}></Route>
+        <Route path='/adminnews' element={<AddNews />}></Route>
         {/* <Route path='/update' element={<Update/>}></Route> */}
         <Route path='*' element={<Error404 />}></Route>
       </Routes>
