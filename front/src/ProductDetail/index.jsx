@@ -17,17 +17,23 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import Description from '../components/ShopData/Description';
 
-const ProductDetail = () => {
+const ProductDetail = ({addToCart}) => {
 
   const navigate = useNavigate()
   const { id: params } = useParams();
   const [data, setData] = useState([]);
+  // const [cart, setCart] = useState([])
+
+  
 
   const getData = async () => {
     const res = await axios.get(`http://localhost:5050/products/${params}`)
     setData(res.data)
   }
 
+  // const addToCart = (data) => {
+  //   setCart([...cart, { ...data, quantity: 1 }])
+  // }
 
   useEffect(() => {
     getData()
@@ -91,7 +97,7 @@ const ProductDetail = () => {
                 </div>
 
                 <div className='shpo-addtocart'>
-                  <button>Add to cart</button>
+                  <button onClick={()=> addToCart(data)}>Add to cart</button>
                   icon
                 </div>
               </div>
@@ -126,7 +132,7 @@ const ProductDetail = () => {
 
           <div className='detail-bottom-text'>
             <div className='description'>
-              
+
             </div>
 
             <div className='specification'>

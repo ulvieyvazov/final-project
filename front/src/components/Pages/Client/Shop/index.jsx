@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom"
 
 
 
-const Shop = ({ addToCart , addToWis}) => {
+const Shop = ({ addToCart, addToWis }) => {
 
     const [age, setAge] = React.useState('');
 
@@ -52,6 +52,17 @@ const Shop = ({ addToCart , addToWis}) => {
     }
 
 
+    const handleSortPrice = () => {
+        let sortData = []
+
+        sortData = [...data].sort((a, b) => {
+            return (a.price - b.price)
+        })
+
+        setData(sortData)
+    }
+
+
     useEffect(() => {
         getData()
     }, [value])
@@ -82,7 +93,6 @@ const Shop = ({ addToCart , addToWis}) => {
                                     <MenuItem value={30}><button style={{ backgroundColor: "transparent", border: 0 }} onClick={getData}>Default</button></MenuItem>
                                 </Select>
                             </FormControl>
-                            <button>sort by price</button>
                         </Box>
 
                         <div className='shop-search' style={{ display: 'flex' }}>
@@ -90,13 +100,14 @@ const Shop = ({ addToCart , addToWis}) => {
                             <IoMdSearch className='shop-icon' />
                         </div>
                     </div>
+                    <button style={{padding: '5px 15px', cursor: 'pointer'}} onClick={handleSortPrice}>sort by price</button>
 
                     <div className='shop-card-parent'>
                         {
                             data.map((d) => (
                                 console.log(d._id),
                                 <div className='featured-card' key={d._id}>
-                                    <img src={d.img} alt="" onClick={() => navigate(`product-details/${d._id}`)}/>
+                                    <img src={d.img} alt="" onClick={() => navigate(`product-details/${d._id}`)} />
 
                                     <div className="featured-card-text">
                                         <p>{d.name}</p>
@@ -135,8 +146,8 @@ const Shop = ({ addToCart , addToWis}) => {
                                         </div>
                                     </div>
 
-                                    <button onClick={()=> addToWis(d)}>add to wis</button>
-                                    <button onClick={()=> addToCart(d)}>add to cart</button>
+                                    <button onClick={() => addToWis(d)}>add to wishlist</button>
+                                    <button onClick={() => addToCart(d)}>add to cart</button>
 
                                 </div>
                             ))

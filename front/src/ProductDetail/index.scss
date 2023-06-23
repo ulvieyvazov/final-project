@@ -19,6 +19,22 @@
                 padding: 8px;
                 width: 100%;
 
+                button {
+                    padding: 3px 10px;
+                    font-size: 18px;
+                    margin-left: 5px;
+                    background-color: #ffd333;
+                    border: 0;
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                    cursor: pointer;
+                    border-radius: 3px;
+                }
+
+                button:hover {
+                    background-color: #e0b620;
+                }
+
                 img {
                     // border: 2px solid #d1cfcf;
                     width: 90%;
@@ -97,6 +113,12 @@
                 a {
                     font-size: 27px;
                     color: #3d464d;
+                    padding: 8px 14px;
+                }
+
+                a:hover {
+                    background-color: #3d464d;
+                    color: white;
                 }
             }
         }

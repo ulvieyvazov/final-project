@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import "./index.css"
 
-const Specification = () => {
+const Specification = ({addToCart}) => {
 
   const params = useParams()
   const [data, setData] = useState([])
@@ -20,7 +20,7 @@ const Specification = () => {
 
   return (
     <>
-      <ProductDetail />
+      <ProductDetail addToCart={addToCart} />
       <div>
         {
           <div className='specification-container'>

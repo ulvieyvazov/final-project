@@ -36,6 +36,7 @@
                 .shop-search {
                     position: relative;
                     align-items: center;
+
                     input {
                         padding: 5px 8px;
                         // width: 400px;
@@ -45,7 +46,8 @@
                         border: 0;
                         border: 1px solid #3d464d;
                     }
-                    .shop-icon{
+
+                    .shop-icon {
                         position: absolute;
                         right: 14px;
                         top: 4px;
@@ -65,11 +67,28 @@
                 justify-content: space-between;
 
                 .featured-card {
-                    height: 350px;
+                    height: 390px;
                     padding: 8px;
                     width: 30%;
                     position: relative;
                     border: 2px solid #d1cfcf;
+
+
+                    button {
+                        padding: 3px 10px;
+                        font-size: 18px;
+                        margin-left: 5px;
+                        background-color: #ffd333;
+                        border: 0;
+                        margin-top: 10px;
+                        margin-bottom: 0;
+                        cursor: pointer;
+                        border-radius: 3px;
+                    }
+
+                    button:hover {
+                        background-color: #e0b620;
+                    }
 
                     img {
                         width: 90%;

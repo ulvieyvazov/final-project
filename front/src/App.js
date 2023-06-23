@@ -68,10 +68,11 @@ function App() {
         {/* <Route path='/shop' element={<Shop addToCart={addToCart} addToCartWi={addToWis} />}></Route> */}
         {/* <Route path='/wishlist' element={<Wishlist cartWi={cartWis} />}></Route> */}
         {/* <Route path='/cartlist' element={<CartList cart={cart} />}></Route> */}
-        <Route path='/shop/product-details/:id' element={<ProductDetail />}></Route>
-        <Route path='/product-details/:id' element={<ProductDetail />}></Route>
-        <Route path='/shop/product-details/:id/description' element={<Description />}></Route>
-        <Route path='/shop/product-details/:id/specification' element={<Specification />}></Route>
+        {/* <Route path='/addtocart' element={<AddToCartT addToCart={addToCart}/>}></Route> */}
+        <Route path='/shop/product-details/:id' element={<ProductDetail addToCart={addToCart}/>}></Route>
+        <Route path='/product-details/:id' element={<ProductDetail addToWis={addToWis} addToCart={addToCart} />}></Route>
+        <Route path='/shop/product-details/:id/description' element={<Description addToCart={addToCart} />}></Route>
+        <Route path='/shop/product-details/:id/specification' element={<Specification addToCart={addToCart} />}></Route>
         <Route path='/adminproducts' element={<AdminProducts/>}></Route>
         <Route path='/adminnews' element={<AddNews/>}></Route>
         {/* <Route path='/update' element={<Update/>}></Route> */}
