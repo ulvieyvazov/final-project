@@ -21,6 +21,7 @@ import AddNews from './components/Pages/Admin/AddNews';
 import Contact from './components/Pages/Client/Contact';
 import Register from './components/Pages/Client/Register';
 import Login from './components/Pages/Client/Login';
+import Account from './components/Pages/Client/Account';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || '[]') 
 const cartWisFromLocalStorage = JSON.parse(localStorage.getItem("cartWis") || '[]') 
@@ -86,6 +87,7 @@ function App() {
         {/* <Route path='/wishlist' element={<Wishlist cartWi={cartWis} />}></Route> */}
         {/* <Route path='/cartlist' element={<CartList cart={cart} />}></Route> */}
         {/* <Route path='/addtocart' element={<AddToCartT addToCart={addToCart}/>}></Route> */}
+        <Route path='/account' element={<Account/>}></Route>
         <Route path='/shop/product-details/:id' element={<ProductDetail addToCart={addToCart} />}></Route>
         <Route path='/product-details/:id' element={<ProductDetail addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/shop/product-details/:id/description' element={<Description addToCart={addToCart} />}></Route>

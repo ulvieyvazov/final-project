@@ -8,6 +8,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { IoMdSearch } from "react-icons/io";
 import { useNavigate } from "react-router-dom"
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 
 
@@ -100,12 +102,11 @@ const Shop = ({ addToCart, addToWis }) => {
                             <IoMdSearch className='shop-icon' />
                         </div>
                     </div>
-                    <button style={{padding: '5px 15px', cursor: 'pointer'}} onClick={handleSortPrice}>sort by price</button>
+                    <button style={{ padding: '5px 15px', cursor: 'pointer' }} onClick={handleSortPrice}>sort by price</button>
 
                     <div className='shop-card-parent'>
                         {
                             data.map((d) => (
-                                console.log(d._id),
                                 <div className='featured-card' key={d._id}>
                                     <img src={d.img} alt="" onClick={() => navigate(`product-details/${d._id}`)} />
 
@@ -152,6 +153,10 @@ const Shop = ({ addToCart, addToWis }) => {
                                 </div>
                             ))
                         }
+                        <Stack spacing={2}>
+                            <Pagination count={10} />
+
+                        </Stack>
                     </div>
                 </div>
             </div>
