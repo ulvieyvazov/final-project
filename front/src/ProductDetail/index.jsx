@@ -52,7 +52,7 @@ const ProductDetail = ({ addToCart }) => {
         <div className='detail-top'>
           {
             <div className='featured-card'>
-              <div style={{ width: '50%' }}>
+              <div style={{ width: '50%' }} className='detail-image'>
                 {/* <img src={data.img} alt="" /> */}
                 <Swiper
                   pagination={{
@@ -162,7 +162,7 @@ const ProductDetail = ({ addToCart }) => {
             <a href="" onClick={() => navigate(`/shop/product-details/${data._id}/description`)}>Description</a>
             {/* <h1>Product Full Description</h1> */}
             {/* <p>{data.fulldisc?.productfulldisc}</p> */}
-            <a href="" onClick={() => navigate(`/shop/product-details/${data._id}/specification`)} style={{ margin: '0 20px' }}>Specification</a>
+            <a href="" onClick={() => navigate(`/shop/product-details/${data._id}/specification`)}>Specification</a>
             <a href="/">Reviews</a>
           </div>
 

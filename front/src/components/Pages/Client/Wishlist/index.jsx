@@ -23,7 +23,7 @@ const Wishlist = ({ cartWis, removeFromWis, addToCart }) => {
                 <div className='wishlist-card'>
                     {
                         CART.map((caWi, caIndex) => (
-                            <div className='wishlist-card-child' style={{ display: 'flex', alignItems: 'center', width: '90%', margin: '0 auto' }}>
+                            <div className='wishlist-card-child' style={{ display: 'flex', alignItems: 'center', width: '90%', margin: '0 auto', marginBottom: '28px' }}>
                                 <img src={caWi.img} style={{ width: '100px', marginRight: '50px' }} alt="" />
 
                                 <div className='wishlist-rating' style={{ display: 'flex' }}>
@@ -46,12 +46,11 @@ const Wishlist = ({ cartWis, removeFromWis, addToCart }) => {
 
 
                                         <button style={{ padding: '5px 10px', height: '30px', backgroundColor: "#ffd333", border: 0, cursor: 'pointer' }} className='remove-icon' onClick={() => removeFromWis(caWi)}>Remove</button>
-                                        <button style={{ padding: '5px 10px', height: '30px', backgroundColor: "#ffd333", border: 0, cursor: 'pointer' }} onClick={() => addToCart(caWi)}>add to cart</button>
+                                        <button style={{ padding: '5px 10px', height: '30px', backgroundColor: "#ffd333", border: 0, cursor: 'pointer' }} onClick={() => addToCart(caWi)}>Add to cart</button>
                                     </div>
                                 </div>
                             </div>
                         ))
-
                     }
                 </div>
             </div>

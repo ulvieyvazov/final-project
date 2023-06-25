@@ -65,6 +65,7 @@
                 flex-wrap: wrap;
                 align-items: center;
                 justify-content: space-between;
+                gap: 15px;
 
                 .featured-card {
                     height: 390px;
@@ -73,21 +74,43 @@
                     position: relative;
                     border: 2px solid #d1cfcf;
 
-
-                    button {
-                        padding: 3px 10px;
-                        font-size: 18px;
-                        margin-left: 5px;
-                        background-color: #ffd333;
+                    .wish {
+                        position: absolute;
+                        top: 0;
+                        right: 0px;
+                        padding: 2px 2px;
+                        background-color: transparent;
                         border: 0;
-                        margin-top: 10px;
-                        margin-bottom: 0;
-                        cursor: pointer;
-                        border-radius: 3px;
+                        color: red;
                     }
 
-                    button:hover {
-                        background-color: #e0b620;
+                    .wish:hover {
+                        position: absolute;
+                        top: 0;
+                        right: 0px;
+                        padding: 2px 2px;
+                        background-color: transparent;
+                        cursor: pointer;
+                    }
+
+                    .btt {
+
+                        button {
+                            padding: 3px 0;
+                            font-size: 18px;
+                            margin-left: 5px;
+                            background-color: #ffd333;
+                            border: 0;
+                            margin-top: 10px;
+                            margin-bottom: 0;
+                            cursor: pointer;
+                            border-radius: 3px;
+                            width: 100%;
+                        }
+
+                        button:hover {
+                            background-color: #e0b620;
+                        }
                     }
 
                     img {
@@ -156,5 +179,49 @@
                 }
             }
         }
+    }
+}
+
+
+
+@media (max-width: 1159px) {
+    .featured-card {
+        width: 45% !important;
+    }
+
+    .shop-right-head {
+        width: 70% !important;
+    }
+}
+
+@media (max-width: 740px) {
+    .featured-card {
+        width: 75% !important;
+    }
+
+    .shop-right-head {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 514px) {
+    .shop-right-head {
+        display: block !important;
+    }
+
+    .shop-search {
+        input {
+            margin-top: 28px !important;
+        }
+
+        svg {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: 437px) {
+    .featured-card {
+        width: 100% !important;
     }
 }

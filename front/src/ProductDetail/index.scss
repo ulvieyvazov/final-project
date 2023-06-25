@@ -142,7 +142,7 @@
                             }
                         }
                     }
-                        
+
                     .reviews {
                         display: flex;
                         align-items: center;
@@ -196,6 +196,8 @@
                 display: flex;
                 width: 40%;
                 margin: 0 auto;
+                flex-wrap: wrap;
+                gap: 25px;
 
                 a {
                     font-size: 27px;
@@ -208,6 +210,71 @@
                     color: white;
                 }
             }
+        }
+    }
+}
+
+
+
+@media (max-width: 1159px) {
+    .detail-parent .featured-card {
+        width: 100% !important;
+    }
+
+    .detail-parent {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 905px) {
+    .detail-parent {
+
+        .featured-card {
+            width: 100% !important;
+            display: block !important;
+        }
+
+        .featured-card-text {
+            width: 100% !important;
+        }
+    }
+
+    .detail-parent {
+        width: 90% !important;
+    }
+
+    .detail-bottom-head {
+        width: 100% !important;
+    }
+
+    .detail-image {
+        width: 60% !important;
+    }
+}
+
+
+
+@media (max-width: 427px) {
+    .detail-bottom-head {
+        flex-direction: column;
+        margin: 0px 0 !important;
+    }
+
+    .detail-image {
+        width: 70% !important;
+    }
+
+    .detail-parent {
+        .featured-card-text {
+            h2 {
+                font-size: 28px !important;
+            }
+        }
+    }
+
+    .detail-bottom-head {
+        a {
+            font-size: 24px !important;
         }
     }
 }

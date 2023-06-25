@@ -10,6 +10,7 @@ import { IoMdSearch } from "react-icons/io";
 import { useNavigate } from "react-router-dom"
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { AiFillHeart } from "react-icons/ai";
 
 
 
@@ -123,7 +124,6 @@ const Shop = ({ addToCart, addToWis }) => {
                                                     <Rating name="read-only" value={d.rating} readOnly />
                                                 </Box>
                                             </div>
-                                            <span style={{ fontSize: '14px', color: '#b3b3b3' }}>{d.reviews} Reviews</span>
                                         </div>
 
                                         <div style={{ display: "flex", gap: '20px' }}>
@@ -147,9 +147,12 @@ const Shop = ({ addToCart, addToWis }) => {
                                         </div>
                                     </div>
 
-                                    <button onClick={() => addToWis(d)}>add to wishlist</button>
-                                    <button onClick={() => addToCart(d)}>add to cart</button>
+                                    <div className='btt'>
+                                        <button onClick={() => addToCart(d)}>add to cart</button>
 
+                                    </div>
+
+                                    <button onClick={() => addToWis(d)} className="wish"><AiFillHeart style={{ fontSize: '25px' }} className="wh" /></button>
                                 </div>
                             ))
                         }

@@ -17,11 +17,18 @@
     }
 
     .wishlist-rating-parent{
-        width: 100% !important;
+        width: 92% !important;
     }
 
     .wishlist-add{
-        width: 36% !important;
+        width: 48% !important;
         margin: 0 auto;
     }
+}
+
+
+@media (max-width: 574px) {
+    .wishlist-add{
+        display: block !important;
+    }    
 }

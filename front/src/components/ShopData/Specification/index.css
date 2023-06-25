@@ -39,3 +39,18 @@
     padding: 14px 5px;
     border-top: 1px solid gray;
 }
+
+@media (max-width: 472px) {
+    .general{
+        width: 100% !important;
+    }    
+    .dimensions{
+        width: 100% !important;
+    }    
+}
+
+@media (max-width: 338px) {
+    .specification-parent{
+        width: 80% !important;
+    }
+}
