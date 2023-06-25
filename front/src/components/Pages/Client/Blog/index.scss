@@ -67,7 +67,8 @@
                         border: 0;
                         cursor: pointer;
                     }
-                    button:hover{
+
+                    button:hover {
                         background-color: #3d464d;
                         color: white;
                     }
@@ -244,7 +245,8 @@
                             color: #3d464d;
                             line-height: 24px;
                         }
-                        span{
+
+                        span {
                             font-size: 14px;
                             color: #adadad;
                         }
@@ -253,5 +255,74 @@
 
             }
         }
+    }
+}
+
+
+
+
+@media (max-width: 1254px) {
+    .latest-cardd {
+        display: block !important;
+    }
+
+    .latest-cardd {
+        img {
+            width: 94% !important;
+        }
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .blog-parent {
+        display: block !important;
+    }
+
+    .latest-cardd {
+        display: flex !important;
+        width: 100% !important;
+    }
+
+    .latest-cardd {
+        img {
+            width: 40% !important;
+        }
+    }
+
+    .blog-right {
+        width: 78% !important;
+    }
+
+    .blog-left{
+        width: 100% !important;
+    }
+}
+
+
+@media (max-width: 470px) {
+
+    .blog-parent {
+        display: block !important;
+    }
+
+    .latest-cardd {
+        display: flex !important;
+        width: 100% !important;
+    }
+
+    .latest-cardd {
+        img {
+            width: 40% !important;
+        }
+    }
+
+    .blog-parent {
+        width: 95% !important;
+    }
+
+    .blog-right {
+        width: 100% !important;
     }
 }

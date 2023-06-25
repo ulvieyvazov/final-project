@@ -280,36 +280,83 @@
 
 
 @media (max-width: 1171px) {
-    .footer-top{
+    .footer-top {
         width: 100% !important;
     }
-    .footer-contact{
+
+    .footer-contact {
         width: 44% !important;
     }
-    .footer-info{
+
+    .footer-info {
         width: 35% !important;
     }
-    .footer-acco{
+
+    .footer-acco {
         width: 38% !important;
     }
-    .footer-new{
+
+    .footer-new {
         width: 45% !important;
     }
 }
+
 @media (max-width: 586px) {
-    .footer-top{
+    .footer-top {
         width: 100% !important;
     }
-    .footer-contact{
-        width: 44% !important;
+
+    .footer-contact {
+        width: 100% !important;
     }
-    .footer-info{
+
+    .footer-info {
         width: 35% !important;
     }
-    .footer-acco{
-        width: 38% !important;
+
+    .footer-acco {
+        width: 35% !important;
     }
-    .footer-new{
+
+    .footer-new {
         width: 40% !important;
+    }
+}
+
+@media (max-width: 347px) {
+    .footer-top {
+        width: 100% !important;
+    }
+
+    .footer-contact {
+        width: 85% !important;
+        margin: 0 auto;
+    }
+
+    .footer-info {
+        width: 75% !important;
+        margin: 0 auto;
+    }
+
+    .footer-acco {
+        width: 75% !important;
+        margin: 0 auto;
+    }
+
+    .footer-new {
+        width: 95% !important;
+        margin: 0 auto;
+
+        button {
+            font-size: 14px !important;
+        }
+
+        input {
+            font-size: 14px !important;
+        }
+    }
+
+    .footer-parent{
+        width: 97% !important;
     }
 }

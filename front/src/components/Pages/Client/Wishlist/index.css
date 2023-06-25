@@ -1,0 +1,27 @@
+@media (max-width: 988px) {
+    .wishlist-card-child {
+        display: block !important;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .wishlist-card-child img{
+        margin: 0 auto;        
+    }
+
+    .wishlist-rating{
+        display: block !important;
+        width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .wishlist-rating-parent{
+        width: 100% !important;
+    }
+
+    .wishlist-add{
+        width: 36% !important;
+        margin: 0 auto;
+    }
+}

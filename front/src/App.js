@@ -83,11 +83,11 @@ function App() {
         <Route path='/wishlist' element={<Wishlist cartWis={cartWis} addToCart={addToCart} removeFromWis={removeFromWis} />}></Route> :
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/account' element={<Account/>}></Route>
         {/* <Route path='/shop' element={<Shop addToCart={addToCart} addToCartWi={addToWis} />}></Route> */}
         {/* <Route path='/wishlist' element={<Wishlist cartWi={cartWis} />}></Route> */}
         {/* <Route path='/cartlist' element={<CartList cart={cart} />}></Route> */}
         {/* <Route path='/addtocart' element={<AddToCartT addToCart={addToCart}/>}></Route> */}
-        <Route path='/account' element={<Account/>}></Route>
         <Route path='/shop/product-details/:id' element={<ProductDetail addToCart={addToCart} />}></Route>
         <Route path='/product-details/:id' element={<ProductDetail addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/shop/product-details/:id/description' element={<Description addToCart={addToCart} />}></Route>

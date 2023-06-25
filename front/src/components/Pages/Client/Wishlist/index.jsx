@@ -23,11 +23,11 @@ const Wishlist = ({ cartWis, removeFromWis, addToCart }) => {
                 <div className='wishlist-card'>
                     {
                         CART.map((caWi, caIndex) => (
-                            <div style={{ display: 'flex', alignItems: 'center', width: '90%', margin: '0 auto' }}>
+                            <div className='wishlist-card-child' style={{ display: 'flex', alignItems: 'center', width: '90%', margin: '0 auto' }}>
                                 <img src={caWi.img} style={{ width: '100px', marginRight: '50px' }} alt="" />
 
-                                <div style={{ display: 'flex' }}>
-                                    <div style={{ width: '500px' }}>
+                                <div className='wishlist-rating' style={{ display: 'flex' }}>
+                                    <div className='wishlist-rating-parent' style={{ width: '500px' }}>
                                         <p>{caWi.name}</p>
                                         <Box
                                             sx={{
@@ -39,7 +39,7 @@ const Wishlist = ({ cartWis, removeFromWis, addToCart }) => {
                                     </div>
 
 
-                                    <div style={{display: 'flex', alignItems: 'center', gap: '3px'}}>
+                                    <div className='wishlist-add' style={{display: 'flex', alignItems: 'center', gap: '3px'}}>
                                         <p style={{marginRight: '20px'}}>${caWi.discount ? caWi.discount : caWi.price}.00</p>
 
                                         {/* <p>{ca.price * ca.quantity}</p> */}
