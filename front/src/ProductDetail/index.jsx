@@ -91,9 +91,8 @@ const ProductDetail = ({ addToCart }) => {
                       }}
                     >
                     </Box>
-                    <Rating name="read-only" value={data.rating} readOnly />
+                    {/* <Rating name="read-only" value={data.rating} readOnly /> */}
                   </div>
-                  <span style={{ fontSize: '16px', color: '#b3b3b3' }}>{data.reviews} Reviews</span>
                 </div>
 
                 <div className='descrip'>
@@ -163,7 +162,7 @@ const ProductDetail = ({ addToCart }) => {
             {/* <h1>Product Full Description</h1> */}
             {/* <p>{data.fulldisc?.productfulldisc}</p> */}
             <a href="" onClick={() => navigate(`/shop/product-details/${data._id}/specification`)}>Specification</a>
-            <a href="/">Reviews</a>
+            <a href="" onClick={() => navigate(`/shop/product-details/${data._id}/reviews`)}>Reviews</a>
           </div>
 
           <div className='detail-bottom-text'>

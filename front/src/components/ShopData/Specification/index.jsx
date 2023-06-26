@@ -32,36 +32,36 @@ const Specification = ({addToCart}) => {
                 {/* <div style={{width: '100%', backgroundColor: 'gray', height: '1px'}}></div> */}
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Material</p>
-                  <div>{data.specification?.general?.material ? data.specification?.general?.material : "There is no such data in this product"}</div>
+                  <div>{data.material ? data.material : "There is no such data in this product"}</div>
                 </div>
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Engine Type</p>
-                  <div>{data.specification?.general?.engine ? data.specification?.general?.engine : "There is no such data in this product"}</div>
+                  <div>{data.engine ? data.engine : "There is no such data in this product"}</div>
                 </div>
 
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Battery Voltage</p>
-                  <div>{data.specification?.general?.batteryVolt ? data.specification?.general?.batteryVolt : "There is no such data in this product"}</div>
+                  <div>{data.batteryVolt ? data.batteryVolt : "There is no such data in this product"}</div>
                 </div>
 
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Battery Type</p>
-                  <div>{data.specification?.general?.batteryType ? data.specification?.general?.batteryType : "There is no such data in this product"}</div>
+                  <div>{data.batteryType ? data.batteryType : "There is no such data in this product"}</div>
                 </div>
 
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Number of Speeds</p>
-                  <div>{data.specification?.general?.speeds ? data.specification?.general?.speeds : "There is no such data in this product"}</div>
+                  <div>{data.speeds ? data.speeds : "There is no such data in this product"}</div>
                 </div>
 
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Weight</p>
-                  <div>{data.specification?.general?.weight ? data.specification?.general?.weight : "There is no such data in this product"} kg</div>
+                  <div>{data.weight ? data.weight : "There is no such data in this product"} kg</div>
                 </div>
 
               </div>
@@ -72,17 +72,17 @@ const Specification = ({addToCart}) => {
                 
                 <div className='dimensions-div' style={{display: 'flex'}}>
                   <p>Length</p>
-                  <div>{data.specification?.dimensions?.length ? <span>{data.specification?.dimensions?.length}sm</span> : "There is no such data in this product"} </div>
+                  <div>{data.length ? <span>{data.length}sm</span> : "There is no such data in this product"} </div>
                 </div>
 
                 <div className='dimensions-div' style={{display: 'flex'}}>
                   <p>Width</p>
-                  <div>{data.specification?.dimensions?.width ? <span>{data.specification?.dimensions?.width}sm</span> : "There is no such data in this product"} </div>
+                  <div>{data.width ? <span>{data.width}sm</span> : "There is no such data in this product"} </div>
                 </div>
                 
                 <div className='dimensions-div' style={{display: 'flex'}}>
                   <p>Height</p>
-                  <div>{data.specification?.dimensions?.height ? <span>{data.specification?.dimensions?.height}sm</span> : "There is no such data in this product"} </div>
+                  <div>{data.height ? <span>{data.height}sm</span> : "There is no such data in this product"} </div>
                 </div>
               </div>
             </div>

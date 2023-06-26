@@ -26,10 +26,10 @@ const Description = ({addToCart}) => {
           <div className='description-container'>
             <div className='description-parent'>
               <h1>Full Description</h1>
-              <p>{data.fulldisc?.productfulldisc}</p>
+              <p>{data?.productfulldisc}</p>
               <h1 style={{paddingTop: '50px'}}>Etiam lacus lacus mollis in mattis</h1>
-              <p>{data.fulldisc?.etiam1}</p>
-              <p>{data.fulldisc?.etiam2}</p>
+              <p>{data?.etiam1}</p>
+              <p>{data?.etiam2}</p>
             </div>
           </div>
         }

@@ -22,6 +22,9 @@ import Contact from './components/Pages/Client/Contact';
 import Register from './components/Pages/Client/Register';
 import Login from './components/Pages/Client/Login';
 import Account from './components/Pages/Client/Account';
+import PowerTools from './components/Pages/Client/MegaMenu/PowerTools';
+import HandTools from './components/Pages/Client/MegaMenu/HandTools';
+import Reviews from './components/ShopData/Reviews';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || '[]') 
 const cartWisFromLocalStorage = JSON.parse(localStorage.getItem("cartWis") || '[]') 
@@ -84,14 +87,15 @@ function App() {
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/account' element={<Account/>}></Route>
-        {/* <Route path='/shop' element={<Shop addToCart={addToCart} addToCartWi={addToWis} />}></Route> */}
-        {/* <Route path='/wishlist' element={<Wishlist cartWi={cartWis} />}></Route> */}
-        {/* <Route path='/cartlist' element={<CartList cart={cart} />}></Route> */}
-        {/* <Route path='/addtocart' element={<AddToCartT addToCart={addToCart}/>}></Route> */}
+        <Route path='/powertools' element={<PowerTools addToWis={addToWis} addToCart={addToCart}/>}></Route>
+        <Route path='/handtools' element={<HandTools addToWis={addToWis} addToCart={addToCart}/>}></Route>
         <Route path='/shop/product-details/:id' element={<ProductDetail addToCart={addToCart} />}></Route>
         <Route path='/product-details/:id' element={<ProductDetail addToWis={addToWis} addToCart={addToCart} />}></Route>
+        <Route path='/handtools/product-details/:id' element={<ProductDetail addToWis={addToWis} addToCart={addToCart} />}></Route>
+        <Route path='/powertools/product-details/:id' element={<ProductDetail addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/shop/product-details/:id/description' element={<Description addToCart={addToCart} />}></Route>
         <Route path='/shop/product-details/:id/specification' element={<Specification addToCart={addToCart} />}></Route>
+        <Route path='/shop/product-details/:id/reviews' element={<Reviews addToCart={addToCart} />}></Route>
         <Route path='/adminproducts' element={<AdminProducts />}></Route>
         <Route path='/adminnews' element={<AddNews />}></Route>
         {/* <Route path='/update' element={<Update/>}></Route> */}

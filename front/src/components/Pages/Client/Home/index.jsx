@@ -147,7 +147,6 @@ const Home = ({addToCart, addToWis}) => {
                                                     <Rating name="read-only" value={d.rating} readOnly />
                                                 </Box>
                                             </div>
-                                            <span style={{ fontSize: '14px', color: '#b3b3b3' }}>{d.reviews} Reviews</span>
                                         </div>
 
                                         <div style={{ display: "flex", gap: '20px' }}>
@@ -308,7 +307,6 @@ const Home = ({addToCart, addToWis}) => {
                                                     <Rating name="read-only" value={d.rating} readOnly />
                                                 </Box>
                                             </div>
-                                            <span style={{ fontSize: '14px', color: '#b3b3b3' }}>{d.reviews} Reviews</span>
                                         </div>
 
                                         <div style={{ display: "flex", gap: '20px' }}>
@@ -383,7 +381,6 @@ const Home = ({addToCart, addToWis}) => {
                                                     <Rating name="read-only" value={d.rating} readOnly />
                                                 </Box>
                                             </div>
-                                            <span style={{ fontSize: '14px', color: '#b3b3b3' }}>{d.reviews} Reviews</span>
                                         </div>
 
                                         <div style={{ display: "flex", gap: '20px' }}>
@@ -440,7 +437,6 @@ const Home = ({addToCart, addToWis}) => {
                                                     <Rating name="read-only" value={d.rating} readOnly />
                                                 </Box>
                                             </div>
-                                            <span style={{ fontSize: '14px', color: '#b3b3b3' }}>{d.reviews} Reviews</span>
                                         </div>
 
                                         <div style={{ display: "flex", gap: '20px' }}>
@@ -499,7 +495,6 @@ const Home = ({addToCart, addToWis}) => {
                                                     <Rating name="read-only" value={d.rating} readOnly />
                                                 </Box>
                                             </div>
-                                            <span style={{ fontSize: '14px', color: '#b3b3b3' }}>{d.reviews} Reviews</span>
                                         </div>
 
                                         <div style={{ display: "flex", gap: '20px' }}>

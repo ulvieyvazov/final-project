@@ -14,6 +14,7 @@ const Header = (props, propsWi) => {
 
     const [fix, setFix] = useState(false)
     const [open, setOpen] = useState(false)
+    const [openM, setOpenM] = useState(false)
     const navigate = useNavigate()
 
 
@@ -33,6 +34,7 @@ const Header = (props, propsWi) => {
     useEffect(() => {
         let handler = (e) => {
             if (!menuRef.current.contains(e.target)) {
+                setOpenM(false)
                 setOpen(false)
                 console.log(menuRef);
             }
@@ -61,14 +63,14 @@ const Header = (props, propsWi) => {
 
                     <div className='cos'>
                         <p>Customer Service</p>
-                        <div>(800) 060-0730</div>
+                        <div><a href="tel:PHONE">(800) 060-0730</a></div>
                     </div>
                 </div>
 
                 <div className={fix ? 'header getFix' : 'header'}>
                     <ul>
                         <li><NavLink to={'/'}>Home</NavLink></li>
-                        <li>Megamenu</li>
+                        <li style={{cursor: 'pointer'}} onClick={() => setOpenM(!openM)} >Megamenu</li>
                         <li><NavLink to={'/about'}>About</NavLink></li>
                         <li><NavLink to={'/contact'}>Contacts</NavLink></li>
                         <li><NavLink to={'/shop'}>Shop</NavLink></li>
@@ -84,7 +86,7 @@ const Header = (props, propsWi) => {
 
                         <div className={`dropmenu ${open ? 'active' : 'inactive'}`}>
                             <li><NavLink to={'/'}>Home</NavLink></li>
-                            <li>Megamenu</li>
+                            {/* <li>Megamenu</li> */}
                             <li><NavLink to={'/about'}>About</NavLink></li>
                             <li>Contacts</li>
                             <li><NavLink to={'/shop'}>Shop</NavLink></li>
@@ -94,6 +96,48 @@ const Header = (props, propsWi) => {
                             <li><NavLink to={'/register'}>Register</NavLink></li>
                         </div>
 
+                    </div>
+
+                    <div>
+                        <div ref={menuRef} className={`megamenu ${openM ? 'active' : 'inactive'}`}>
+                            <div>
+                                <h3 onClick={()=> navigate("/powertools")}>Power Tools</h3>
+                                <ul>
+                                    <li>Engravers</li>
+                                    <li>Wrenches</li>
+                                    <li>Wall Chaser</li>
+                                    <li>Pneumatic Tools</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 onClick={()=> navigate("/handtools")}>Hand Tools</h3>
+                                <ul>
+                                    <li>Screwdrivers</li>
+                                    <li>Handsaws</li>
+                                    <li>Knives</li>
+                                    <li>Axes</li>
+                                </ul>
+                            </div>
+                            {/* <div>
+                                <h3>Machine Tools</h3>
+                                <ul>
+                                    <li>Thread Cutting</li>
+                                    <li>Chip Blowers</li>
+                                    <li>Sharpening Machines</li>
+                                    <li>Pipe Cutters</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>Garden Equipment</h3>
+                                <ul>
+                                    <li>Motor Pumps</li>
+                                    <li>Chainsaws</li>
+                                    <li>Electric Saws</li>
+                                    <li>Brush Cutters</li>
+                                </ul>
+                            </div> */}
+                            
+                        </div>
                     </div>
 
 

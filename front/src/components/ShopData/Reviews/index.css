@@ -1,0 +1,31 @@
+.reviews-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+
+}
+
+.reviews-parent {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.reviews-parent p {
+    font-size: 17px;
+    color: #504f4f;
+    padding: 15px 0;
+}
+
+.reviews .contact-right{
+    width: 50%;
+}
+
+.contact-input input{
+    padding: 3px 5px;    
+    font-size: 15px;
+}
+
+.reviews-top{
+    width: 60%;
+}

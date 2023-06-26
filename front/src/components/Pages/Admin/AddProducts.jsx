@@ -23,6 +23,8 @@ const AdminProducts = () => {
         price: "",
         discount: "",
         img: "",
+        material: "",
+        engine: "",
         detailimg: "",
         innovation: "",
         category: "",
@@ -43,6 +45,8 @@ const AdminProducts = () => {
             price: ud.price,
             discount: ud.discount,
             img: ud.img,
+            material: ud.material,
+            engine: ud.engine,
             detailimg: ud.detailimg,
             innovation: ud.innovation,
             category: ud.category,
@@ -65,6 +69,8 @@ const AdminProducts = () => {
             price: "",
             discount: "",
             img: "",
+            material: "",
+            engine: "",
             detailimg: "",
             innovation: "",
             category: "",
@@ -95,6 +101,8 @@ const AdminProducts = () => {
             price: values.price,
             discount: values.discount,
             img: values.img,
+            material: values.material,
+            engine: values.engine,
             detailimg: values.detailimg,
             innovation: values.innovation,
             category: values.category,
@@ -163,6 +171,18 @@ const AdminProducts = () => {
                                 )}
                             </div>
                             <div>
+                                <TextField id="outlined-basic" label="material" variant="outlined" {...register("material")} onChange={handleChange} value={state.material} />
+                                {errors.material?.message && (
+                                    <p style={{ color: "red" }}>{errors.material?.message}</p>
+                                )}
+                            </div>
+                            <div>
+                                <TextField id="outlined-basic" label="engine" variant="outlined" {...register("engine")} onChange={handleChange} value={state.engine} />
+                                {errors.engine?.message && (
+                                    <p style={{ color: "red" }}>{errors.engine?.message}</p>
+                                )}
+                            </div>
+                            <div>
                                 <TextField id="outlined-basic" label="detailimg" variant="outlined" {...register("detailimg")} onChange={handleChange} value={state.detailimg} />
                                 {errors.detailimg?.message && (
                                     <p style={{ color: "red" }}>{errors.detailimg?.message}</p>
@@ -184,12 +204,6 @@ const AdminProducts = () => {
                                 <TextField id="outlined-basic" label="rating" variant="outlined" type='number' {...register("rating")} onChange={handleChange} value={state.rating} />
                                 {errors.rating?.message && (
                                     <p style={{ color: "red" }}>{errors.rating?.message}</p>
-                                )}
-                            </div>
-                            <div>
-                                <TextField id="outlined-basic" label="reviews" variant="outlined" type='number' {...register("reviews")} onChange={handleChange} value={state.reviews} />
-                                {errors.reviews?.message && (
-                                    <p style={{ color: "red" }}>{errors.reviews?.message}</p>
                                 )}
                             </div>
                             <div>
@@ -253,7 +267,6 @@ const AdminProducts = () => {
                                                 <Rating name="read-only" value={d.rating} readOnly />
                                             </Box>
                                         </div>
-                                        <span style={{ fontSize: '14px', color: '#b3b3b3' }}>{d.reviews} Reviews</span>
                                     </div>
 
                                     <div style={{ display: "flex", gap: '20px' }}>
@@ -262,6 +275,9 @@ const AdminProducts = () => {
                                         {d.discount ? <h3 style={{ textDecorationLine: "line-through", fontSize: '14px' }}>${d.price}.00</h3> : <h3>${d.price}.00</h3>}
 
                                         {d.discount ? <h3 style={{ color: 'red', fontSize: '20px' }}>${d.discount}.00</h3> : ""}
+                                        
+                                        <p>{d.material}</p>
+                                        <p>{d.engine}</p>
                                     </div>
 
                                 </div>

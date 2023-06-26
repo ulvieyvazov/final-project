@@ -17,8 +17,12 @@ const CommentSchema = new Schema(
       type: String,
       require: true,
     },
-    lastname: {
+    email: {
       type: String,
+      require: true,
+    },
+    rating: {
+      type: Number,
       require: true,
     },
     comment: {

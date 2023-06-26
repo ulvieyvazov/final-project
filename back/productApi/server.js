@@ -65,105 +65,106 @@ const ProductsSchema = new Schema(
             type: Number,
             require: true,
         },
-        fulldisc:
-        {
-            productfulldisc: {
-                type: String,
-                require: true,
-            },
-            etiam1: {
-                type: String,
-                require: true,
-            },
-            etiam2: {
-                type: String,
-                require: true
-            },
+        productfulldisc: {
+            type: String,
+            require: true,
+        },
+        etiam1: {
+            type: String,
+            require: true,
+        },
+        etiam2: {
+            type: String,
+            require: true
         },
 
-        specification:
-        {
-            general:
-            {
-                material: {
-                    type: String,
-                    require: true
-                },
-                engine: {
-                    type: String,
-                    require: true
-                },
-                batteryVolt: {
-                    type: String,
-                    require: true
-                },
-                batteryType: {
-                    type: String,
-                    require: true
-                },
-                speeds: {
-                    type: Number,
-                    require: true
-                },
-                weight: {
-                    type: Number,
-                    require: true
-                },
-            },
-
-
-            dimensions:
-            {
-                length: {
-                    type: String,
-                    require: true
-                },
-                width: {
-                    type: String,
-                    require: true
-                },
-                height: {
-                    type: String,
-                    require: true
-                },
-            },
-
+        material: {
+            type: String,
+            require: true
         },
-
-        // reviewsDetali: [
-        //     {
-        //         profilImg: {
-        //             type: String,
-        //         },
-        //         reviewsName: {
-        //             type: String,
-        //             require: true
-        //         },
-        //         reviewsrating: {
-        //             type: Number,
-        //             require: true
-        //         },
-        //         reviewsComment: {
-        //             type: String,
-        //             require: true
-        //         },
-        //         reviewsDate: {
-        //             type: String,
-        //             require: true
-        //         }                
-        //     }
-        // ]
-        // "reviewsDetali": [
-
-        //     {
-        //         "profilImg": "",
-        //         "reviewsName": "Samantha Smith",
-        //         "reviewsrating": 4,
-        //         "reviewsComment": "Phasellus id mattis nulla. Mauris velit nisi, imperdiet vitae sodales in, maximus ut lectus. Vivamus commodo scelerisque lacus, at porttitor dui iaculis id. Curabitur imperdiet ultrices fermentum",
-        //         "reviewsDate": "27 May, 2018"   
-        //     }
-        // ]
+        engine: {
+            type: String,
+            require: true
+        },
+        batteryVolt: {
+            type: String,
+            require: true
+        },
+        batteryType: {
+            type: String,
+            require: true
+        },
+        speeds: {
+            type: Number,
+            require: true
+        },
+        weight: {
+            type: Number,
+            require: true
+        },
+        length: {
+            type: String,
+            require: true
+        },
+        width: {
+            type: String,
+            require: true
+        },
+        height: {
+            type: String,
+            require: true
+        },
+        reviewsName: {
+            type: String,
+            require: true
+        },
+        reviewsrating: {
+            type: Number,
+            require: true
+        },
+        reviewsComment: {
+            type: String,
+            require: true
+        },
+        reviewsEmail: {
+            type: String,
+            require: true
+        }
     },
+
+    // reviewsDetali: [
+    //     {
+    //         profilImg: {
+    //             type: String,
+    //         },
+    //         reviewsName: {
+    //             type: String,
+    //             require: true
+    //         },
+    //         reviewsrating: {
+    //             type: Number,
+    //             require: true
+    //         },
+    //         reviewsComment: {
+    //             type: String,
+    //             require: true
+    //         },
+    //         reviewsDate: {
+    //             type: String,
+    //             require: true
+    //         }                
+    //     }
+    // ]
+    // "reviewsDetali": [
+
+    //     {
+    //         "profilImg": "",
+    //         "reviewsName": "Samantha Smith",
+    //         "reviewsrating": 4,
+    //         "reviewsComment": "Phasellus id mattis nulla. Mauris velit nisi, imperdiet vitae sodales in, maximus ut lectus. Vivamus commodo scelerisque lacus, at porttitor dui iaculis id. Curabitur imperdiet ultrices fermentum",
+    //         "reviewsDate": "27 May, 2018"   
+    //     }
+    // ]
     { timestamps: true }
 );
 

@@ -5,6 +5,8 @@ export const ProductSchema = yup.object().shape({
     price: yup.number().required(),
     discount: yup.number(),
     img: yup.string().required(),
+    specification: yup.string().required(),
+    engine: yup.string().required(),
     detailimg: yup.string().required(),
     innovation: yup.string(),
     category: yup.string().required(),

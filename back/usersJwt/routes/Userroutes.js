@@ -65,6 +65,8 @@ const getMe = async (req, res) => {
 const getLo = async (req, res) => {
     await res.status(200).send(req.user)
 }
+
+
 const getRe = async (req, res) => {
     await res.status(200).send(req.user)
 }
