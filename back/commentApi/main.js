@@ -21,10 +21,6 @@ const CommentSchema = new Schema(
       type: String,
       require: true,
     },
-    rating: {
-      type: Number,
-      require: true,
-    },
     comment: {
       type: String,
       require: true,

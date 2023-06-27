@@ -25,13 +25,16 @@ import Account from './components/Pages/Client/Account';
 import PowerTools from './components/Pages/Client/MegaMenu/PowerTools';
 import HandTools from './components/Pages/Client/MegaMenu/HandTools';
 import Reviews from './components/ShopData/Reviews';
+import PaymentForm from './components/Pages/Client/Payment/PaymentForm';
 
-const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || '[]') 
-const cartWisFromLocalStorage = JSON.parse(localStorage.getItem("cartWis") || '[]') 
+const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || '[]')
+const cartWisFromLocalStorage = JSON.parse(localStorage.getItem("cartWis") || '[]')
 
 function App() {
 
 
+
+  const [showItem, setShowItem] = useState(false);
   const [cart, setCart] = useState(cartFromLocalStorage)
   const [cartWis, setCartWis] = useState(cartWisFromLocalStorage)
   const [showCart, setShowCart] = useState(false)
@@ -41,11 +44,11 @@ function App() {
     setCart([...cart, { ...data, quantity: 1 }])
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart))
   }, [cart])
 
-  useEffect(()=>{
+  useEffect(() => {
     localStorage.setItem("cartWis", JSON.stringify(cartWis))
   }, [cartWis])
 
@@ -86,9 +89,9 @@ function App() {
         <Route path='/wishlist' element={<Wishlist cartWis={cartWis} addToCart={addToCart} removeFromWis={removeFromWis} />}></Route> :
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
-        <Route path='/account' element={<Account/>}></Route>
-        <Route path='/powertools' element={<PowerTools addToWis={addToWis} addToCart={addToCart}/>}></Route>
-        <Route path='/handtools' element={<HandTools addToWis={addToWis} addToCart={addToCart}/>}></Route>
+        <Route path='/account' element={<Account />}></Route>
+        <Route path='/powertools' element={<PowerTools addToWis={addToWis} addToCart={addToCart} />}></Route>
+        <Route path='/handtools' element={<HandTools addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/shop/product-details/:id' element={<ProductDetail addToCart={addToCart} />}></Route>
         <Route path='/product-details/:id' element={<ProductDetail addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/handtools/product-details/:id' element={<ProductDetail addToWis={addToWis} addToCart={addToCart} />}></Route>
@@ -98,10 +101,10 @@ function App() {
         <Route path='/shop/product-details/:id/reviews' element={<Reviews addToCart={addToCart} />}></Route>
         <Route path='/adminproducts' element={<AdminProducts />}></Route>
         <Route path='/adminnews' element={<AddNews />}></Route>
-        {/* <Route path='/update' element={<Update/>}></Route> */}
         <Route path='*' element={<Error404 />}></Route>
+        <Route path='/payment' element={<PaymentForm/>}></Route>
       </Routes>
-      <BackToTopButton />
+      {/* <BackToTopButton /> */}
       <Footer />
     </>
   );
