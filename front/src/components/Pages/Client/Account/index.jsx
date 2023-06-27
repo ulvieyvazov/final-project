@@ -8,7 +8,7 @@ const Account = () => {
     const navigate = useNavigate()
 
     const getData = async () => {
-        const res = await axios.get("http://localhost:5050/products")
+        const res = await axios.get("http://localhost:8000/api/users/login")
         setData(res.data)
     }
 
@@ -18,7 +18,11 @@ const Account = () => {
 
     return (
         <div>
-            
+            {
+                <div>
+                    <p>{data.name}</p>
+                </div>
+            }
         </div>
     )
 }

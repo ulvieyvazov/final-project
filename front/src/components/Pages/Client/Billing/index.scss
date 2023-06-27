@@ -1,0 +1,22 @@
+.billing-container {
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+
+    .billing-parent {
+        width: 40%;
+        margin: 0 auto;
+        padding-top: 40px;
+
+        input{
+            width: 100%;
+            padding: 3px 4px;
+            font-size: 19px;
+            outline-color: blue;
+        }
+
+        div{
+            margin: 14px 0;
+        }
+    }
+}

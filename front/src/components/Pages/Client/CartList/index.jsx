@@ -2,6 +2,7 @@ import { Rating } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
 import "./index.scss"
+import Billing from '../Billing'
 
 const CartList = ({ cart, removeFromCart }) => {
 
@@ -75,6 +76,8 @@ const CartList = ({ cart, removeFromCart }) => {
                     {/* CART.map((item)=> item.discount ? (item.discount * item.quantity).reduce((total, value) => total + value, 0) :
                     (item.price * item.quantity).reduce((total, value) => total + value, 0)
                 ) */}
+
+                <Billing/>
                 </div>
             </div>
         </div>

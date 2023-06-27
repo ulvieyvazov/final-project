@@ -5,29 +5,30 @@ import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
 
-
-    const navigate = useNavigate()
-
-    const [data, setdata] = useState({
+    const [data, setData] = useState({
         username: "",
         email: "",
-        password: ""
-    })
+        password: "",
+    });
+    const navigate = useNavigate()
+    const [success, setsuccess] = useState("")
+    const [error, seterror] = useState("")
 
-    const updateName = e => {
-        const fieldName = e.target.name
-        setdata(existingValues => ({
-            ...existingValues,
-            [fieldName]: e.target.value,
-        }))
+    const handleChange = ({ currentTarget: input }) => {
+        setData({ ...data, [input.name]: input.value });
+    };
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        axios.post('http://localhost:8000/api/users', data)
+            .then(res => {
+                setsuccess(res.data)
+                console.log(res.data);
+                navigate('/login')
+            })
+            .catch(errors => seterror(errors))
     }
 
-    const handlePost = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:3000/api/users', data)
-            .then(res => navigate('/login'))
-            .catch(res => console.log(res.data))
-    }
 
     return (
         <div className='register-container'>
@@ -35,18 +36,19 @@ const Register = () => {
                 <h1>Register</h1>
 
 
-                <form action="" onSubmit={handlePost}>
+                <form action="" onSubmit={handleRegister}>
                     <div>
+                        {error && <div className="error_msg"><h2>Email already exists</h2></div>}
                         <label htmlFor="">User Name</label> <br />
-                        <input type="text" name="username" value={data.username} onChange={updateName} placeholder='User name' />
+                        <input type="text" name="username" onChange={handleChange} placeholder='User name' />
                     </div>
                     <div>
                         <label htmlFor="">Email address</label> <br />
-                        <input placeholder='Enter email' value={data.email} onChange={updateName} type='email' name='email' />
+                        <input placeholder='Enter email' onChange={handleChange} type='email' name='email' />
                     </div>
                     <div>
                         <label htmlFor="">Password</label> <br />
-                        <input type="password" name="password" value={data.password} onChange={updateName} placeholder='Password' />
+                        <input type="password" autoComplete="current-password" name="password" onChange={handleChange} placeholder='Password' />
                     </div>
 
                     <button type="submit">Register</button>

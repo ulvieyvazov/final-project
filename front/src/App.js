@@ -26,6 +26,7 @@ import PowerTools from './components/Pages/Client/MegaMenu/PowerTools';
 import HandTools from './components/Pages/Client/MegaMenu/HandTools';
 import Reviews from './components/ShopData/Reviews';
 import PaymentForm from './components/Pages/Client/Payment/PaymentForm';
+import Billing from './components/Pages/Client/Billing';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || '[]')
 const cartWisFromLocalStorage = JSON.parse(localStorage.getItem("cartWis") || '[]')
@@ -103,6 +104,7 @@ function App() {
         <Route path='/adminnews' element={<AddNews />}></Route>
         <Route path='*' element={<Error404 />}></Route>
         <Route path='/payment' element={<PaymentForm/>}></Route>
+        <Route path='/billing' element={<Billing/>}></Route>
       </Routes>
       {/* <BackToTopButton /> */}
       <Footer />
