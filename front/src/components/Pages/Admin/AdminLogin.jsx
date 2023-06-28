@@ -33,10 +33,10 @@ const AdminLogin = () => {
     }
 
     return (
-        <div>
-            <div>
-                <div>
-                    <form onSubmit={handlePost}>
+        <div className='register-container'>
+            <div className='register-parent' style={{width: '30%'}}>
+                <div style={{width: '100%'}}>
+                    <form onSubmit={handlePost} style={{width: '100%'}}>
                         <h1>Login to Your Account</h1>
                         <input
                             value={data.email}
@@ -54,7 +54,7 @@ const AdminLogin = () => {
                             required
                             onChange={updateName}
                         />
-                        <button type="submit">
+                        <button type="submit" style={{width: '100%'}}>
                             Sign In
                         </button>
                     </form>

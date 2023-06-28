@@ -16,7 +16,7 @@ const Reviews = ({ addToCart }) => {
 
 
   const getData = async () => {
-    const res = await axios.get(`http://localhost:8080/comment/${params.id}`)
+    const res = await axios.get(`http://localhost:1000/comment/${params.id}`)
     setData(res.data)
   }
 
@@ -45,7 +45,7 @@ const Reviews = ({ addToCart }) => {
   const postProduct = async () => {
     const values = getValues()
 
-    await axios.post(`http://localhost:8080/comment`, {
+    await axios.post(`http://localhost:1000/comment`, {
       name: values.name,
       // rating: values.rating,
       comment: values.comment,
