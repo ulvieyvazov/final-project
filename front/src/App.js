@@ -27,6 +27,8 @@ import HandTools from './components/Pages/Client/MegaMenu/HandTools';
 import Reviews from './components/ShopData/Reviews';
 import PaymentForm from './components/Pages/Client/Payment/PaymentForm';
 import Billing from './components/Pages/Client/Billing';
+import Admin from './components/Pages/Admin/Admin';
+import AdminLogin from './components/Pages/Admin/AdminLogin';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || '[]')
 const cartWisFromLocalStorage = JSON.parse(localStorage.getItem("cartWis") || '[]')
@@ -35,6 +37,7 @@ function App() {
 
 
 
+  const [state, setState] = useState()
   const [showItem, setShowItem] = useState(false);
   const [cart, setCart] = useState(cartFromLocalStorage)
   const [cartWis, setCartWis] = useState(cartWisFromLocalStorage)
@@ -102,6 +105,8 @@ function App() {
         <Route path='/shop/product-details/:id/reviews' element={<Reviews addToCart={addToCart} />}></Route>
         <Route path='/adminproducts' element={<AdminProducts />}></Route>
         <Route path='/adminnews' element={<AddNews />}></Route>
+        <Route path='/admin' element={<Admin />}></Route>
+        <Route path='/adminlogin' element={<AdminLogin />}></Route>
         <Route path='/payment' element={<PaymentForm/>}></Route>
         <Route path='/billing' element={<Billing/>}></Route>
         <Route path='*' element={<Error404 />}></Route>
