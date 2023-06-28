@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { BillingSchema } from '../../../../ProductSchema/BillingSchema';
 import axios from 'axios';
+import { Navigate, useNavigate } from "react-router-dom"
 
 const Billing = () => {
 
@@ -14,6 +15,25 @@ const Billing = () => {
     //     setData(res.data)
     // }
 
+
+
+
+
+
+
+    const [state, setState] = useState({
+
+        fname: "",
+        lname: "",
+        // country: "",
+        address: "",
+        city: "",
+        phone: "",
+        notes: "",
+        suite: "",
+        state: "",
+
+    })
 
     const {
         register,
@@ -37,8 +57,11 @@ const Billing = () => {
             notes: values.notes,
             suite: values.suite,
             state: values.state,
-        })
+        },)
+
     }
+
+    const navigate = useNavigate()
 
     useEffect(() => {
     }, [])
@@ -120,7 +143,7 @@ const Billing = () => {
                         )}
                     </div>
 
-                    <button type='submit'>Order</button>
+                    <button type='submit'><a href="" onClick={() => navigate("/payment")}>Order</a></button>
                 </form>
 
             </div>

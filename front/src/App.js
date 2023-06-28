@@ -102,9 +102,9 @@ function App() {
         <Route path='/shop/product-details/:id/reviews' element={<Reviews addToCart={addToCart} />}></Route>
         <Route path='/adminproducts' element={<AdminProducts />}></Route>
         <Route path='/adminnews' element={<AddNews />}></Route>
-        <Route path='*' element={<Error404 />}></Route>
         <Route path='/payment' element={<PaymentForm/>}></Route>
         <Route path='/billing' element={<Billing/>}></Route>
+        <Route path='*' element={<Error404 />}></Route>
       </Routes>
       {/* <BackToTopButton /> */}
       <Footer />

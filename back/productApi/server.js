@@ -15,63 +15,45 @@ const ProductsSchema = new Schema(
     {
         img: {
             type: String,
-            require: true,
         },
         name: {
             type: String,
-            require: true,
         },
         innovation: {
             type: String,
-            require: true,
         },
         category: {
             type: String,
-            require: true,
         },
         detailimg: {
             type: String,
-            require: true,
         },
         rating: {
             type: Number,
-            require: true,
-        },
-        reviews: {
-            type: Number,
-            require: true,
         },
         description: {
             type: String,
-            require: true,
         },
         availability: {
             type: String,
-            require: true,
         },
         brand: {
             type: String,
-            require: true,
         },
         sku: {
             type: String,
-            require: true,
         },
         price: {
             type: String,
-            require: true,
         },
         discount: {
             type: Number,
-            require: true,
         },
         productfulldisc: {
             type: String,
-            require: true,
         },
         etiam1: {
             type: String,
-            require: true,
         },
         etiam2: {
             type: String,
@@ -111,22 +93,6 @@ const ProductsSchema = new Schema(
             require: true
         },
         height: {
-            type: String,
-            require: true
-        },
-        reviewsName: {
-            type: String,
-            require: true
-        },
-        reviewsrating: {
-            type: Number,
-            require: true
-        },
-        reviewsComment: {
-            type: String,
-            require: true
-        },
-        reviewsEmail: {
             type: String,
             require: true
         }

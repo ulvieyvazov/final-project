@@ -3,10 +3,12 @@ import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
 import "./index.scss"
 import Billing from '../Billing'
+import { useNavigate } from 'react-router-dom'
 
 const CartList = ({ cart, removeFromCart }) => {
 
 
+    const navigate = useNavigate()
     const [CART, setCART] = useState([])
 
 
@@ -77,7 +79,7 @@ const CartList = ({ cart, removeFromCart }) => {
                     (item.price * item.quantity).reduce((total, value) => total + value, 0)
                 ) */}
 
-                <Billing/>
+                <button onClick={()=> navigate('/billing')}>Order</button>
                 </div>
             </div>
         </div>

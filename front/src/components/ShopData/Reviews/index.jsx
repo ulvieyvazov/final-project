@@ -16,7 +16,7 @@ const Reviews = ({ addToCart }) => {
 
 
   const getData = async () => {
-    const res = await axios.get(`http://localhost:8080/comment`)
+    const res = await axios.get(`http://localhost:8080/comment/${params.id}`)
     setData(res.data)
   }
 
@@ -31,6 +31,7 @@ const Reviews = ({ addToCart }) => {
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
+
 
   const {
     register,
@@ -49,6 +50,7 @@ const Reviews = ({ addToCart }) => {
       // rating: values.rating,
       comment: values.comment,
       email: values.email,
+      _id: params.id
     })
   }
 
@@ -67,20 +69,20 @@ const Reviews = ({ addToCart }) => {
 
             <div className='reviews-top'>
               {
-                data.id === params._id ? <div>
 
+                <div>
                   <h3>{data.name}</h3>
                   <p>{data.comment}</p>
                   <p>{data.email}</p>
-                  {/* <Box
+                </div>
+
+                /* <Box
                   sx={{
                     '& > legend': { mt: 5 },
                   }}
                 >
                 </Box>
                 <Rating name="read-only" value={data.rating} readOnly /> */}
-                </div> : ""
-              }
             </div>
 
 

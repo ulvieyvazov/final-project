@@ -38,7 +38,7 @@ const BillingSchema = new Schema(
             require: true,
         },
         phone: {
-            type: String,
+            type: Number,
             require: true,
         },
         notes: {

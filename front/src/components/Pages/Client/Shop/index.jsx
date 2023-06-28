@@ -99,7 +99,7 @@ const Shop = ({ addToCart, addToWis }) => {
                         </Box>
 
                         <div className='shop-search' style={{ display: 'flex' }}>
-                            <input type="text" st placeholder='Search Product' value={value} onChange={(e) => setValue(e.target.value)} />
+                            <input type="text" placeholder='Search Product' value={value} onChange={(e) => setValue(e.target.value)} />
                             <IoMdSearch className='shop-icon' />
                         </div>
                     </div>

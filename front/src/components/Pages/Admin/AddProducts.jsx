@@ -29,7 +29,6 @@ const AdminProducts = () => {
         innovation: "",
         category: "",
         rating: "",
-        reviews: "",
         description: "",
         availability: "",
         brand: "",
@@ -75,7 +74,6 @@ const AdminProducts = () => {
             innovation: "",
             category: "",
             rating: "",
-            reviews: "",
             description: "",
             availability: "",
             brand: "",
@@ -107,7 +105,6 @@ const AdminProducts = () => {
             innovation: values.innovation,
             category: values.category,
             rating: values.rating,
-            reviews: values.reviews,
             description: values.description,
             availability: values.availability,
             brand: values.brand,
@@ -276,8 +273,6 @@ const AdminProducts = () => {
 
                                         {d.discount ? <h3 style={{ color: 'red', fontSize: '20px' }}>${d.discount}.00</h3> : ""}
                                         
-                                        <p>{d.material}</p>
-                                        <p>{d.engine}</p>
                                     </div>
 
                                 </div>
