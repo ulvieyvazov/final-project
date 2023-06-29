@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Admin from '.'
 
 const AdminHome = () => {
 
@@ -18,6 +19,17 @@ const AdminHome = () => {
         console.log(res.data);
     }
 
+    const [datac, setDatac] = useState([])
+    const getDatac = async () => {
+        const res = await axios.get("http://localhost:1000/comment")
+        setDatac(res.data)
+    }
+
+
+    useEffect(() => {
+        getDatac()
+    }, [])
+
     const deleteData = async (id) => {
         await axios.delete(`http://localhost:9090/billing/${id}`);
         await getDataor();
@@ -31,35 +43,46 @@ const AdminHome = () => {
     }, [])
 
     return (
-        <div style={{ width: '80%', margin: '0 auto', display: 'flex', justifyContent: 'space-between' }}>
-            <div className='admin-hom'>
-                <p>Total Products</p>
-                <h3>
-                    {
-                        data.length
-                    }
-                </h3>
-            </div>
-            <div className='admin-hom'>
-                <p>Total order</p>
-                <h3>
-                    {
-                        dataor.length
-                    }
-                </h3>
-            </div>
+        <>
+        <Admin/>
+            <div style={{ width: '80%', margin: '0 auto', display: 'flex', justifyContent: 'space-between' }}>
+                <div className='admin-hom'>
+                    <p>Total Products</p>
+                    <h3>
+                        {
+                            data.length
+                        }
+                    </h3>
+                </div>
+                <div className='admin-hom'>
+                    <p>Total order</p>
+                    <h3>
+                        {
+                            dataor.length
+                        }
+                    </h3>
+                </div>
+                <div className='admin-hom'>
+                    <p>Total comment</p>
+                    <h3>
+                        {
+                            datac.length
+                        }
+                    </h3>
+                </div>
 
-            <div>
-                {
-                    dataor.map((d) => (
-                        <div>
-                            <p>{d.lname}</p>
-                            <button onClick={() => deleteData(d._id)}>delete</button>
-                        </div>
-                    ))
-                }
+                <div>
+                    {
+                        dataor.map((d) => (
+                            <div>
+                                <p>{d.lname}</p>
+                                <button onClick={() => deleteData(d._id)}>delete</button>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -25,7 +25,7 @@ const Billing = () => {
 
         fname: "",
         lname: "",
-        // country: "",
+        country: "",
         address: "",
         city: "",
         phone: "",
@@ -50,7 +50,7 @@ const Billing = () => {
         await axios.post("http://localhost:9090/billing", {
             fname: values.fname,
             lname: values.lname,
-            // country: values.country,
+            country: values.country,
             address: values.address,
             city: values.city,
             phone: values.phone,
@@ -89,19 +89,6 @@ const Billing = () => {
                             )}
                         </div>
                     </div>
-
-                    {/* <div>
-                        <select style={{ width: '100%', padding: '5px 0', fontSize: '18px' }} name="" id="" >
-                            <option value="" {...register("country")}>Select a country...</option>
-                            <option value="" {...register("country")}>Russia</option>
-                            <option value="" {...register("country")}>Azerbaijan</option>
-                            <option value="" {...register("country")}>Italia</option>
-                            <option value="" {...register("country")}>France</option>
-                            {errors.country?.message && (
-                                <p style={{ color: "red" }}>{errors.country?.message}</p>
-                            )}
-                        </select>
-                    </div> */}
 
                     <div>
                         <label htmlFor="">Street Address</label>
@@ -143,7 +130,7 @@ const Billing = () => {
                         )}
                     </div>
 
-                    <button type='submit'><a href="" onClick={() => navigate("/payment")}>Order</a></button>
+                    <button type='submit'>Order</button>
                 </form>
 
             </div>

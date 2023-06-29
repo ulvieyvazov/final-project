@@ -21,7 +21,7 @@ const Admin = () => {
         <div className='admin-das-header'>
           <div className='admin-das-head'>
             <ul>
-              <li>Dashboard</li>
+              <li onClick={()=> navigate('/adminhome')}>Dashboard</li>
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                 <InputLabel id="demo-select-small-label">Add</InputLabel>
                 <Select
@@ -37,7 +37,7 @@ const Admin = () => {
                   <MenuItem value={30}>All-Comment</MenuItem>
                 </Select>
               </FormControl>
-              <li>Orders</li>
+              <li onClick={()=> navigate('/adminorder')}>Orders</li>
             </ul>
           </div>
         </div>

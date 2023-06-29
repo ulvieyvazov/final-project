@@ -3,7 +3,6 @@ import * as yup from 'yup';
 export const ProductSchema = yup.object().shape({
     name: yup.string(),
     price: yup.number(),
-    discount: yup.number(),
     img: yup.string(),
     specification: yup.string(),
     engine: yup.string(),

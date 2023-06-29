@@ -72,7 +72,7 @@ const CartList = ({ cart, removeFromCart }) => {
                 <div style={{ fontSize: '23px', margin: '20px 5px' }}> Total:
                     <span>$
                         {
-                            CART.map((item) => item.price * item.quantity).reduce(((total, value) => total + value, 0))
+                            CART.map((item) => item.price * item.quantity).reduce((total, value) => total + value, 0)
                         }
                     </span>
                     {/* CART.map((item)=> item.discount ? (item.discount * item.quantity).reduce((total, value) => total + value, 0) :

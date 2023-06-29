@@ -48,6 +48,7 @@ const ProductsSchema = new Schema(
         },
         discount: {
             type: Number,
+            require: true
         },
         productfulldisc: {
             type: String,

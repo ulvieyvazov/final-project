@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import "./index.scss"
 import { NewsSchema } from '../../../ProductSchema/NewsSchema';
+import Admin from './AdminDasboard';
 
 const AddNews = () => {
 
@@ -14,7 +15,7 @@ const AddNews = () => {
     const [data, setData] = useState([])
     const getData = async () => {
         const res = await axios.get("http://localhost:4040/news")
-        setData(res.data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase())));
+        setData(res.data);
     };
 
     const [state, setState] = useState({
@@ -86,87 +87,92 @@ const AddNews = () => {
     }, [value])
 
     return (
-        <div className='admin-container'>
-            <div className="admin-parent">
+        <>
+
+        <Admin/>
+
+            <div className='admin-container'>
+                <div className="admin-parent">
 
 
-                <div style={{ width: '100%', display: 'flex' }}>
-                    <form action="" style={{ width: '100%', margin: '0 auto' }} onSubmit={handleSubmit(postNews)}>
-                        <Box
-                            display={'flex'}
-                            flexWrap={'wrap'}
-                            component="form"
-                            sx={{
-                                '& > :not(style)': { m: 1, width: '25ch' },
-                            }}
-                            noValidate
-                            autoComplete="off"
-                        >
-                            <div>
-                                <TextField id="outlined-basic" label="img" variant="outlined" {...register("img")} onChange={handleChange} value={state.img} />
-                                {errors.img?.message && (
-                                    <p style={{ color: "red" }}>{errors.img?.message}</p>
-                                )}
-                            </div>
-                            <div>
-                                <TextField id="outlined-basic" label="info" variant="outlined" {...register("info")} onChange={handleChange} value={state.info} />
-                                {errors.info?.message && (
-                                    <p style={{ color: "red" }}>{errors.info?.message}</p>
-                                )}
-                            </div>
-                            <div>
-                                <TextField id="outlined-basic" label="date" variant="outlined" {...register("date")} onChange={handleChange} value={state.date} />
-                                {errors.date?.message && (
-                                    <p style={{ color: "red" }}>{errors.date?.message}</p>
-                                )}
-                            </div>
-                            <div>
-                                <TextField id="outlined-basic" label="title" variant="outlined" {...register("title")} onChange={handleChange} value={state.title} />
-                                {errors.title?.message && (
-                                    <p style={{ color: "red" }}>{errors.title?.message}</p>
-                                )}
-                            </div>
-                            <div>
-                                <TextField id="outlined-basic" label="disc" variant="outlined" {...register("disc")} onChange={handleChange} value={state.disc} />
-                                {errors.disc?.message && (
-                                    <p style={{ color: "red" }}>{errors.disc?.message}</p>
-                                )}
-                            </div>
-                        </Box>
-
-                        <button type='submit'>Add</button>
-                        <button onClick={updateData}>update</button>
-                        <input className='search' type="text" placeholder='Search blog' value={value} onChange={(e) => setValue(e.target.value)} />
-                    </form>
-
-                </div>
-
-
-
-                <div className='admin-card'>
-                    {
-                        data.map((d) => (
-                            <div className='featured-card' style={{height: '400px'}} key={d._id}>
-                                <div className='post-left1'>
-                                    <img src={d.img} alt="" />
-
-                                    <div className='post-left1-text'>
-                                        <span>{d.info}</span>
-                                        <span>{d.date}</span>
-
-                                        <h3>{d.title}</h3>
-                                        <p> {d.disc}</p>
-
-                                    </div>
+                    <div style={{ width: '100%', display: 'flex' }}>
+                        <form action="" style={{ width: '100%', margin: '0 auto' }} onSubmit={handleSubmit(postNews)}>
+                            <Box
+                                display={'flex'}
+                                flexWrap={'wrap'}
+                                component="form"
+                                sx={{
+                                    '& > :not(style)': { m: 1, width: '25ch' },
+                                }}
+                                noValidate
+                                autoComplete="off"
+                            >
+                                <div>
+                                    <TextField id="outlined-basic" label="img" variant="outlined" {...register("img")} onChange={handleChange} value={state.img} />
+                                    {errors.img?.message && (
+                                        <p style={{ color: "red" }}>{errors.img?.message}</p>
+                                    )}
                                 </div>
-                                <button onClick={() => deleteData(d._id)}>delete</button>
-                                <button onClick={() => editClick(d)}>edit</button>
-                            </div>
-                        ))
-                    }
+                                <div>
+                                    <TextField id="outlined-basic" label="info" variant="outlined" {...register("info")} onChange={handleChange} value={state.info} />
+                                    {errors.info?.message && (
+                                        <p style={{ color: "red" }}>{errors.info?.message}</p>
+                                    )}
+                                </div>
+                                <div>
+                                    <TextField id="outlined-basic" label="date" variant="outlined" {...register("date")} onChange={handleChange} value={state.date} />
+                                    {errors.date?.message && (
+                                        <p style={{ color: "red" }}>{errors.date?.message}</p>
+                                    )}
+                                </div>
+                                <div>
+                                    <TextField id="outlined-basic" label="title" variant="outlined" {...register("title")} onChange={handleChange} value={state.title} />
+                                    {errors.title?.message && (
+                                        <p style={{ color: "red" }}>{errors.title?.message}</p>
+                                    )}
+                                </div>
+                                <div>
+                                    <TextField id="outlined-basic" label="disc" variant="outlined" {...register("disc")} onChange={handleChange} value={state.disc} />
+                                    {errors.disc?.message && (
+                                        <p style={{ color: "red" }}>{errors.disc?.message}</p>
+                                    )}
+                                </div>
+                            </Box>
+
+                            <button type='submit'>Add</button>
+                            <button onClick={updateData}>update</button>
+                            {/* <input className='search' type="text" placeholder='Search blog' value={value} onChange={(e) => setValue(e.target.value)} /> */}
+                        </form>
+
+                    </div>
+
+
+
+                    <div className='admin-card'>
+                        {
+                            data.map((d) => (
+                                <div className='featured-card' style={{ height: '400px' }} key={d._id}>
+                                    <div className='post-left1'>
+                                        <img src={d.img} alt="" />
+
+                                        <div className='post-left1-text'>
+                                            <span>{d.info}</span>
+                                            <span>{d.date}</span>
+
+                                            <h3>{d.title}</h3>
+                                            <p> {d.disc}</p>
+
+                                        </div>
+                                    </div>
+                                    <button onClick={() => deleteData(d._id)}>delete</button>
+                                    <button onClick={() => editClick(d)}>edit</button>
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
