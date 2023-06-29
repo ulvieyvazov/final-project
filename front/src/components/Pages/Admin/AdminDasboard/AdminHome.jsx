@@ -23,10 +23,24 @@ const AdminHome = () => {
         setDatac(res.data)
     }
 
-
     useEffect(() => {
         getDatac()
     }, [])
+
+
+
+    const [datam, setDatam] = useState([])
+    const getDatam = async () => {
+        const res = await axios.get("http://localhost:1000/comment")
+        setDatam(res.data)
+    }
+
+    useEffect(() => {
+        getDatam()
+    }, [])
+    
+
+
     const [datau, setDatau] = useState([])
     const getDatau = async () => {
         const res = await axios.get("http://localhost:8000/api/users/login")
@@ -84,6 +98,14 @@ const AdminHome = () => {
                     <h3>
                         {
                             datau.length
+                        }
+                    </h3>
+                </div>
+                <div className='admin-hom'>
+                    <p>Total message</p>
+                    <h3>
+                        {
+                            datam.length
                         }
                     </h3>
                 </div>

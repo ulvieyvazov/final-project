@@ -26,7 +26,7 @@ const AdminLogin = () => {
         axios.post('http://localhost:3000/api/users/login', data)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
-                navigate('/admin')
+                navigate('/adminhome')
 
             })
             .catch(res => console.log(res.data))

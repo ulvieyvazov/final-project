@@ -26,6 +26,8 @@
     font-size: 15px;
 }
 
-.reviews-top{
-    width: 60%;
+.reviews .reviews-top{
+    margin: 50px 0;
+    width: 40%;
+    border: 1px solid black;
 }

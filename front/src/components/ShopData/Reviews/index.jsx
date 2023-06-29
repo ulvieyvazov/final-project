@@ -73,7 +73,7 @@ const Reviews = ({ addToCart }) => {
                 <div>
                   <h3>{data.name}</h3>
                   <p>{data.comment}</p>
-                  <p>{data.email}</p>
+                  {/* <p>{data.email}</p> */}
                 </div>
 
                 /* <Box
@@ -103,6 +103,8 @@ const Reviews = ({ addToCart }) => {
                       <p style={{ color: "red" }}>{errors.rating?.message}</p>
                     )}
                   </div> */}
+
+
                   <div className='contact-input'>
                     <label htmlFor="">Your Name</label> <br />
                     <input type="text" name='name' placeholder='Your Name' {...register("name")} onChange={handleChange} value={state.name} />
@@ -118,6 +120,8 @@ const Reviews = ({ addToCart }) => {
                     )}
                   </div>
                 </div>
+
+                {/* <input type="number" max={5} /> */}
 
                 <div className='contact-input' style={{ width: '100%' }}>
                   <label htmlFor="">Message</label> <br />

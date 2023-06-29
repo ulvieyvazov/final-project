@@ -1,7 +1,34 @@
 import React from 'react'
 import "./index.scss"
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { MessageSchema } from '../../../../ProductSchema/MessageSchema';
+import axios from 'axios';
 
 const Contact = () => {
+
+
+    const {
+        register,
+        getValues,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        resolver: yupResolver(MessageSchema),
+    });
+
+    const postProduct = async () => {
+        const values = getValues()
+
+        await axios.post("http://localhost:9900/message", {
+            name: values.name,
+            email: values.email,
+            message: values.message,
+            subject: values.subject,
+        },)
+
+    }
+
     return (
         <div style={{ width: '100%', margin: '0 auto' }}>
             <iframe style={{ width: '100%', height: '500px' }} class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Baku&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
@@ -30,29 +57,41 @@ const Contact = () => {
                         <div className='contact-right'>
                             <h2>Leave us a Message</h2>
 
-                            <form action="">
+                            <form action="" onSubmit={handleSubmit(postProduct)}>
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div className='contact-input'>
                                         <label htmlFor="">Your Name</label> <br />
-                                        <input type="text" placeholder='Your Name' />
+                                        <input type="text" placeholder='Your Name' {...register("name")} />
+                                        {errors.name?.message && (
+                                            <p style={{ color: "red" }}>{errors.name?.message}</p>
+                                        )}
                                     </div>
                                     <div className='contact-input'>
                                         <label htmlFor="">Email</label> <br />
-                                        <input type="email" placeholder='Email' />
+                                        <input type="email" placeholder='Email' {...register("email")} />
+                                        {errors.email?.message && (
+                                            <p style={{ color: "red" }}>{errors.email?.message}</p>
+                                        )}
                                     </div>
                                 </div>
 
                                 <div className='contact-input' style={{ width: '100%', margin: '25px 0' }}>
                                     <label htmlFor="">Subject</label> <br />
-                                    <input style={{ width: '95%' }} type="text" placeholder='Subject' />
+                                    <input style={{ width: '95%' }} type="text" placeholder='Subject' {...register("subject")} />
+                                    {errors.subject?.message && (
+                                        <p style={{ color: "red" }}>{errors.subject?.message}</p>
+                                    )}
                                 </div>
 
                                 <div className='contact-input' style={{ width: '100%' }}>
                                     <label htmlFor="">Message</label> <br />
-                                    <textarea style={{ width: '95%', height: '120px' }} id="subject" name="message"></textarea>
+                                    <textarea style={{ width: '95%', height: '120px' }} id="subject" name="message" {...register("message")} ></textarea>
+                                    {errors.message?.message && (
+                                        <p style={{ color: "red" }}>{errors.message?.message}</p>
+                                    )}
                                 </div>
 
-                                <button>Send Message</button>
+                                <button type='submit'>Send Message</button>
                             </form>
                         </div>
                     </div>

@@ -23,7 +23,7 @@ const Admin = () => {
             <ul>
               <li onClick={()=> navigate('/adminhome')}>Dashboard</li>
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                <InputLabel id="demo-select-small-label">Add</InputLabel>
+                <InputLabel id="demo-select-small-label">All</InputLabel>
                 <Select
                   labelId="demo-select-small-label"
                   id="demo-select-small"
@@ -35,6 +35,7 @@ const Admin = () => {
                   <MenuItem value={10} onClick={()=> navigate("/adminproducts")}>All-Products</MenuItem>
                   <MenuItem value={20} onClick={()=> navigate("/adminnews")}>All-News</MenuItem>
                   <MenuItem value={30} onClick={()=> navigate("/admincomment")}>All-Comment</MenuItem>
+                  <MenuItem value={40} onClick={()=> navigate("/adminmessage")}>All-Message</MenuItem>
                 </Select>
               </FormControl>
               <li onClick={()=> navigate('/adminorder')}>Orders</li>

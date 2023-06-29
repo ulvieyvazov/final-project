@@ -32,6 +32,7 @@ import AdminLogin from './components/Pages/Admin/AdminLogin';
 import AdminHome from './components/Pages/Admin/AdminDasboard/AdminHome';
 import AdminOrder from './components/Pages/Admin/AdminDasboard/AdminOrder';
 import AdminComment from './components/Pages/Admin/AdminDasboard/AdminComment';
+import AdminMessage from './components/Pages/Admin/AdminDasboard/AdminMessage';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || '[]')
 const cartWisFromLocalStorage = JSON.parse(localStorage.getItem("cartWis") || '[]')
@@ -113,6 +114,7 @@ function App() {
         <Route path='/adminhome' element={<AdminHome />}></Route>
         <Route path='/adminorder' element={<AdminOrder />}></Route>
         <Route path='/admincomment' element={<AdminComment />}></Route>
+        <Route path='/adminmessage' element={<AdminMessage />}></Route>
         <Route path='/payment' element={<PaymentForm />}></Route>
         <Route path='/billing' element={<Billing count={cart.length} cart={cart} removeFromCart={removeFromCart} />}></Route>
         <Route path='*' element={<Error404 />}></Route>
