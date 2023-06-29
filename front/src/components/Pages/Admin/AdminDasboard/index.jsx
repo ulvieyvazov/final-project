@@ -34,7 +34,7 @@ const Admin = () => {
                 >
                   <MenuItem value={10} onClick={()=> navigate("/adminproducts")}>All-Products</MenuItem>
                   <MenuItem value={20} onClick={()=> navigate("/adminnews")}>All-News</MenuItem>
-                  <MenuItem value={30}>All-Comment</MenuItem>
+                  <MenuItem value={30} onClick={()=> navigate("/admincomment")}>All-Comment</MenuItem>
                 </Select>
               </FormControl>
               <li onClick={()=> navigate('/adminorder')}>Orders</li>

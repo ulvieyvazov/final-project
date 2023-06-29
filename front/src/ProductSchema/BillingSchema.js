@@ -7,7 +7,6 @@ export const BillingSchema = yup.object().shape({
     address: yup.string().required(),
     city: yup.string().required(),
     phone: yup.number(),
-    notes: yup.string(),
     suite: yup.string(),
     state: yup.string()
 })

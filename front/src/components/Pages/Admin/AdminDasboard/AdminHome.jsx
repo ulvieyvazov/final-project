@@ -9,14 +9,12 @@ const AdminHome = () => {
     const getData = async () => {
         const res = await axios.get("http://localhost:5050/products")
         setData(res.data)
-        console.log(res.data);
     }
     const [dataor, setDataor] = useState([])
 
     const getDataor = async () => {
         const res = await axios.get("http://localhost:9090/billing")
         setDataor(res.data)
-        console.log(res.data);
     }
 
     const [datac, setDatac] = useState([])
@@ -28,6 +26,17 @@ const AdminHome = () => {
 
     useEffect(() => {
         getDatac()
+    }, [])
+    const [datau, setDatau] = useState([])
+    const getDatau = async () => {
+        const res = await axios.get("http://localhost:8000/api/users/login")
+        setDatau(res.data)
+        console.log(res.data);
+    }
+
+
+    useEffect(() => {
+        getDatau()
     }, [])
 
     const deleteData = async (id) => {
@@ -67,6 +76,14 @@ const AdminHome = () => {
                     <h3>
                         {
                             datac.length
+                        }
+                    </h3>
+                </div>
+                <div className='admin-hom'>
+                    <p>Total users</p>
+                    <h3>
+                        {
+                            datau.length
                         }
                     </h3>
                 </div>

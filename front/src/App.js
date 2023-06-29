@@ -113,11 +113,11 @@ function App() {
         <Route path='/adminhome' element={<AdminHome />}></Route>
         <Route path='/adminorder' element={<AdminOrder />}></Route>
         <Route path='/admincomment' element={<AdminComment />}></Route>
-        <Route path='/payment' element={<PaymentForm/>}></Route>
-        <Route path='/billing' element={<Billing/>}></Route>
+        <Route path='/payment' element={<PaymentForm />}></Route>
+        <Route path='/billing' element={<Billing count={cart.length} cart={cart} removeFromCart={removeFromCart} />}></Route>
         <Route path='*' element={<Error404 />}></Route>
       </Routes>
-      {/* <BackToTopButton /> */}
+      <BackToTopButton />
       <Footer />
     </>
   );

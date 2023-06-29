@@ -5,8 +5,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { BillingSchema } from '../../../../ProductSchema/BillingSchema';
 import axios from 'axios';
 import { Navigate, useNavigate } from "react-router-dom"
+import { Box, Rating } from '@mui/material';
+import PaymentForm from '../Payment/PaymentForm';
 
-const Billing = () => {
+const Billing = ({ cart, removeFromCart, count }) => {
 
 
     // const [data, setData] = useState([])
@@ -15,7 +17,16 @@ const Billing = () => {
     //     setData(res.data)
     // }
 
+    const [CART, setCART] = useState([])
 
+
+    // const removeFromCart = (ca) => {
+    //     setCART(CART.filter((product) => product !== ca))
+    // }
+
+    useEffect(() => {
+        setCART(cart)
+    }, [cart])
 
 
 
@@ -69,9 +80,9 @@ const Billing = () => {
 
     return (
         <div className='billing-container'>
-            <div className='billing-parent'>
-                <h1>Billing details</h1>
+            <div className='billing-parent' style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <form action="" onSubmit={handleSubmit(postProduct)}>
+                    <h1>Shipping</h1>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <div style={{ width: '45%' }}>
                             <label htmlFor="">First Name</label>
@@ -130,9 +141,63 @@ const Billing = () => {
                         )}
                     </div>
 
-                    <button type='submit'>Order</button>
+                    <div>
+                        <label htmlFor="">notes</label>
+                        <textarea type="text" name='notes' style={{ width: '100%', height: '70px' }} {...register("notes")} />
+                        {errors.notes?.message && (
+                            <p style={{ color: "red" }}>{errors.notes?.message}</p>
+                        )}
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <button type='submit'>Send</button>
+                        <button type='submit'>Order</button>
+                    </div>
                 </form>
 
+
+
+                <div>
+                    {
+
+                        CART.map((ca, caIndex) => (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                                <div style={{ display: 'flex', width: '30%' }}>
+                                    <img src={ca.img} style={{ width: '100px' }} alt="" />
+                                    <div style={{ width: '100%' }}>
+                                        <p>{ca.name}</p>
+                                        <Box
+                                            sx={{
+                                                '& > legend': { mt: 5 },
+                                            }}
+                                        >
+                                            <Rating name="read-only" value={ca.rating} readOnly />
+                                        </Box>
+                                    </div>
+                                </div>
+                                <div style={{ display: 'flex', marginTop: '-25px', alignItems: 'center' }}>
+                                    <p style={{ padding: '0 11px', width: '150px', margin: '0 auto' }}>${ca.discount ? ca.discount * ca.quantity : ca.price * ca.quantity}.00</p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                    
+                    <div>Shipping: ${count * 25}</div>
+
+                    <div style={{ fontSize: '23px', margin: '20px 5px' }}> Total:
+                        <span>$
+                            {
+                                CART.map((item) => item.price * item.quantity).reduce((total, value) => total + value, count * 25)
+                            }
+                        </span>
+                        {/* CART.map((item)=> item.discount ? (item.discount * item.quantity).reduce((total, value) => total + value, 0) :
+                        (item.price * item.quantity).reduce((total, value) => total + value, 0)
+                        ) */}
+                    </div>
+                    
+                    <PaymentForm/>
+
+                </div>
             </div>
         </div>
     )

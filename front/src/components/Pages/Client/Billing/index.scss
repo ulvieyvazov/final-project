@@ -4,19 +4,41 @@
     margin: 0 auto;
 
     .billing-parent {
-        width: 40%;
+        width: 80%;
         margin: 0 auto;
         padding-top: 40px;
 
-        input{
-            width: 100%;
-            padding: 3px 4px;
-            font-size: 19px;
-            outline-color: blue;
-        }
+        form {
+            width: 40%;
 
-        div{
-            margin: 14px 0;
+            input {
+                width: 100%;
+                padding: 3px 4px;
+                font-size: 19px;
+                outline-color: blue;
+            }
+
+            div {
+                margin: 14px 0;
+            }
+
+            button {
+                padding: 8px 17px;
+                width: 35%;
+                font-size: 17px;
+                background-color: #ffd333;
+                color: #3d464d;
+                border: 0;
+                cursor: pointer;
+                transition: all 0.5s;
+                border-radius: 3px;
+                margin-top: 15px;
+            }
+
+            button:hover {
+                background-color: #3d464d;
+                color: #fff;
+            }
         }
     }
 }

@@ -77,9 +77,9 @@ const CartList = ({ cart, removeFromCart }) => {
                     </span>
                     {/* CART.map((item)=> item.discount ? (item.discount * item.quantity).reduce((total, value) => total + value, 0) :
                     (item.price * item.quantity).reduce((total, value) => total + value, 0)
-                ) */}
+                    ) */}
 
-                <button onClick={()=> navigate('/billing')}>Order</button>
+                    <button onClick={()=> navigate('/billing')}>Order</button>
                 </div>
             </div>
         </div>

@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
+import Admin from '.';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -60,37 +61,37 @@ const AdminComment = () => {
     }, [])
 
     return (
-        <div style={{width: '60%', margin: '0 auto', padding: '40px 0'}}>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <StyledTableCell>Name</StyledTableCell>
-                            <StyledTableCell align="right">Email</StyledTableCell>
-                            <StyledTableCell align="right">Comment</StyledTableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {datap.map((d) => (
-                            <StyledTableRow key={d.name}>
-                                <StyledTableCell component="th" scope="row">
-                                    {d.name}
-                                </StyledTableCell>
-                                <StyledTableCell align="right">{d.email}</StyledTableCell>
-                                <StyledTableCell align="right">{d.comment}</StyledTableCell>
-                            </StyledTableRow>
-                            
-                        ))}
+        <>
 
-                        {
-                            data.map((d)=>(
-                                d._id === datap._id ? <img src={d.img} alt="" /> : ""
-                            ))
-                        }
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
+        <Admin/>
+
+            <div style={{ width: '60%', margin: '0 auto', padding: '40px 0' }}>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell>Name</StyledTableCell>
+                                <StyledTableCell align="right">Email</StyledTableCell>
+                                <StyledTableCell align="right">Comment</StyledTableCell>
+                                <StyledTableCell align="right">Product id</StyledTableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {datap.map((d) => (
+                                <StyledTableRow key={d.name}>
+                                    <StyledTableCell component="th" scope="row">
+                                        {d.name}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">{d.email}</StyledTableCell>
+                                    <StyledTableCell align="right">{d.comment}</StyledTableCell>
+                                    <StyledTableCell align="right">{d._id}</StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div>
+        </>
     )
 }
 
