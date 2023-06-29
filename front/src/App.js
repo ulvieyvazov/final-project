@@ -27,8 +27,9 @@ import HandTools from './components/Pages/Client/MegaMenu/HandTools';
 import Reviews from './components/ShopData/Reviews';
 import PaymentForm from './components/Pages/Client/Payment/PaymentForm';
 import Billing from './components/Pages/Client/Billing';
-import Admin from './components/Pages/Admin/Admin';
+import Admin from './components/Pages/Admin/AdminDasboard/index';
 import AdminLogin from './components/Pages/Admin/AdminLogin';
+import AdminHome from './components/Pages/Admin/AdminDasboard/AdminHome';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || '[]')
 const cartWisFromLocalStorage = JSON.parse(localStorage.getItem("cartWis") || '[]')
@@ -107,6 +108,7 @@ function App() {
         <Route path='/adminnews' element={<AddNews />}></Route>
         <Route path='/admin' element={<Admin />}></Route>
         <Route path='/adminlogin' element={<AdminLogin />}></Route>
+        <Route path='/adminhome' element={<AdminHome />}></Route>
         <Route path='/payment' element={<PaymentForm/>}></Route>
         <Route path='/billing' element={<Billing/>}></Route>
         <Route path='*' element={<Error404 />}></Route>
