@@ -17,17 +17,50 @@
     padding: 15px 0;
 }
 
-.reviews .contact-right{
+.reviews .contact-right {
     width: 50%;
 }
 
-.contact-input input{
-    padding: 3px 5px;    
+.contact-input input {
+    padding: 3px 5px;
     font-size: 15px;
+    outline-color: #1c6ead;
+}
+.contact-input textarea {
+    outline-color: #1c6ead;
 }
 
-.reviews .reviews-top{
+.reviews .reviews-top {
     margin: 50px 0;
-    width: 40%;
-    border: 1px solid black;
+    width: 60%;
+    /* height: 200px; */
+    border: 1px solid #504f4f;
+}
+
+.reviews .contact-right{
+    padding-bottom: 50px;
+}
+
+.reviews .contact-right h3{
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.reviews .contact-right form label{
+    font-size: 18px;    
+}
+
+
+.reviews .contact-right button {
+    padding: 8px 17px;
+    width: 35%;
+    font-size: 17px;
+    background-color: #ffd333;
+    color: #3d464d;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 3px;
+    margin-top: 15px;
+
 }

@@ -89,7 +89,7 @@ const Reviews = ({ addToCart }) => {
             <div className='contact-right'>
               <h3>Write A Review</h3>
               <form action="" onSubmit={handleSubmit(postProduct)}>
-                <div style={{ display: 'flex', width: '100%', alignItems: 'center' }}>
+                <div style={{ display: 'flex', width: '90%', alignItems: 'center', justifyContent:  'space-between', marginBottom: '40px' }}>
                   {/* 
                   <div>
                     <select type="option" name='rating' {...register("rating")} onChange={handleChange} value={state.rating}>
