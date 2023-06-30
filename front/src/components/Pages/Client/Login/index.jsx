@@ -72,7 +72,7 @@ const Login = () => {
                         {error && <div>Email or Password invalid</div>}
                     </div>
 
-                    <button type="submit">Login</button>
+                    <button type="submit" onClick={()=> navigate('/')}>Login</button>
                 </form>
             </div>
         </div>

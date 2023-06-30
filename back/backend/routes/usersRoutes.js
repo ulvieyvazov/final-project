@@ -14,7 +14,6 @@ function useRouter(router) {
     router.get("/users", getUsersData);
     router.get("/users/:id", getUsersDataById);
     router.delete("/users/:id", deleteUserInfo);
-    router.post("/museums", createNewMuseumInfo);
     router.put("/users/:id", updateUsersData);
     router.post("/register", register);
     router.post("/login", login);

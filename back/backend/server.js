@@ -10,6 +10,7 @@ app.use(express.json({ limit: "20mb" }));
 app.use(cors({ credentials: true, origin: "http://localhost:3001" }));
 
 app.use('/api/users',require('./routes/AuthRoutes'))
+// app.use('/users',require('./routes/usersRoutes'))
 
 const port = 8000;
 app.listen(port, () => {

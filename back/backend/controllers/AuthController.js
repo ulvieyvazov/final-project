@@ -64,33 +64,48 @@ module.exports.register = async (req, res) => {
         const errors = handleErrors(err);
         res.json({ errors, created: false });
     }
+
+
+
+
 };
 
 
 
-// Login
+// // Login
+// module.exports.login = async (req, res) => {
+//     try {
+//         const { email, password } = req.body;
+//         const user = await userModel.findOne({ email: email });
+
+//         if (!user) {
+//             throw Error("User not found");
+//         }
+//         const passwordMatch = await bcrypt.compare(password, user.password);
+//         if (!passwordMatch) {
+//             throw Error("Incorrect password");
+//         }
+//         const token = createToken(user._id);
+
+//         res.cookie("jwt", token, {
+//             withCredentials: true,
+//             maxAge: maxAge * 1000,
+//         });
+//         res.status(200).json({ data: user, created: true });
+//     } catch (err) {
+//         console.log(err);
+//         const errors = handleErrors(err);
+//         res.json({ errors, created: false });
+//     }
+// };
+
+
 module.exports.login = async (req, res) => {
     try {
-        const { email, password } = req.body;
-        const user = await userModel.findOne({ email: email });
-
-        if (!user) {
-            throw Error("User not found");
-        }
-        const passwordMatch = await bcrypt.compare(password, user.password);
-        if (!passwordMatch) {
-            throw Error("Incorrect password");
-        }
-        const token = createToken(user._id);
-
-        res.cookie("jwt", token, {
-            withCredentials: true,
-            maxAge: maxAge * 1000,
-        });
-        res.status(200).json({ data: user, created: true });
-    } catch (err) {
-        console.log(err);
-        const errors = handleErrors(err);
-        res.json({ errors, created: false });
+        const users = await userModel.find();
+        res.status(200).json(users);
+        console.log("get users");
+    } catch (error) {
+        res.status(500).json({ message: error.message });
     }
 };

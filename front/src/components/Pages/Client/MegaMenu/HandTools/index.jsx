@@ -156,10 +156,6 @@ const HandTools = ({ addToCart, addToWis }) => {
                 </div> : ""
               ))
             }
-            <Stack spacing={2}>
-              <Pagination count={10} />
-
-            </Stack>
           </div>
         </div>
       </div>

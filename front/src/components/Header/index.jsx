@@ -82,7 +82,7 @@ const Header = (props, propsWi) => {
                         <li><NavLink to={'/about'}>About</NavLink></li>
                         <li><NavLink to={'/contact'}>Contacts</NavLink></li>
                         <li><NavLink to={'/shop'}>Shop</NavLink></li>
-                        <li>Account</li>
+                        <li><NavLink to={'/account'}>Account</NavLink></li>
                         <li><NavLink to={'/blog'}>Blog</NavLink></li>
                         <li><NavLink to={'/login'}>Login</NavLink></li>
                         <li><NavLink to={'/register'}>Register</NavLink></li>

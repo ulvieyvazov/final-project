@@ -43,6 +43,7 @@ const Shop = ({ addToCart, addToWis }) => {
         setData(res.data.filter((item) => item.name.toLowerCase().includes(value.toLocaleLowerCase())))
     }
 
+
     const handleSortA = () => {
         let sortData = []
 
@@ -83,7 +84,8 @@ const Shop = ({ addToCart, addToWis }) => {
         <div className='shop-container'>
             <div className='shop-parent'>
                 <div className='shop-left'>
-                </div>
+                    
+                </div>  
 
                 <div className='shop-right'>
                     <div className='shop-right-head'>

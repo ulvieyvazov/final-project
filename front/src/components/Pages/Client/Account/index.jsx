@@ -10,6 +10,7 @@ const Account = () => {
     const getData = async () => {
         const res = await axios.get("http://localhost:8000/api/users/login")
         setData(res.data)
+        console.log(data[0]);
     }
 
     useEffect(() => {
@@ -17,11 +18,15 @@ const Account = () => {
     }, [])
 
     return (
-        <div>
+        <div style={{width: '70%', margin: '0 auto', padding: '50px 0'}}>
+            <h1 style={{marginBottom: '15px'}}>Account</h1>
             {
-                <div>
-                    <p>{data.name}</p>
-                </div>
+                data.map((d) => (
+                    <div>
+                        <h3>Name: {d.username}</h3>
+                        <h4>Email: {d.email}</h4>
+                    </div>
+                ))
             }
         </div>
     )

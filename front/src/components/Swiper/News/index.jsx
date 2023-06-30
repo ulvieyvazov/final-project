@@ -41,8 +41,8 @@ export default function NewsSwiper() {
                 {
                     data.map((d) => (
                         <SwiperSlide>
-                            <div className='home-news-card'>
-                                <img src={d.img} alt="" onClick={() => navigate("/morenews")} />
+                            <div className='home-news-card' key={d._id}>
+                                <img src={d.img} alt="" onClick={() => navigate(`morenews/${d._id}`)} />
                                 <div className='home-news-card-text'>
                                     <h3>{d.title}</h3>
                                     <span>{d.date}</span>
