@@ -73,9 +73,9 @@ const Reviews = ({ addToCart }) => {
               {
 
                 <div>
-                  <h3>Name: {data.name}</h3>
-                  <p>Comment: {data.comment}</p>
-                  <a href={data.email}>{data.email}</a>
+                  <h3>{data.name}</h3>
+                  <p>{data.comment}</p>
+                  {/* <a href={data.email}>{data.email}</a> */}
                 </div>
 
                 /* <Box
