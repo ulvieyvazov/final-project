@@ -17,7 +17,9 @@ const Billing = ({ cart, removeFromCart, count }) => {
     //     setData(res.data)
     // }
 
+    const [open, setOpen] = useState(false)
     const [CART, setCART] = useState([])
+
 
 
     // const removeFromCart = (ca) => {
@@ -150,54 +152,10 @@ const Billing = ({ cart, removeFromCart, count }) => {
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <button type='submit'>Send</button>
-                        <button type='submit'>Order</button>
+                        <button type='submit' onClick={() => postProduct === true ? navigate('/payment') : ""}>Send</button>
                     </div>
+                    <button type='submit' onClick={() => navigate('/payment')}>Order</button>
                 </form>
-
-
-
-                <div>
-                    {
-
-                        CART.map((ca, caIndex) => (
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                                <div style={{ display: 'flex', width: '30%' }}>
-                                    <img src={ca.img} style={{ width: '100px' }} alt="" />
-                                    <div style={{ width: '100%' }}>
-                                        <p>{ca.name}</p>
-                                        <Box
-                                            sx={{
-                                                '& > legend': { mt: 5 },
-                                            }}
-                                        >
-                                            <Rating name="read-only" value={ca.rating} readOnly />
-                                        </Box>
-                                    </div>
-                                </div>
-                                <div style={{ display: 'flex', marginTop: '-25px', alignItems: 'center' }}>
-                                    <p style={{ padding: '0 11px', width: '150px', margin: '0 auto' }}>${ca.discount ? ca.discount * ca.quantity : ca.price * ca.quantity}.00</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                    
-                    <div>Shipping: ${count * 25}</div>
-
-                    <div style={{ fontSize: '23px', margin: '20px 5px' }}> Total:
-                        <span>$
-                            {
-                                CART.map((item) => item.price * item.quantity).reduce((total, value) => total + value, count * 25)
-                            }
-                        </span>
-                        {/* CART.map((item)=> item.discount ? (item.discount * item.quantity).reduce((total, value) => total + value, 0) :
-                        (item.price * item.quantity).reduce((total, value) => total + value, 0)
-                        ) */}
-                    </div>
-                    
-                    <PaymentForm/>
-
-                </div>
             </div>
         </div>
     )

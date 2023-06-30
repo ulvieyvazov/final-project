@@ -85,7 +85,7 @@
                 visibility: visible;
                 transform: translateY(0);
                 transition: var(--speed) ease;
-                z-index: 999;
+                z-index: 99999;
                 position: absolute;
                 top: 80px;
                 left: 50px;
@@ -269,4 +269,22 @@
             display: none !important;
         }
     }
+}
+
+
+
+
+
+
+
+@media (max-width: 422px) {
+    .header-top{
+        display: block !important;
+
+        .cos{
+            p{
+                text-align: start !important;
+            }
+        }
+    }    
 }

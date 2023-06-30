@@ -6,7 +6,7 @@
 }
 
 .reviews-parent {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     padding-top: 40px;
 }
@@ -53,7 +53,6 @@
 
 .reviews .contact-right button {
     padding: 8px 17px;
-    width: 35%;
     font-size: 17px;
     background-color: #ffd333;
     color: #3d464d;
@@ -62,5 +61,16 @@
     transition: all 0.5s;
     border-radius: 3px;
     margin-top: 15px;
+}
 
+
+
+@media (max-width: 560px) {
+    .reviews .contact-right form .rew-div{
+        display: block !important;
+    }
+    
+    .contact-input{
+        margin-bottom: 20px !important;
+    }
 }

@@ -11,12 +11,21 @@ import { useNavigate } from "react-router-dom"
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { AiFillHeart } from "react-icons/ai";
+import Slider, { Range } from 'rc-slider';
 
 
 
 const Shop = ({ addToCart, addToWis }) => {
 
     const [age, setAge] = React.useState('');
+    const [filter, setFilter] = useState(0)
+
+    useEffect(() => {
+        if (filter === 0) {
+
+        }
+
+    }, [filter])
 
     const handleChange = (event) => {
         setAge(event.target.value);
@@ -74,7 +83,6 @@ const Shop = ({ addToCart, addToWis }) => {
         <div className='shop-container'>
             <div className='shop-parent'>
                 <div className='shop-left'>
-
                 </div>
 
                 <div className='shop-right'>
@@ -104,6 +112,7 @@ const Shop = ({ addToCart, addToWis }) => {
                         </div>
                     </div>
                     <button style={{ padding: '5px 15px', cursor: 'pointer' }} onClick={handleSortPrice}>sort by price</button>
+                    {/* <input type="range" min='0' max='5000' step='1' value={filter} onChange={(e) => setFilter(e.target.value)} /> */}
 
                     <div className='shop-card-parent'>
                         {

@@ -69,7 +69,7 @@ const CartList = ({ cart, removeFromCart }) => {
                     ))
                 }
 
-                <div style={{ fontSize: '23px', margin: '20px 5px' }}> Total:
+                <div className='total-bill' style={{ fontSize: '23px', margin: '20px 5px' }}> Total:
                     <span>$
                         {
                             CART.map((item) => item.price * item.quantity).reduce((total, value) => total + value, 0)

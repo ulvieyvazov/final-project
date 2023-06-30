@@ -30,11 +30,11 @@ const Header = (props, propsWi) => {
     window.addEventListener("scroll", getFix)
 
     let menuRef = useRef();
+    let menuRefe = useRef();
 
     useEffect(() => {
         let handler = (e) => {
             if (!menuRef.current.contains(e.target)) {
-                setOpenM(false)
                 setOpen(false)
                 console.log(menuRef);
             }
@@ -44,6 +44,14 @@ const Header = (props, propsWi) => {
 
         return () => {
             document.removeEventListener("mousedown", handler)
+        }
+    })
+    useEffect(() => {
+        let handler = (e) => {
+            if (!menuRef.current.contains(e.target)) {
+                setOpenM(false)
+                console.log(menuRef);
+            }
         }
     })
 
@@ -99,7 +107,7 @@ const Header = (props, propsWi) => {
                     </div>
 
                     <div>
-                        <div ref={menuRef} className={`megamenu ${openM ? 'active' : 'inactive'}`}>
+                        <div ref={menuRefe} className={`megamenu ${openM ? 'active' : 'inactive'}`}>
                             <div>
                                 <h3 onClick={()=> navigate("/powertools")}>Power Tools</h3>
                                 <ul>

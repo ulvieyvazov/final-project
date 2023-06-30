@@ -32,36 +32,36 @@ const Specification = ({addToCart}) => {
                 {/* <div style={{width: '100%', backgroundColor: 'gray', height: '1px'}}></div> */}
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Material</p>
-                  <div>{data.material ? data.material : "There is no such data in this product"}</div>
+                  <div>{data.material ? data.material : "No information"}</div>
                 </div>
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Engine Type</p>
-                  <div>{data.engine ? data.engine : "There is no such data in this product"}</div>
+                  <div>{data.engine ? data.engine : "No information"}</div>
                 </div>
 
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Battery Voltage</p>
-                  <div>{data.batteryVolt ? data.batteryVolt : "There is no such data in this product"}</div>
+                  <div>{data.batteryVolt ? data.batteryVolt : "No information"}</div>
                 </div>
 
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Battery Type</p>
-                  <div>{data.batteryType ? data.batteryType : "There is no such data in this product"}</div>
+                  <div>{data.batteryType ? data.batteryType : "No information"}</div>
                 </div>
 
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Number of Speeds</p>
-                  <div>{data.speeds ? data.speeds : "There is no such data in this product"}</div>
+                  <div>{data.speeds ? data.speeds : "No information"}</div>
                 </div>
 
 
                 <div className='general-div' style={{ display: 'flex' }}>
                   <p>Weight</p>
-                  <div>{data.weight ? data.weight : "There is no such data in this product"} kg</div>
+                  <div>{data.weight ? data.weight : "No information"} kg</div>
                 </div>
 
               </div>
@@ -72,17 +72,17 @@ const Specification = ({addToCart}) => {
                 
                 <div className='dimensions-div' style={{display: 'flex'}}>
                   <p>Length</p>
-                  <div>{data.length ? <span>{data.length}sm</span> : "There is no such data in this product"} </div>
+                  <div>{data.length ? <span>{data.length}sm</span> : "No information"} </div>
                 </div>
 
                 <div className='dimensions-div' style={{display: 'flex'}}>
                   <p>Width</p>
-                  <div>{data.width ? <span>{data.width}sm</span> : "There is no such data in this product"} </div>
+                  <div>{data.width ? <span>{data.width}sm</span> : "No information"} </div>
                 </div>
                 
                 <div className='dimensions-div' style={{display: 'flex'}}>
                   <p>Height</p>
-                  <div>{data.height ? <span>{data.height}sm</span> : "There is no such data in this product"} </div>
+                  <div>{data.height ? <span>{data.height}sm</span> : "No information"} </div>
                 </div>
               </div>
             </div>

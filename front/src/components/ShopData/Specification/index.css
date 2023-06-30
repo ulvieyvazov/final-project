@@ -40,7 +40,7 @@
     border-top: 1px solid gray;
 }
 
-@media (max-width: 472px) {
+@media (max-width: 872px) {
     .general{
         width: 100% !important;
     }    
@@ -49,8 +49,8 @@
     }    
 }
 
-@media (max-width: 338px) {
+@media (max-width: 588px) {
     .specification-parent{
-        width: 80% !important;
+        width: 85% !important;
     }
 }
