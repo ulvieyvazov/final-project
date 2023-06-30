@@ -26,8 +26,8 @@ const Wishlist = ({ cartWis, removeFromWis, addToCart }) => {
                             <div className='wishlist-card-child' style={{ display: 'flex', alignItems: 'center', width: '90%', margin: '0 auto', marginBottom: '28px' }}>
                                 <img src={caWi.img} style={{ width: '100px', marginRight: '50px' }} alt="" />
 
-                                <div className='wishlist-rating' style={{ display: 'flex' }}>
-                                    <div className='wishlist-rating-parent' style={{ width: '500px' }}>
+                                <div className='wishlist-rating' style={{ display: 'flex', alignItems: 'center',gap: '30px' }}>
+                                    <div className='wishlist-rating-parent' style={{ width: '400px' }}>
                                         <p>{caWi.name}</p>
                                         <Box
                                             sx={{
@@ -36,6 +36,10 @@ const Wishlist = ({ cartWis, removeFromWis, addToCart }) => {
                                         >
                                             <Rating name="read-only" value={caWi.rating} readOnly />
                                         </Box>
+                                    </div>
+
+                                    <div style={{backgroundColor: '#28a745', color: 'white', fontSize: '14px', padding: '1px 2px', borderRadius: '2px'}}>
+                                        { caWi.availability }
                                     </div>
 
 

@@ -16,7 +16,7 @@ const AdminProducts = () => {
     const [data, setData] = useState([])
     const getData = async () => {
         const res = await axios.get("http://localhost:5050/products")
-        setData(res.data.filter((item) => item.name.toLowerCase().includes(value.toLowerCase())))
+        setData(res.data.filter((item) => item._id.toLowerCase().includes(value.toLowerCase())))
     }
 
     const [state, setState] = useState({
@@ -125,7 +125,7 @@ const AdminProducts = () => {
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [value])
 
     return (
         <>
@@ -243,7 +243,7 @@ const AdminProducts = () => {
 
                             <button type='submit'>Add</button>
                             <button onClick={updateData}>update</button>
-                            {/* <input className='search' type="text" placeholder='Search product' value={value} onChange={(e) => setValue(e.target.value)} /> */}
+                            <input className='search' type="text" placeholder='Search product' value={value} onChange={(e) => setValue(e.target.value)} />
                         </form>
 
                     </div>

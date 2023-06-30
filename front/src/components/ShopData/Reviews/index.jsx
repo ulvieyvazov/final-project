@@ -52,6 +52,8 @@ const Reviews = ({ addToCart }) => {
       email: values.email,
       _id: params.id
     })
+
+    await getData()
   }
 
   useEffect(() => {
@@ -71,9 +73,9 @@ const Reviews = ({ addToCart }) => {
               {
 
                 <div>
-                  <h3>{data.name}</h3>
-                  <p>{data.comment}</p>
-                  {/* <p>{data.email}</p> */}
+                  <h3>Name: {data.name}</h3>
+                  <p>Comment: {data.comment}</p>
+                  <a href={data.email}>{data.email}</a>
                 </div>
 
                 /* <Box

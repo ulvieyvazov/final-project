@@ -69,7 +69,7 @@ const Shop = ({ addToCart, addToWis }) => {
         let sortData = []
 
         sortData = [...data].sort((a, b) => {
-            return (a.price - b.price)
+            return (a.discount ? a.discount - b.price : a.price - b.price)
         })
 
         setData(sortData)

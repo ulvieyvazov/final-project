@@ -19,15 +19,6 @@ const Account = () => {
 
     return (
         <div style={{width: '70%', margin: '0 auto', padding: '50px 0'}}>
-            <h1 style={{marginBottom: '15px'}}>Account</h1>
-            {
-                data.map((d) => (
-                    <div>
-                        <h3>Name: {d.username}</h3>
-                        <h4>Email: {d.email}</h4>
-                    </div>
-                ))
-            }
         </div>
     )
 }
