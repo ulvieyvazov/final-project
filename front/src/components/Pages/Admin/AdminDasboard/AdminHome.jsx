@@ -27,7 +27,7 @@ const AdminHome = () => {
         getDatac()
     }, [])
 
-
+    
 
     const [datam, setDatam] = useState([])
     const getDatam = async () => {
@@ -41,17 +41,17 @@ const AdminHome = () => {
     
 
 
-    const [datau, setDatau] = useState([])
-    const getDatau = async () => {
-        const res = await axios.get("http://localhost:8000/api/users/login")
-        setDatau(res.data)
-        console.log(res.data);
-    }
+    // const [datau, setDatau] = useState([])
+    // const getDatau = async () => {
+    //     const res = await axios.get("http://localhost:8000/api/users/login")
+    //     setDatau(res.data)
+    //     console.log(res.data);
+    // }
 
 
-    useEffect(() => {
-        getDatau()
-    }, [])
+    // useEffect(() => {
+    //     getDatau()
+    // }, [])
 
     const deleteData = async (id) => {
         await axios.delete(`http://localhost:9090/billing/${id}`);
@@ -93,14 +93,14 @@ const AdminHome = () => {
                         }
                     </h3>
                 </div>
-                <div className='admin-hom'>
+                {/* <div className='admin-hom'>
                     <p>Total users</p>
                     <h3>
                         {
                             datau.length
                         }
                     </h3>
-                </div>
+                </div> */}
                 <div className='admin-hom'>
                     <p>Total message</p>
                     <h3>
@@ -109,7 +109,7 @@ const AdminHome = () => {
                         }
                     </h3>
                 </div>
-
+{/* 
                 <div>
                     {
                         dataor.map((d) => (
@@ -119,7 +119,7 @@ const AdminHome = () => {
                             </div>
                         ))
                     }
-                </div>
+                </div> */}
             </div>
         </>
     )

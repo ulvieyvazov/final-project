@@ -39,8 +39,8 @@ const Blog = () => {
                     <h1>Latest News</h1>
                     {
                         data.map((d) => (
-                            <div className='post-left1'>
-                                <img src={d.img} alt="" onClick={() => navigate('/morenews')} />
+                            <div className='post-left1' key={d._id}>
+                                <img src={d.img} alt="" onClick={() => navigate(`morenews/${d._id}`)} />
 
                                 <div className='post-left1-text'>
                                     <span>{d.info}</span>
@@ -49,7 +49,7 @@ const Blog = () => {
                                     <h3>{d.title}</h3>
                                     <p> {d.disc}</p>
 
-                                    <button onClick={() => navigate('/morenews')}>Read More</button>
+                                    <button onClick={() => navigate(`morenews/${d._id}`)}>Read More</button>
                                 </div>
                             </div>
                         ))
