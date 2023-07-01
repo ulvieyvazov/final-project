@@ -84,7 +84,7 @@ const AdminComment = () => {
                                     </StyledTableCell>
                                     <StyledTableCell align="right">{d.email}</StyledTableCell>
                                     <StyledTableCell align="right">{d.comment}</StyledTableCell>
-                                    <StyledTableCell align="right">{d._id}</StyledTableCell>
+                                    <StyledTableCell align="right">{d.idComment}</StyledTableCell>
                                 </StyledTableRow>
                             ))}
                         </TableBody>

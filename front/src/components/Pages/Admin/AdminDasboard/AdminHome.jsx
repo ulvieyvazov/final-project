@@ -31,7 +31,7 @@ const AdminHome = () => {
 
     const [datam, setDatam] = useState([])
     const getDatam = async () => {
-        const res = await axios.get("http://localhost:1000/comment")
+        const res = await axios.get("http://localhost:9900/message")
         setDatam(res.data)
     }
 
@@ -56,6 +56,10 @@ const AdminHome = () => {
     const deleteData = async (id) => {
         await axios.delete(`http://localhost:9090/billing/${id}`);
         await getDataor();
+    };
+    const deleteDatac = async (id) => {
+        await axios.delete(`http://localhost:1000/comment/${id}`);
+        await getDatac();
     };
 
     useEffect(() => {
@@ -109,7 +113,7 @@ const AdminHome = () => {
                         }
                     </h3>
                 </div>
-{/* 
+
                 <div>
                     {
                         dataor.map((d) => (
@@ -119,7 +123,17 @@ const AdminHome = () => {
                             </div>
                         ))
                     }
-                </div> */}
+                </div>
+                <div>
+                    {
+                        datac.map((d) => (
+                            <div>
+                                <p>{d.comment}</p>
+                                <button onClick={() => deleteDatac(d._id)}>delete</button>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </>
     )

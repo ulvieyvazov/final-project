@@ -24,7 +24,11 @@ const CommentSchema = new Schema(
     comment: {
       type: String,
       require: true,
-    }
+    },
+    idComment: {
+      type: String,
+      require: true,
+    },
   },
   { timestamps: true }
 );

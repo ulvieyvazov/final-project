@@ -8,6 +8,24 @@
         margin: 0 auto;
         padding-top: 40px;
 
+
+        .shopping-quantity {
+            // margin-bottom: 2px;
+            // width: 40%;
+
+            span {
+                padding: 0 8px;
+            }
+
+            button {
+                cursor: pointer;
+            }
+
+            button:hover {
+                color: #3d464d;
+            }
+        }
+
         .total-bill {
             button {
                 padding: 8px 17px;
@@ -35,7 +53,6 @@
         }
 
         .remove-icon {
-            margin: 0 auto;
             background-color: #ffd333;
             border: 0;
             padding: 5px 10px;
@@ -43,10 +60,92 @@
             border-radius: 3px;
             color: #3d464d;
             cursor: pointer;
+            margin-bottom: 20px;
         }
 
         .remove-icon:hover {
             background-color: #e0b620;
+        }
+    }
+}
+
+
+
+
+
+@media (max-width: 922px) {
+    .shopping-child {
+        justify-content: space-between !important;
+    }
+}
+
+
+
+@media (max-width: 724px) {
+    .shopping-child {
+        display: block !important;
+        width: 80% !important;
+        margin: 0 auto;
+
+        .shopping-child-img {
+            width: 100% !important;
+        }
+
+        .remove-icon {
+            width: 100% !important;
+            // margin-left: 70px;
+            // margin-top: 15px;
+            margin: 0 auto;
+        }
+    }
+
+    .shopping-cart-parent {
+        .total-bill {
+            button {
+                width: 50% !important;
+            }
+        }
+    }
+
+    .shopping-quantity {
+        display: block !important;
+        margin: 0 auto;
+        width: 50% !important;
+
+        div {
+            width: 70% !important;
+            margin-top: 25px;
+
+        }
+
+        p {
+            padding: 7px 0 !important;
+        }
+
+        p {
+            margin: 0 !important;
+        }
+    }
+}
+
+
+
+
+
+@media (max-width: 373px) {
+    .shopping-cart-parent {
+        width: 88% !important;
+        .total-bill {
+            button {
+                margin-left: 0 !important;
+            }
+        }
+
+
+        .shopping-quantity {
+            div {
+                width: 80% !important;
+            }
         }
     }
 }

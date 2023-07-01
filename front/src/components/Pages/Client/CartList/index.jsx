@@ -27,8 +27,8 @@ const CartList = ({ cart, removeFromCart }) => {
                 {
 
                     CART.map((ca, caIndex) => (
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                            <div style={{ display: 'flex', width: '30%' }}>
+                        <div className='shopping-child' style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '15px' }}>
+                            <div className='shopping-child-img' style={{ display: 'flex', width: '40%', alignItems: 'center' }}>
                                 <img src={ca.img} style={{ width: '100px' }} alt="" />
                                 <div style={{ width: '100%' }}>
                                     <p>{ca.name}</p>
@@ -41,9 +41,10 @@ const CartList = ({ cart, removeFromCart }) => {
                                     </Box>
                                 </div>
                             </div>
-                            <div style={{ display: 'flex', marginTop: '-25px', alignItems: 'center' }}>
-                                <div>
+                            <div className='shopping-quantity' style={{ display: 'flex', marginTop: '-25px', alignItems: 'center' }}>
+                                <div style={{border: '1px solid gray', padding: '4px 8px'}}>
                                     <button
+                                        style={{ padding: '1px 6px', backgroundColor: 'transparent', border: 0, fontSize: '20px' }}
                                         onClick={() => {
                                             const _CART = CART.map((item, index) => {
                                                 return caIndex === index ? { ...item, quantity: item.quantity > 0 ? item.quantity - 1 : 0 } : item
@@ -52,14 +53,16 @@ const CartList = ({ cart, removeFromCart }) => {
                                         }}
                                     >-</button>
                                     <span>{ca.quantity}</span>
-                                    <button onClick={() => {
-                                        const _CART = CART.map((item, index) => {
-                                            return caIndex === index ? { ...item, quantity: item.quantity + 1 } : item
-                                        })
-                                        setCART(_CART)
-                                    }}>+</button>
+                                    <button
+                                        style={{ padding: '1px 5px', backgroundColor: 'transparent', border: 0, fontSize: '19px' }}
+                                        onClick={() => {
+                                            const _CART = CART.map((item, index) => {
+                                                return caIndex === index ? { ...item, quantity: item.quantity + 1 } : item
+                                            })
+                                            setCART(_CART)
+                                        }}>+</button>
                                 </div>
-                                <p style={{ padding: '0 11px', width: '150px', margin: '0 auto' }}>${ca.discount ? ca.discount * ca.quantity : ca.price * ca.quantity}.00</p>
+                                <p style={{ padding: '0 11px', width: '150px', margin: '0 auto', fontSize: '21px' }}>${ca.discount ? ca.discount * ca.quantity : ca.price * ca.quantity}.00</p>
 
 
                             </div>
@@ -79,7 +82,7 @@ const CartList = ({ cart, removeFromCart }) => {
                     (item.price * item.quantity).reduce((total, value) => total + value, 0)
                     ) */}
 
-                    <button onClick={()=> navigate('/billing')}>Order</button>
+                    <button onClick={() => navigate('/billing')}>Order</button>
                 </div>
             </div>
         </div>

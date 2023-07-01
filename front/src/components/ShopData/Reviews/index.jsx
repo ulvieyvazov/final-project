@@ -12,11 +12,16 @@ const Reviews = ({ addToCart }) => {
 
   const params = useParams()
   const [data, setData] = useState([])
+  const [datac, setDatac] = useState([])
   const [searchString, setSearchString] = useState();
 
 
-  const getData = async () => {
-    const res = await axios.get(`http://localhost:1000/comment/${params.id}`)
+  // const getData = async () => {
+  //   const res = await axios.get(`http://localhost:1000/comment/${params.id}`)
+  //   setData(res.data)
+  // }
+  const getDatac = async () => {
+    const res = await axios.get(`http://localhost:1000/comment`)
     setData(res.data)
   }
 
@@ -25,6 +30,7 @@ const Reviews = ({ addToCart }) => {
     // rating: "",
     comment: "",
     email: "",
+    idComment: "",
   })
   const [productId, setProductId] = useState("")
 
@@ -50,15 +56,23 @@ const Reviews = ({ addToCart }) => {
       // rating: values.rating,
       comment: values.comment,
       email: values.email,
-      _id: params.id
+      idComment: params.id
     })
 
-    await getData()
+    await getDatac()
+
   }
 
   useEffect(() => {
-    getData()
+    getDatac()
   }, [])
+
+
+  var createdAt = data.createdAt
+  var date = new Date(createdAt)
+  console.log(date)
+
+
 
   return (
     <>
@@ -70,13 +84,26 @@ const Reviews = ({ addToCart }) => {
 
 
             <div className='reviews-top'>
-              {
-
-                <div>
-                  <h3>{data.name}</h3>
-                  <p>{data.comment}</p>
-                  {/* <a href={data.email}>{data.email}</a> */}
+              <div className='reviews-div'>
+                <p>Comment</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
+                  <h3>Ulvi Eyvazov</h3>
+                  <p>1 July 2023</p>
                 </div>
+              </div>
+              {
+                data.map((d) => (
+                  d.idComment === params.id ? <div className='reviews-div'>
+                    <p>{d.comment}</p>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
+                      <h3>{d.name}</h3>
+                      {
+                        new Date(d.createdAt).toLocaleString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+                      }
+                    </div>
+                    {/* <a href={data.email}>{data.email}</a> */}
+                  </div> : ""
+                ))
 
                 /* <Box
                   sx={{
@@ -91,7 +118,7 @@ const Reviews = ({ addToCart }) => {
             <div className='contact-right'>
               <h3>Write A Review</h3>
               <form action="" onSubmit={handleSubmit(postProduct)}>
-                <div className='rew-div' style={{ display: 'flex', width: '90%', alignItems: 'center', justifyContent:  'space-between', marginBottom: '40px' }}>
+                <div className='rew-div' style={{ display: 'flex', width: '90%', alignItems: 'center', justifyContent: 'space-between', marginBottom: '40px' }}>
                   {/* 
                   <div>
                     <select type="option" name='rating' {...register("rating")} onChange={handleChange} value={state.rating}>

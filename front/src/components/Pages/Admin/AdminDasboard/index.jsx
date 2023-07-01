@@ -39,6 +39,7 @@ const Admin = () => {
                 </Select>
               </FormControl>
               <li onClick={()=> navigate('/adminorder')}>Orders</li>
+              <li style={{marginLeft: '79px'}} onClick={()=> navigate('/')}>Logout</li>
             </ul>
           </div>
         </div>
