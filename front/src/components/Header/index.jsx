@@ -10,7 +10,7 @@ import DarkMode from '../mode';
 
 
 
-const Header = (props, propsWi, handleShow, handleShowWi) => {
+const Header = (props, propsWi) => {
 
     const [fix, setFix] = useState(false)
     const [open, setOpen] = useState(false)
@@ -31,8 +31,6 @@ const Header = (props, propsWi, handleShow, handleShowWi) => {
 
     let menuRef = useRef();
     let menuRefe = useRef();
-
-    console.log(props.count);
 
     useEffect(() => {
         let handler = (e) => {

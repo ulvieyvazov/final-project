@@ -87,7 +87,6 @@ function App() {
     <>
       <Header count={cart.length} size={cartWis.length} handleShow={handleShow} handleShowWi={handleShowWi} removeFromCart={removeFromCart} removeFromWis={removeFromWis} />
       <Routes>
-        <Route></Route>
         <Route path='/' element={<Home addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
@@ -121,7 +120,7 @@ function App() {
         <Route path='*' element={<Error404 />}></Route>
       </Routes>
       <BackToTopButton />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
