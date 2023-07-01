@@ -87,6 +87,7 @@ function App() {
     <>
       <Header count={cart.length} size={cartWis.length} handleShow={handleShow} handleShowWi={handleShowWi} removeFromCart={removeFromCart} removeFromWis={removeFromWis} />
       <Routes>
+        <Route></Route>
         <Route path='/' element={<Home addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
@@ -98,7 +99,6 @@ function App() {
         <Route path='/wishlist' element={<Wishlist cartWis={cartWis} addToCart={addToCart} removeFromWis={removeFromWis} />}></Route> :
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
-        <Route path='/account' element={<Account />}></Route>
         <Route path='/powertools' element={<PowerTools addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/handtools' element={<HandTools addToWis={addToWis} addToCart={addToCart} />}></Route>
         <Route path='/shop/product-details/:id' element={<ProductDetail addToCart={addToCart} />}></Route>
@@ -121,7 +121,7 @@ function App() {
         <Route path='*' element={<Error404 />}></Route>
       </Routes>
       <BackToTopButton />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

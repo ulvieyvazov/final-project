@@ -10,7 +10,7 @@ import DarkMode from '../mode';
 
 
 
-const Header = (props, propsWi) => {
+const Header = (props, propsWi, handleShow, handleShowWi) => {
 
     const [fix, setFix] = useState(false)
     const [open, setOpen] = useState(false)
@@ -31,6 +31,8 @@ const Header = (props, propsWi) => {
 
     let menuRef = useRef();
     let menuRefe = useRef();
+
+    console.log(props.count);
 
     useEffect(() => {
         let handler = (e) => {
@@ -163,10 +165,7 @@ const Header = (props, propsWi) => {
                                 {props.count}
                             </div>
                         </div>
-
-                        <div>
-                            <AiOutlineUser className='icon-head' />
-                        </div>
+                        
                     </div>
                 </div>
             </div>

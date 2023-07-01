@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./index.scss"
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Navigate, useNavigate } from "react-router-dom"
 import { Box, Rating } from '@mui/material';
 import PaymentForm from '../Payment/PaymentForm';
+
 
 const Billing = ({ cart, removeFromCart, count }) => {
 
@@ -19,7 +20,6 @@ const Billing = ({ cart, removeFromCart, count }) => {
 
     const [open, setOpen] = useState(false)
     const [CART, setCART] = useState([])
-
 
 
     // const removeFromCart = (ca) => {
@@ -153,9 +153,10 @@ const Billing = ({ cart, removeFromCart, count }) => {
 
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <button type='submit' onClick={() => postProduct === true ? navigate('/payment') : ""}>Send</button>
+                        <button type='submit' onClick={() => navigate('/payment')}>Order</button>
                     </div>
-                    <button type='submit' onClick={() => navigate('/payment')}>Order</button>
                 </form>
+
             </div>
         </div>
     )

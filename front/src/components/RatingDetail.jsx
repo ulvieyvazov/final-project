@@ -10,7 +10,7 @@ const RatingDetail = () => {
     const [data, setData] = useState([])
 
     const getData = async () => {
-        const res = await axios.get(`http://localhost:5050/products/${params.id}`)
+        const res = await axios.get(`http://localhost:5050/products`)
         setData(res.data)
     }
 

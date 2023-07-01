@@ -1,6 +1,7 @@
 import { Box, Rating } from '@mui/material';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import StripeCheckout from 'react-stripe-checkout';
+import emailjs from '@emailjs/browser';
 
 const PaymentForm = ({ cart, removeFromCart, count }) => {
 
@@ -8,6 +9,23 @@ const PaymentForm = ({ cart, removeFromCart, count }) => {
     const onToken = (token) => {
         console.log(token);
     }
+
+
+    const form = useRef()
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_kxs4spn', 'template_i3oflw4', form.current, '7rBw5obZQSl4FSOsd')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        e.target.reset()
+    };
+
+
     const [CART, setCART] = useState([])
 
     useEffect(() => {
@@ -16,7 +34,7 @@ const PaymentForm = ({ cart, removeFromCart, count }) => {
 
 
     return (
-        <div style={{width: '80%', margin: '0 auto', padding: '50px 0'}}>
+        <div style={{ width: '80%', margin: '0 auto', padding: '50px 0' }}>
             <div>
                 {
 
@@ -56,10 +74,21 @@ const PaymentForm = ({ cart, removeFromCart, count }) => {
                 </div>
 
             </div>
-            <StripeCheckout
-                token={onToken}
-                stripeKey="pk_test_51NNYzQE5seW1hwSy9x6NNtxPtWyERyh70FGQag8jjS1z2cA8LSGfqGj46fP4h3EvRCeqnLLla6mX1GItgLX8FNyK00uD3KQMmK"
-            />
+            <div style={{ position: 'relative' }}>
+                <StripeCheckout
+                    token={onToken}
+                    stripeKey="pk_test_51NNYzQE5seW1hwSy9x6NNtxPtWyERyh70FGQag8jjS1z2cA8LSGfqGj46fP4h3EvRCeqnLLla6mX1GItgLX8FNyK00uD3KQMmK"
+                />
+
+
+
+                <form action="" ref={form} onSubmit={sendEmail}>
+                    <input type="text" name='user_name' required value={'Ulvi'} style={{ display: 'none' }} />
+                    <input type="email" name='user_email' required value={'eyvazovulvi010101@gmail.com'} style={{ display: 'none' }} />
+                    <input type="text" name='subject' required value={'Order'} style={{ display: 'none' }} />
+                    <button type='submit' style={{ backgroundColor: 'transparent', color: 'transparent', position: 'sticky', position: 'absolute', zIndex: '111', top: 0, width: '10%', cursor: 'pointer', border: '0', height: '20px'}}>send</button>
+                </form>
+            </div>
         </div>
     )
 }

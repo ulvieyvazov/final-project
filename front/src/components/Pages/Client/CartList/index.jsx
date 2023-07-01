@@ -19,6 +19,8 @@ const CartList = ({ cart, removeFromCart }) => {
     useEffect(() => {
         setCART(cart)
     }, [cart])
+    
+
 
     return (
         <div className='shopping-cart-container'>

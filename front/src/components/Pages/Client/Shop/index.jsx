@@ -76,6 +76,17 @@ const Shop = ({ addToCart, addToWis }) => {
     }
 
 
+    const handleSortPriceH = () => {
+        let sortData = []
+
+        sortData = [...data].sort((a, b) => {
+            return (b.discount ? b.discount - a.price : b.price - a.price)
+        })
+
+        setData(sortData)
+    }
+
+
     useEffect(() => {
         getData()
     }, [value])
@@ -84,11 +95,13 @@ const Shop = ({ addToCart, addToWis }) => {
         <div className='shop-container'>
             <div className='shop-parent'>
                 <div className='shop-left'>
-                    
-                </div>  
+
+                </div>
 
                 <div className='shop-right'>
                     <div className='shop-right-head'>
+
+
 
                         <Box sx={{ minWidth: 1 }} className='aa'>
                             <FormControl fullWidth style={{ width: '180px', height: '30px' }}>
@@ -108,13 +121,32 @@ const Shop = ({ addToCart, addToWis }) => {
                             </FormControl>
                         </Box>
 
+
+                        <Box sx={{ minWidth: 1 }} className='aa'>
+                            <FormControl fullWidth style={{ width: '180px', height: '30px' }}>
+                                <InputLabel id="demo-simple-select-label">Sort</InputLabel>
+                                <Select
+                                    style={{ height: '50px' }}
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={age}
+                                    label="Age"
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value={10}><button style={{ backgroundColor: "transparent", border: 0 }} onClick={handleSortPrice}>Lowest price</button></MenuItem>
+                                    <MenuItem value={20}><button style={{ backgroundColor: "transparent", border: 0 }} onClick={handleSortPriceH}>The highest price</button></MenuItem>
+                                    <MenuItem value={30}><button style={{ backgroundColor: "transparent", border: 0 }} onClick={getData}>Default</button></MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+
+                        {/* <button style={{ padding: '5px 15px', cursor: 'pointer' }} onClick={handleSortPrice}>sort by price</button> */}
+
                         <div className='shop-search' style={{ display: 'flex' }}>
                             <input type="text" placeholder='Search Product' value={value} onChange={(e) => setValue(e.target.value)} />
                             <IoMdSearch className='shop-icon' />
                         </div>
                     </div>
-                    <button style={{ padding: '5px 15px', cursor: 'pointer' }} onClick={handleSortPrice}>sort by price</button>
-                    {/* <input type="range" min='0' max='5000' step='1' value={filter} onChange={(e) => setFilter(e.target.value)} /> */}
 
                     <div className='shop-card-parent'>
                         {
@@ -159,7 +191,7 @@ const Shop = ({ addToCart, addToWis }) => {
                                     </div>
 
                                     <div className='btt'>
-                                        <button onClick={() => addToCart(d)}>add to cart</button>
+                                        <button onClick={() => addToCart(d)}>Add to cart</button>
 
                                     </div>
 
@@ -169,8 +201,8 @@ const Shop = ({ addToCart, addToWis }) => {
                         }
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 

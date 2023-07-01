@@ -7,6 +7,7 @@ import { CommentSchema } from '../../../ProductSchema/CommentSchema'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import ProductDetail from '../../../ProductDetail'
+import HomeSwiper from "../../Swiper/HomeSwiper/index"
 
 const Reviews = ({ addToCart }) => {
 
@@ -84,13 +85,6 @@ const Reviews = ({ addToCart }) => {
 
 
             <div className='reviews-top'>
-              <div className='reviews-div'>
-                <p>Comment</p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
-                  <h3>Ulvi Eyvazov</h3>
-                  <p>1 July 2023</p>
-                </div>
-              </div>
               {
                 data.map((d) => (
                   d.idComment === params.id ? <div className='reviews-div'>
