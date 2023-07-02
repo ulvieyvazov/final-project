@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./index.scss"
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -8,6 +8,10 @@ import axios from 'axios';
 const Contact = () => {
 
 
+    const [datas, setData] = useState({ email: "", password: "" });
+    const handleChange = ({ currentTarget: input }) => {
+        setData({ ...datas, [input.name]: input.value });
+    };
     const {
         register,
         getValues,

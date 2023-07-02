@@ -43,3 +43,21 @@
         }
     }
 }
+
+
+
+
+
+
+@media (max-width: 771px) {
+    .billing-parent form {
+        width: 80% !important;
+    }
+}
+
+
+@media (max-width: 448px) {
+    .billing-parent form{
+        width: 95% !important;
+    }    
+}

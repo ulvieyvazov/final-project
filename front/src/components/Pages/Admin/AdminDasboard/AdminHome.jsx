@@ -113,7 +113,7 @@ const AdminHome = () => {
                         }
                     </h3>
                 </div>
-
+{/* 
                 <div>
                     {
                         dataor.map((d) => (
@@ -133,7 +133,7 @@ const AdminHome = () => {
                             </div>
                         ))
                     }
-                </div>
+                </div> */}
             </div>
         </>
     )

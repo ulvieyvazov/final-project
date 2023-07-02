@@ -239,6 +239,10 @@
         }
     }
 
+    .reviews-top{
+        width: 65% !important;
+    }
+
     .detail-parent {
         width: 90% !important;
     }
@@ -252,6 +256,12 @@
     }
 }
 
+
+@media (max-width: 607px) {
+    .reviews-top{
+        width: 80% !important;
+    }    
+}
 
 
 @media (max-width: 427px) {

@@ -93,11 +93,9 @@ const Header = (props, propsWi) => {
 
                         <div className={`dropmenu ${open ? 'active' : 'inactive'}`}>
                             <li><NavLink to={'/'}>Home</NavLink></li>
-                            {/* <li>Megamenu</li> */}
                             <li><NavLink to={'/about'}>About</NavLink></li>
-                            <li>Contacts</li>
+                            <li><NavLink to={'contact'}>Contacts</NavLink></li>
                             <li><NavLink to={'/shop'}>Shop</NavLink></li>
-                            <li>Account</li>
                             <li><NavLink to={'/blog'}>Blog</NavLink></li>
                             <li><NavLink to={'/login'}>Login</NavLink></li>
                             <li><NavLink to={'/register'}>Register</NavLink></li>

@@ -63,18 +63,7 @@ const ProductDetail = ({ addToCart }) => {
                   className="mySwiper"
                 >
 
-                  <SwiperSlide><ReactImageMagnify {...{
-                    smallImage: {
-                      alt: 'Wristwatch by Ted Baker London',
-                      isFluidWidth: true,
-                      src: data.img
-                    },
-                    largeImage: {
-                      src: data.img,
-                      width: 1200,
-                      height: 1800
-                    }
-                  }} /></SwiperSlide>
+                  <SwiperSlide><img src={data.img} alt=""/></SwiperSlide>
                   <SwiperSlide><img src={data.detailimg} alt="" /></SwiperSlide>
 
                 </Swiper>

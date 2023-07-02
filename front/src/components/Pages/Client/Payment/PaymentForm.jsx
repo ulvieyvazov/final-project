@@ -39,8 +39,8 @@ const PaymentForm = ({ cart, removeFromCart, count }) => {
                 {
 
                     CART.map((ca, caIndex) => (
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                            <div style={{ display: 'flex', width: '30%' }}>
+                        <div className='payment-parent' style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                            <div className='payment-cart' style={{ display: 'flex', width: '30%' }}>
                                 <img src={ca.img} style={{ width: '100px' }} alt="" />
                                 <div style={{ width: '100%' }}>
                                     <p>{ca.name}</p>
@@ -53,7 +53,7 @@ const PaymentForm = ({ cart, removeFromCart, count }) => {
                                     </Box>
                                 </div>
                             </div>
-                            <div style={{ display: 'flex', marginTop: '-25px', alignItems: 'center' }}>
+                            <div className='payment-quantitys' style={{ display: 'flex', marginTop: '-25px', alignItems: 'center' }}>
                                 <p style={{ padding: '0 11px', width: '150px', margin: '0 auto' }}>${ca.discount ? ca.discount * ca.quantity : ca.price * ca.quantity}.00</p>
                             </div>
                         </div>

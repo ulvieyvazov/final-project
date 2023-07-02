@@ -24,6 +24,8 @@
                 padding-bottom: 25px;
 
                 .aa {
+                    margin-bottom: 32px;
+
                     button {
                         padding: 7px 0;
                         background-color: transparent;
@@ -188,11 +190,24 @@
     .featured-card {
         width: 45% !important;
     }
+}
 
+
+@media (max-width: 780px) {
     .shop-right-head {
-        width: 70% !important;
+        width: 60% !important;
+        display: block !important;
+        // margin: 0 auto;
+
+        .shop-search{
+            svg{
+                display: none !important;
+            }
+        }
     }
 }
+
+
 
 @media (max-width: 740px) {
     .featured-card {

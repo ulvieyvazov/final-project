@@ -94,9 +94,6 @@ const Shop = ({ addToCart, addToWis }) => {
     return (
         <div className='shop-container'>
             <div className='shop-parent'>
-                <div className='shop-left'>
-
-                </div>
 
                 <div className='shop-right'>
                     <div className='shop-right-head'>

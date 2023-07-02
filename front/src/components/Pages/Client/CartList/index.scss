@@ -135,6 +135,7 @@
 @media (max-width: 373px) {
     .shopping-cart-parent {
         width: 88% !important;
+
         .total-bill {
             button {
                 margin-left: 0 !important;
@@ -148,4 +149,39 @@
             }
         }
     }
+}
+
+
+
+
+
+
+@media (max-width: 795px) {
+    .payment-cart {
+        width: 40% !important;
+    }
+}
+
+
+@media (max-width: 508px) {
+    .payment-parent {
+        display: block !important;
+    }
+
+    .payment-quantitys {
+        margin: 0 !important;
+        padding-bottom: 12px !important;
+    }
+
+    .payment-cart {
+        width: 70% !important;
+    }
+
+}
+
+@media (max-width: 402px) {
+    .payment-cart {
+        width: 89% !important;
+    }
+
 }
