@@ -25,11 +25,11 @@ const DarkMode = () => {
     return (
         <div>
             <div className={`${mode}`}>
-                <button onClick={toggleDark}>
+                <button style={{padding: '1px 3px', border: '0', cursor: 'pointer'}} onClick={toggleDark}>
                     {mode === "dark" ? "🌙" : "☀"}
                 </button>
             </div>
-        </div>
+        </div>  
     )
 }
 

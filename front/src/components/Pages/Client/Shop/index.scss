@@ -76,6 +76,13 @@
                     position: relative;
                     border: 2px solid #d1cfcf;
 
+                    .btt {
+                        button {
+                            color: #3d464d;
+                            font-size: 15px;
+                        }
+                    }
+
                     .wish {
                         position: absolute;
                         top: 0;
@@ -199,8 +206,8 @@
         display: block !important;
         // margin: 0 auto;
 
-        .shop-search{
-            svg{
+        .shop-search {
+            svg {
                 display: none !important;
             }
         }

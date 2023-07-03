@@ -514,7 +514,7 @@
                 }
 
                 div {
-                    width: 82%;
+                    width: 75%;
                     height: 2px;
                     background-color: #d1cfcf;
                 }
@@ -1027,6 +1027,14 @@
     .home-parent {
         .featured-card {
             width: 100% !important;
+        }
+    }
+
+    .home-popular{
+        .featured{
+            div{
+                width: 50% !important;
+            }
         }
     }
 
