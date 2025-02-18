@@ -78,7 +78,6 @@ function App() {
     setCart(cart.filter((product) => product !== ca))
   }
 
-
   const removeFromWis = (ca) => {
     setCartWis(cartWis.filter((product) => product !== ca))
   }
